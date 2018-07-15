@@ -3,3 +3,25 @@
 2018-07-14 22:14:15,652 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
 2018-07-15 15:50:40,698 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@67c27493
 2018-07-15 15:50:40,703 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-15 19:16:42,052 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@2f9f7dcf
+2018-07-15 19:16:42,063 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-15 19:18:36,213 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-15 19:20:08,148 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-15 19:50:28,024 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@67c27493
+2018-07-15 19:50:28,027 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-15 19:50:34,559 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@67c27493
+2018-07-15 19:50:34,560 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@72967906
+2018-07-15 19:50:34,560 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@5b8dfcc1
+2018-07-15 19:50:46,596 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@67c27493
+2018-07-15 19:50:46,597 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@72967906
+2018-07-15 19:50:46,597 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@5b8dfcc1
+2018-07-15 19:50:46,751 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@6cf0e0ba
+2018-07-15 19:50:46,752 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@7d8995e
+2018-07-15 19:50:46,752 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@130d63be
+2018-07-15 19:52:32,701 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@67c27493
+2018-07-15 19:52:32,702 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@72967906
+2018-07-15 19:52:32,703 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@5b8dfcc1
+2018-07-15 19:52:32,856 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@6cf0e0ba
+2018-07-15 19:52:32,856 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@7d8995e
+2018-07-15 19:52:32,857 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@130d63be
+2018-07-15 19:52:32,857 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@42a48628
