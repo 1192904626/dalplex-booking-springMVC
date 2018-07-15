@@ -13,6 +13,16 @@ public class User {
     public User() {
     }
 
+    public User(String student_name, String password, String phone_number, String email, String membership_start_date, int membership_day, String student_role) {
+        this.student_name = student_name;
+        this.password = password;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.membership_start_date = membership_start_date;
+        this.membership_day = membership_day;
+        this.student_role = student_role;
+    }
+
     public User(String student_name, String password, int student_id, String phone_number, String email, String membership_start_date, int membership_day, String student_role) {
         this.student_name = student_name;
         this.password = password;
