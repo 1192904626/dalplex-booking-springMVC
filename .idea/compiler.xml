@@ -10,8 +10,5 @@
         <module name="dalplexbooking" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="dalplex-booking" target="1.7" />
-    </bytecodeTargetLevel>
   </component>
 </project>
