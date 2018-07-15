@@ -28,6 +28,8 @@ public class UserDaoImpl implements UserDao{
             user.setEmail(rs.getString("email"));
             user.setMembership_day(rs.getInt("membership_day"));
             user.setMembership_start_date(rs.getString("membership_start_date"));
+            user.setStudent_role(rs.getString("student_role"));
+
 
             logger.info(user.toString());
             return user;
