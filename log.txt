@@ -1,3 +1,5 @@
 2018-07-14 22:14:15,643 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - database connection success
 2018-07-14 22:14:15,648 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@71be98f5
 2018-07-14 22:14:15,652 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-15 15:50:40,698 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@67c27493
+2018-07-15 15:50:40,703 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.

@@ -6,8 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="dalplex-booking" />
         <module name="dalplexbooking" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="dalplex-booking" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

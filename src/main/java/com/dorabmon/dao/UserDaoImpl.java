@@ -9,16 +9,73 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
-public class UserDaoImpl implements UserDao{
+public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>{
 
-    private DatabaseConnection databaseConnection = new DatabaseConnection();
     private final static Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
 
+    public UserDaoImpl() {
+        super();
+    }
 
 
-    public User setResultUser(ResultSet rs) {
+    @Override
+    public void Insert(User entity) throws SQLException {
 
+    }
+
+    @Override
+    public void Update(User entity) throws SQLException {
+
+    }
+
+    @Override
+    public void Delete(User entity) throws SQLException {
+
+    }
+
+    @Override
+    public User FindById(int id) throws SQLException {
+        try {
+            User user = null;
+            String FIND_BY_ID = "CALL FIND_USER_BY_ID(?)";
+            stmt = conn.prepareStatement(FIND_BY_ID);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                user =  this.setResult(rs);
+            }
+            rs.close();
+            return user;
+
+        }catch (SQLException e){
+            logger.error(e.getSQLState()+e.getMessage());
+            throw new RuntimeException(e);
+        }finally {
+            databaseConnection.close(conn);
+            databaseConnection.close(stmt);
+            logger.info("Database Connection and PreparedStatement have been closed.");
+        }
+    }
+
+    @Override
+    public List<User> FindAll() throws SQLException {
+        return null;
+    }
+
+    @Override
+    public List<User> FindAll(String query) throws SQLException {
+        return null;
+    }
+
+    @Override
+    public User setResult() {
+        return null;
+    }
+
+    @Override
+    public User setResult(ResultSet rs) {
         try{
             User user = new User();
             user.setPhone_number(rs.getString("phone_number"));
@@ -36,36 +93,6 @@ public class UserDaoImpl implements UserDao{
             logger.error(e.getMessage());
             throw new RuntimeException(e);
 
-        }
-    }
-
-    @Override
-    public User GetUserByID(int id) {
-        Connection conn = null;
-        PreparedStatement stmt = null;
-
-        try {
-            conn = databaseConnection.getConnection();
-            String FIND_BY_ID = "CALL FIND_USER_BY_ID(?)";
-            stmt = conn.prepareStatement(FIND_BY_ID);
-            stmt.setInt(1, id);
-            ResultSet rs = stmt.executeQuery();
-            logger.info("database connection success");
-            System.out.print("databae connection success");
-
-            if (rs.next()) {
-                return setResultUser(rs);
-            } else {
-                return null;
-            }
-
-        }catch (SQLException e){
-            logger.error(e.getSQLState()+e.getMessage());
-            throw new RuntimeException(e);
-        }finally {
-            databaseConnection.close(conn);
-            databaseConnection.close(stmt);
-            logger.info("Database Connection and PreparedStatement have been closed.");
         }
     }
 }

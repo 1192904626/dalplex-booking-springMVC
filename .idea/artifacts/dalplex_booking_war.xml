@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dalplex-booking:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="dalplex-booking.war">
+      <element id="artifact" artifact-name="dalplex-booking:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -5,6 +5,8 @@ import com.dorabmon.dao.UserDaoImpl;
 import com.dorabmon.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.sql.SQLException;
+
 public class UserServiceImpl implements UserService{
 
     @Autowired
@@ -12,8 +14,8 @@ public class UserServiceImpl implements UserService{
 
 
     @Override
-    public User GetUserByID(int id) {
+    public User GetUserByID(int id) throws SQLException {
         userDao = new UserDaoImpl();
-        return userDao.GetUserByID(id);
+        return userDao.FindById(id);
     }
 }

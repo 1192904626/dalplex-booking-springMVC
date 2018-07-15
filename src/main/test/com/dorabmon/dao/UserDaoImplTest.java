@@ -4,6 +4,8 @@ import com.dorabmon.model.User;
 import org.junit.Test;
 import org.junit.jupiter.api.BeforeEach;
 
+import java.sql.SQLException;
+
 import static org.junit.Assert.*;
 
 public class UserDaoImplTest {
@@ -20,9 +22,9 @@ public class UserDaoImplTest {
     }
 
     @Test
-    public void getUserByID() {
+    public void getUserByID() throws SQLException {
 
-        User user = userDao.GetUserByID(1);
+        User user = userDao.FindById(1);
         assertEquals("Yi Ren", user.getStudent_name());
     }
 }
