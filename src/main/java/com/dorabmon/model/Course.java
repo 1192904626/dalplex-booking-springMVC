@@ -15,8 +15,8 @@ public class Course {
     public Course() {
     }
 
-    public Course(int course_id, String course_name, String course_category, String course_start_date, String course_end_date, String course_start_time, String course_end_time, String course_instructor, String course_cover_image_link) {
-        this.course_id = course_id;
+    public Course(String course_name, String course_category, String course_start_date, String course_end_date, String course_start_time, String course_end_time, String course_instructor, String course_cover_image_link) {
+//        this.course_id = course_id;
         this.course_name = course_name;
         this.course_category = course_category;
         this.course_start_date = course_start_date;

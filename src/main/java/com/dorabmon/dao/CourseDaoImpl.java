@@ -32,7 +32,7 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             stmt.setString(3, sdf.format(new Date())); // course_start_date
             stmt.setString(4, sdf.format(new Date())); // course_end_date
-            // not sure about this part
+            // not sure about this part, but pass unit test
             DateFormat tmf = new SimpleDateFormat("HH:mm:ss");
             stmt.setString(5, tmf.format(new Date()));
             stmt.setString(6, tmf.format(new Date()));
