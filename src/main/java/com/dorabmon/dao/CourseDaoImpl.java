@@ -19,6 +19,7 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
         super();
     }
 
+
     @Override
     public void Insert(Course entity) throws SQLException {
         try {
@@ -45,19 +46,17 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
             stmt.close();
 
         } catch (SQLException e) {
-          throw new RuntimeException(e);
+            throw new RuntimeException(e);
         }
+    }
 
+    @Override
+    public void Update(Object entity) throws SQLException {
 
     }
 
     @Override
-    public void Update(Course entity) throws SQLException {
-
-    }
-
-    @Override
-    public void Delete(Course entity) throws SQLException {
+    public void Delete(Object entity) throws SQLException {
 
     }
 
@@ -75,7 +74,6 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
     public List FindAll(String query) throws SQLException {
         return null;
     }
-
 
     @Override
     public Course setResult() {
