@@ -4,6 +4,7 @@ import com.dorabmon.model.User;
 import com.dorabmon.util.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +15,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Repository
 public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>{
 
     private final static Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
@@ -50,12 +52,34 @@ public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>
 
     @Override
     public void Update(User entity) throws SQLException {
+        String sql = "CALL UPDATE_USER(?,?,?,?,?,?,?)";
+
+        stmt = conn.prepareStatement(sql);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        stmt.setString(1, entity.getPassword());
+        stmt.setString(2, entity.getStudent_name());
+        stmt.setString(3, entity.getPhone_number());
+        stmt.setString(4, sdf.format(new Date()));
+        stmt.setInt(5, entity.getMembership_day());
+        stmt.setString(6, entity.getStudent_role());
+        stmt.setString(7, entity.getEmail());
+        stmt.executeUpdate();
+
+        if (stmt != null){
+            stmt.close();
+        }
 
     }
 
     @Override
-    public void Delete(User entity) throws SQLException {
+    public void Delete(String id) throws SQLException {
+        stmt = conn.prepareStatement("CALL DELETE_USER_BY_EMAIL(?)");
+        stmt.setString(1, id);
+        stmt.executeUpdate();
 
+        if (stmt != null){
+            stmt.close();
+        }
     }
 
     @Override
@@ -76,7 +100,6 @@ public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>
             logger.error(e.getSQLState()+e.getMessage());
             throw new RuntimeException(e);
         }finally {
-            databaseConnection.close(conn);
             databaseConnection.close(stmt);
             logger.info("Database Connection and PreparedStatement have been closed.");
         }
@@ -101,7 +124,19 @@ public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>
 
     @Override
     public List<User> FindAll(String query) throws SQLException {
-        return null;
+        List<User> userList = new ArrayList<>();
+        try {
+            stmt = conn.prepareStatement(query);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                userList.add(this.setResult(rs));
+            }
+            rs.close();
+            stmt.close();
+            return userList;
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

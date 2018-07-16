@@ -4,6 +4,7 @@ import com.dorabmon.model.Course;
 import com.dorabmon.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+@Repository
 public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<Course> {
 
     private final static Logger logger = LoggerFactory.getLogger(CourseDaoImpl.class);
@@ -56,9 +58,10 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
     }
 
     @Override
-    public void Delete(Course entity) throws SQLException {
+    public void Delete(String id) throws SQLException {
 
     }
+
 
     @Override
     public Course FindById(int id) throws SQLException {
