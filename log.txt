@@ -40,3 +40,5 @@
 2018-07-16 16:44:56,733 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@5a4aa2f2
 2018-07-16 16:48:34,437 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@49c43f4e
 2018-07-16 16:48:34,443 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-16 20:34:03,766 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - User{student_name='123', password='123', student_id=7, phone_number='123', email='test', membership_start_date='2019-10-09', membership_day=23, student_role='user'}
+2018-07-16 20:34:03,768 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
