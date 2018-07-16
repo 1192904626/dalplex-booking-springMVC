@@ -11,6 +11,10 @@ public class Course {
     private String course_instructor;
     private String course_cover_image_link;
 
+
+    public Course() {
+    }
+
     public Course(int course_id, String course_name, String course_category, String course_start_date, String course_end_date, String course_start_time, String course_end_time, String course_instructor, String course_cover_image_link) {
         this.course_id = course_id;
         this.course_name = course_name;

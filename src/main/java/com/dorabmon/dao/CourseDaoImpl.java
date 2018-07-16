@@ -1,6 +1,7 @@
 package com.dorabmon.dao;
 
 import com.dorabmon.model.Course;
+import com.dorabmon.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -8,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -60,12 +62,43 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
 
     @Override
     public Course FindById(int id) throws SQLException {
-        return null;
+        try {
+            Course course = null;
+            String FIND_BY_ID = "CALL FIND_COURSE_BY_ID(?)";
+            stmt = conn.prepareStatement(FIND_BY_ID);
+            stmt.setInt(1, id);
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                course =  this.setResult(rs);
+            }
+            rs.close();
+            return course;
+        } catch (SQLException e) {
+            logger.error(e.getSQLState()+e.getMessage());
+            throw new RuntimeException(e);
+        } finally {
+            databaseConnection.close(conn);
+            databaseConnection.close(stmt);
+            logger.info("Database Connection and PreparedStatement have been closed.");
+
+        }
     }
 
     @Override
     public List FindAll() throws SQLException {
-        return null;
+        List<Course> courseList = new ArrayList<>();
+        try {
+            stmt = conn.prepareStatement("CALL LIST_ALL_COURSE");
+            ResultSet rs = stmt.executeQuery();
+            while (rs.next()){
+                courseList.add(this.setResult(rs));
+            }
+            rs.close();
+            stmt.close();
+            return courseList;
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -80,6 +113,22 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
 
     @Override
     public Course setResult(ResultSet rs) {
-        return null;
+        try {
+            Course course = new Course();
+            course.setCourse_name(rs.getString("course_name"));
+            course.setCourse_category(rs.getString("course_category"));
+            course.setCourse_start_date(rs.getString("course_start_date"));
+            course.setCourse_end_date(rs.getString("course_end_date"));
+            course.setCourse_start_time(rs.getString("course_start_time"));
+            course.setCourse_end_time(rs.getString("course_end_time"));
+            course.setCourse_cover_image_link(rs.getString("course_cover_image_link"));
+            course.setCourse_instructor(rs.getString("course_instructor"));
+            logger.info(course.toString());
+            return course;
+
+        } catch (SQLException e) {
+            logger.error(e.getMessage());
+            throw new RuntimeException(e);
+        }
     }
 }
