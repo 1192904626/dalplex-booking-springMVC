@@ -1,30 +1,30 @@
-package com.dorabmon.service.court;
+package com.dorabmon.service.course;
 
-import com.dorabmon.dao.court.CourtDao;
-import com.dorabmon.model.Court;
+import com.dorabmon.dao.CourseDao;
+import com.dorabmon.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.SQLException;
 import java.util.List;
 
-public class CourtServiceImpl implements CourtService {
+public class CourseServiceImpl implements CourseService {
 
     @Autowired
-    private CourtDao courtDao;
+    private CourseDao courseDao;
 
     @Override
-    public void Insert(Court entity) {
-        try {
-            courtDao.Insert(entity);
+    public void Insert(Course entity) {
+        try{
+            courseDao.Insert(entity);
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
     }
 
     @Override
-    public void Update(Court entity) {
+    public void Update(Course entity) {
         try{
-            courtDao.Update(entity);
+            courseDao.Update(entity);
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
@@ -33,25 +33,25 @@ public class CourtServiceImpl implements CourtService {
     @Override
     public void Delete(String id) {
         try{
-            courtDao.Delete(id);
+            courseDao.Delete(id);
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
     }
 
     @Override
-    public Court FindById(int id) {
+    public Course FindById(int id) {
         try{
-            return courtDao.FindById(id);
+            return courseDao.FindById(id);
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
     }
 
     @Override
-    public List<Court> FindAll() {
+    public List<Course> FindAll() {
         try{
-            return courtDao.FindAll();
+            return courseDao.FindAll();
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
