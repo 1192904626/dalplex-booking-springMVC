@@ -1,5 +1,7 @@
 package com.dorabmon.dao;
 
-public interface CourseDao extends BaseDao{
+import com.dorabmon.model.Course;
+
+public interface CourseDao extends BaseDao<Course>{
 
 }

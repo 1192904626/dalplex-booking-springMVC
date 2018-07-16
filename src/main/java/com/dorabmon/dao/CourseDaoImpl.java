@@ -15,9 +15,7 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
 
     private final static Logger logger = LoggerFactory.getLogger(CourseDaoImpl.class);
 
-    public CourseDaoImpl() {
-        super();
-    }
+    public CourseDaoImpl() { super(); }
 
 
     @Override
@@ -51,17 +49,17 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
     }
 
     @Override
-    public void Update(Object entity) throws SQLException {
+    public void Update(Course entity) throws SQLException {
 
     }
 
     @Override
-    public void Delete(Object entity) throws SQLException {
+    public void Delete(Course entity) throws SQLException {
 
     }
 
     @Override
-    public Object FindById(int id) throws SQLException {
+    public Course FindById(int id) throws SQLException {
         return null;
     }
 
