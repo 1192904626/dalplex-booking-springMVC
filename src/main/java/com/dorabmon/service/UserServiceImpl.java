@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void Delete(User entity) {
+    public void Delete(String id) {
 
     }
 
