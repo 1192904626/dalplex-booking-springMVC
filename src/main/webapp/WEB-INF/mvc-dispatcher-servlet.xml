@@ -21,7 +21,7 @@
     <mvc:resources mapping="/css/**" location="/WEB-INF/pages/css/"/>
     <mvc:resources mapping="/js/**" location="/WEB-INF/pages/js/"/>
     <mvc:resources mapping="/image/**" location="/WEB-INF/pages/image/"/>
-    <mvc:resources mapping="/font/**" location="WEB-INF/pages/fonts/"/>
+    <mvc:resources mapping="/fonts/**" location="WEB-INF/pages/fonts/"/>
 
     <!-- configure annotation driven, bond request parameters with controller parameters -->
     <mvc:annotation-driven/>

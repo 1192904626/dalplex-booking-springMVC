@@ -46,16 +46,12 @@
 <body>
 <div>
     <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button" style="background-color:#c08c0c;color:#222222;" data-toggle="sticky-onscroll">
-        <div class="container"><a class="navbar-brand" href="index.html" style="font-size:29px;">Dalplex Booking</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="#" style="font-size:29px;">Dalplex Booking</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
                     class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size:20px;"><strong>Course</strong>&nbsp;</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                    </li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size:20px;"><strong>Court</strong>&nbsp;</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                    </li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#course-display" style="font-size:20px;"><strong>Course</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="#court-display" style="font-size:20px;"><strong>Court</strong></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>Contact</strong></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>About</strong></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="admin_dashboard.html" style="font-size:20px;"><strong>Admin</strong></a></li>
@@ -76,33 +72,11 @@
     </div>
 </div>
 <div class="photo-gallery">
-    <div class="container">
+    <div class="container" id="course-display">
         <div class="intro">
             <h2 class="text-center">Course</h2>
         </div>
         <div class="row photos">
-            <%--course display--%>
-            <%--<table>--%>
-            <%--<thead>--%>
-            <%--<tr>--%>
-                <%--<th>course_id</th>--%>
-                <%--<th>course_category</th>--%>
-                <%--<th>course_name</th>--%>
-                <%--<th>course_start_time</th>--%>
-            <%--</tr>--%>
-            <%--</thead>--%>
-                <%--<tbody>--%>
-                <%--<c:forEach items="${courseList}" var="course">--%>
-                    <%--<tr>--%>
-                        <%--<td>${course.course_id} </td>--%>
-                        <%--<td>${course.course_category} </td>--%>
-                        <%--<td>${course.course_name} </td>--%>
-                        <%--<td>${course.course_start_time} </td>--%>
-                    <%--</tr>--%>
-
-                <%--</c:forEach>--%>
-                <%--</tbody>--%>
-            <%--</table>--%>
                 <c:forEach items="${courseList}" var="course">
                 <div class="col-sm-6 col-md-4 col-lg-3 item">
                     <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
@@ -111,44 +85,27 @@
                     <label style="font-size:28px;padding-left:0px;">${course.course_name}</label>
                 </div>
                 </c:forEach>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item">--%>
-                <%--<a href="image/desk.jpg" data-lightbox="photos">--%>
-                    <%--<img alt="#" class="img-fluid" src="image/yoga.jpg">--%>
-                <%--</a>--%>
-                <%--<label style="font-size:28px;padding-left:0px;">Yoga</label>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;">Swimming</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;">Boxing</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/socor.jpg"></a><label style="font-size:28px;">Soccor</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;">Baseball</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;">Badminton</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label></div>--%>
-        <%--</div>--%>
     </div>
-    <div class="container">
+    <div class="container" id="court-display">
         <div class="intro">
             <h2 class="text-center">Court</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item">
-                <a href="image/desk.jpg" data-lightbox="photos">
-                    <img alt="#" class="img-fluid" src="image/basketball_court.jpg">
-                </a>
-                <label style="font-size:28px;">Basketball</label>
-            </div>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item">--%>
+                <%--<a href="image/desk.jpg" data-lightbox="photos">--%>
+                    <%--<img alt="#" class="img-fluid" src="image/basketball_court.jpg">--%>
+                <%--</a>--%>
+                <%--<label style="font-size:28px;">Basketball</label>--%>
+            <%--</div>--%>
             <c:forEach items="${courtList}" var="court">
                 <div class="col-sm-6 col-md-4 col-lg-3 item">
                     <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
-                        <img  class="img-fluid" src=${court}>
+                        <img  class="img-fluid" src=${court.courtDescription}>
                     </a>
-                    <label style="font-size:28px;padding-left:0px;">${course.course_name}</label>
+                    <label style="font-size:28px;padding-left:0px;">${court.courtName}</label>
                 </div>
             </c:forEach>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor</label></div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label></div>--%>
-        </div>
+      </div>
     </div>
 </div>
 <div class="footer-basic">
@@ -177,7 +134,7 @@
     </div>
 </div>
 <script src="js/jquery.min.js"></script>
-<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <script src="js/DashBoard-light-boostrap.js"></script>
 <script src="js/DashBoard-light-boostrap.js"></script>
 <script src="js/DashBoard-light-boostrap.js"></script>
