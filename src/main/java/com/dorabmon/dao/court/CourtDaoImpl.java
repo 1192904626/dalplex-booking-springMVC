@@ -62,7 +62,18 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
 
     @Override
     public void Update(Court entity) throws SQLException {
+        stmt = conn.prepareStatement("CALL UPDATE_COURT(?,?,?,?,?)");
 
+        stmt.setInt(1, entity.getCourtId());
+        stmt.setString(2, entity.getCourtName());
+        stmt.setString(3, entity.getCourtTpye());
+        stmt.setInt(4, entity.getCourtCapacity());
+        stmt.setString(5, entity.getCourtDescription());
+
+        stmt.executeUpdate();
+        if (stmt != null){
+            stmt.close();
+        }
     }
 
     @Override
@@ -80,7 +91,7 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
     @Override
     public Court FindById(int id) throws SQLException {
 //        TODO
-        stmt = conn.prepareStatement("");
+        stmt = conn.prepareStatement("CALL FIND_COURT_BY_ID(?)");
         stmt.setInt(1, id);
         Court court = null;
         ResultSet rs = stmt.executeQuery();
