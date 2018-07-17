@@ -47,7 +47,7 @@
                 <h2>Sign in</h2>
             </div>
         </div>
-        <form id="signupform" >
+        <form id="signupform" action="/login" method="post">
 
             <div class="form-group">
                 <label for="email111">Email</label>
