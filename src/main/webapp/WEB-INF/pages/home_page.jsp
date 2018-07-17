@@ -52,9 +52,9 @@
                 <ul class="nav navbar-nav mr-auto">
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#course-display" style="font-size:20px;"><strong>Course</strong></a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link" href="#court-display" style="font-size:20px;"><strong>Court</strong></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>Contact</strong></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#contact-us" style="font-size:20px;"><strong>Contact</strong></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>About</strong></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="admin_dashboard.html" style="font-size:20px;"><strong>Admin</strong></a></li>
+                    <%--<li class="nav-item" role="presentation"><a class="nav-link" href="admin_dashboard.html" style="font-size:20px;"><strong>Admin</strong></a></li>--%>
                 </ul><span class="navbar-text actions"> <a href="student_page.html" class="login" style="font-size:20px;">Log In</a><a class="btn btn-light action-button" role="button" href="#" style="font-size:20px;background-color:#222222;">Sign Up</a></span></div>
         </div>
     </nav>
@@ -91,12 +91,6 @@
             <h2 class="text-center">Court</h2>
         </div>
         <div class="row photos">
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item">--%>
-                <%--<a href="image/desk.jpg" data-lightbox="photos">--%>
-                    <%--<img alt="#" class="img-fluid" src="image/basketball_court.jpg">--%>
-                <%--</a>--%>
-                <%--<label style="font-size:28px;">Basketball</label>--%>
-            <%--</div>--%>
             <c:forEach items="${courtList}" var="court">
                 <div class="col-sm-6 col-md-4 col-lg-3 item">
                     <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
@@ -108,7 +102,7 @@
       </div>
     </div>
 </div>
-<div class="footer-basic">
+<div class="footer-basic" id="contact-us">
     <footer>
         <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
         <ul class="list-inline">
@@ -118,14 +112,14 @@
             <li class="list-inline-item"><a href="#">Terms</a></li>
             <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
         </ul>
-        <p class="copyright">Dalplex booking system © 2017</p>
+        <p class="copyright">Dalplex Booking System 2017</p>
     </footer>
 </div>
 <div class="newsletter-subscribe">
     <div class="container">
         <div class="intro">
             <h2 class="text-center">Subscribe for our Newsletter</h2>
-            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
+            <p class="text-center">Keep watching our lasted news </p>
         </div>
         <form class="form-inline" method="post">
             <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
