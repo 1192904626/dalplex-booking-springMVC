@@ -1,3 +1,6 @@
+<%@ page import="java.util.Set" %>
+<%@ page import="java.util.HashSet" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -78,25 +81,73 @@
             <h2 class="text-center">Course</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;">Yoga</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;">Swimming</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;">Boxing</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/socor.jpg"></a><label style="font-size:28px;">Soccor</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;">Baseball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;">Badminton</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label></div>
-        </div>
+            <%--course display--%>
+            <%--<table>--%>
+            <%--<thead>--%>
+            <%--<tr>--%>
+                <%--<th>course_id</th>--%>
+                <%--<th>course_category</th>--%>
+                <%--<th>course_name</th>--%>
+                <%--<th>course_start_time</th>--%>
+            <%--</tr>--%>
+            <%--</thead>--%>
+                <%--<tbody>--%>
+                <%--<c:forEach items="${courseList}" var="course">--%>
+                    <%--<tr>--%>
+                        <%--<td>${course.course_id} </td>--%>
+                        <%--<td>${course.course_category} </td>--%>
+                        <%--<td>${course.course_name} </td>--%>
+                        <%--<td>${course.course_start_time} </td>--%>
+                    <%--</tr>--%>
+
+                <%--</c:forEach>--%>
+                <%--</tbody>--%>
+            <%--</table>--%>
+                <c:forEach items="${courseList}" var="course">
+                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                    <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
+                        <img  class="img-fluid" src=${course.course_cover_image_link}>
+                    </a>
+                    <label style="font-size:28px;padding-left:0px;">${course.course_name}</label>
+                </div>
+                </c:forEach>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item">--%>
+                <%--<a href="image/desk.jpg" data-lightbox="photos">--%>
+                    <%--<img alt="#" class="img-fluid" src="image/yoga.jpg">--%>
+                <%--</a>--%>
+                <%--<label style="font-size:28px;padding-left:0px;">Yoga</label>--%>
+            <%--</div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;">Swimming</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;">Boxing</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/socor.jpg"></a><label style="font-size:28px;">Soccor</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;">Baseball</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;">Badminton</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label></div>--%>
+        <%--</div>--%>
     </div>
     <div class="container">
         <div class="intro">
             <h2 class="text-center">Court</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/basketball_court.jpg"></a><label style="font-size:28px;">Basketball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item">
+                <a href="image/desk.jpg" data-lightbox="photos">
+                    <img alt="#" class="img-fluid" src="image/basketball_court.jpg">
+                </a>
+                <label style="font-size:28px;">Basketball</label>
+            </div>
+            <c:forEach items="${courtList}" var="court">
+                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                    <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
+                        <img  class="img-fluid" src=${court}>
+                    </a>
+                    <label style="font-size:28px;padding-left:0px;">${course.course_name}</label>
+                </div>
+            </c:forEach>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor</label></div>--%>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label></div>--%>
         </div>
     </div>
 </div>
@@ -143,4 +194,4 @@
 <script src="js/sticky.js"></script>
 </body>
 
-</html>l>
+</html>
