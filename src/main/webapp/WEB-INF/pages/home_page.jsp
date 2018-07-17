@@ -78,14 +78,14 @@
             <h2 class="text-center">Course</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;">Yoga</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/swimming.jpg"></a><label style="font-size:28px;">Swimming</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/boxing.jpg"></a><label style="font-size:28px;">Boxing</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/basketball.jpg"></a><label style="font-size:28px;">Basketball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/socor.jpg"></a><label style="font-size:28px;">Soccor</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/baseball.jpg"></a><label style="font-size:28px;">Baseball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/badminton.jpg"></a><label style="font-size:28px;">Badminton</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;">Yoga</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;">Swimming</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;">Boxing</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/socor.jpg"></a><label style="font-size:28px;">Soccor</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;">Baseball</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;">Badminton</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label></div>
         </div>
     </div>
     <div class="container">
@@ -93,10 +93,10 @@
             <h2 class="text-center">Court</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/basketball_court.jpg"></a><label style="font-size:28px;">Basketball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/badminton_court.jpg"></a><label style="font-size:28px;">Badminton</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/soccor_court.jpg"></a><label style="font-size:28px;">Soccor</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/basketball_court.jpg"></a><label style="font-size:28px;">Basketball</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label></div>
         </div>
     </div>
 </div>
