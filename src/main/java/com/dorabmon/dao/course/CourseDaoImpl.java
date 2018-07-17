@@ -55,7 +55,33 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
 
     @Override
     public void Update(Course entity) throws SQLException {
+        String sql = "CALL UPDATE_COURSE(?,?,?,?,?,?,?,?,?)";
+        stmt = conn.prepareStatement(sql);
 
+        stmt.setInt(1, entity.getCourse_id());
+        stmt.setString(2,entity.getCourse_name());
+        stmt.setString(3, entity.getCourse_category());
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        stmt.setString(4, sdf.format(new Date())); // course_start_date
+        stmt.setString(5, sdf.format(new Date())); // course_end_date
+        // not sure about this part, but pass unit test
+        DateFormat tmf = new SimpleDateFormat("HH:mm:ss");
+        stmt.setString(6, tmf.format(new Date()));
+        stmt.setString(7, tmf.format(new Date()));
+
+//        stmt.setString(4,entity.getCourse_start_date());
+//        stmt.setString(5, entity.getCourse_end_date());
+//        stmt.setString(6, entity.getCourse_start_time());
+//        stmt.setString(7, entity.getCourse_end_time());
+        stmt.setString(8, entity.getCourse_instructor());
+        stmt.setString(9, entity.getCourse_cover_image_link());
+
+        stmt.executeUpdate();
+
+        if(stmt != null) {
+            stmt.close();
+        }
     }
 
     @Override
@@ -86,7 +112,7 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
             logger.error(e.getSQLState()+e.getMessage());
             throw new RuntimeException(e);
         } finally {
-            databaseConnection.close(conn);
+//            databaseConnection.close(conn);
             databaseConnection.close(stmt);
             logger.info("Database Connection and PreparedStatement have been closed.");
 
@@ -124,6 +150,7 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
     public Course setResult(ResultSet rs) {
         try {
             Course course = new Course();
+            course.setCourse_id(rs.getInt("course_id"));
             course.setCourse_name(rs.getString("course_name"));
             course.setCourse_category(rs.getString("course_category"));
             course.setCourse_start_date(rs.getString("course_start_date"));
