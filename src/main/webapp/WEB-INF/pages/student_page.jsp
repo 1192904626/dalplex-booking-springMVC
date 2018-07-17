@@ -71,19 +71,19 @@
             <h2 class="text-center">My Course</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 101</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 101</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
@@ -96,28 +96,28 @@
             <h2 class="text-center">Coming Course</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 102</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 102</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;width:100%;">Basketball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;width:100%;">Basketball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="image-fluid delete-course" src="image/socor.jpg"></a><label style="font-size:28px;width:100%;">Soccor 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid delete-course" src="image/socor.jpg"></a><label style="font-size:28px;width:100%;">Soccor 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;width:100%;">Baseball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;width:100%;">Baseball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;width:100%;">Badminton 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;width:100%;">Badminton 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
             </div>
         </div>
@@ -127,19 +127,19 @@
             <h2 class="text-center">My Court</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/basketball_court.jpg"></a><label style="font-size:28px;">Basketball 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball_court.jpg"></a><label style="font-size:28px;">Basketball 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="image-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
                 <button
                         class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
             </div>
