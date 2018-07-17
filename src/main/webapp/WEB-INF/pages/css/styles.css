@@ -1,0 +1,29 @@
+.sticky.is-sticky {
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  z-index:1000;
+  width:100%;
+}
+
+.btn.btn-primary.d-block.delete-course:focus {
+  box-shadow:none;
+}
+
+.btn.btn-primary.d-block.delete-course.focus {
+  box-shadow:none;
+}
+
+.container.time-table {
+  padding-top:30px;
+}
+
+.table {
+  margin-top:30px;
+}
+
+.modal-header {
+  background-color:#c08c0c;
+}
+

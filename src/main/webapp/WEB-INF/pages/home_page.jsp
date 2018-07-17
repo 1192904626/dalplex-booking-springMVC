@@ -6,38 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>home_page</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/ionicons.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="assets/css/Article-List.css">
-    <link rel="stylesheet" href="assets/css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="assets/css/Data-Table.css">
-    <link rel="stylesheet" href="assets/css/Data-Table.css">
-    <link rel="stylesheet" href="assets/css/Dynamic-Table.css">
-    <link rel="stylesheet" href="assets/css/Footer-Basic.css">
-    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
+    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
+    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
+    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
+    <link rel="stylesheet" href="css/Article-List.css">
+    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
+    <link rel="stylesheet" href="css/Data-Table.css">
+    <link rel="stylesheet" href="css/Data-Table.css">
+    <link rel="stylesheet" href="css/Dynamic-Table.css">
+    <link rel="stylesheet" href="css/Footer-Basic.css">
+    <link rel="stylesheet" href="css/Footer-Clean.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
-    <link rel="stylesheet" href="assets/css/Lightbox-Gallery.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Newsletter-Subscription-Form.css">
-    <link rel="stylesheet" href="assets/css/product-list.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="assets/css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-2.css">
-    <link rel="stylesheet" href="assets/css/SIdebar-Responsive-2.css">
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
-    <link rel="stylesheet" href="assets/css/sss-Product-List-f.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="css/Lightbox-Gallery.css">
+    <link rel="stylesheet" href="css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="css/Newsletter-Subscription-Form.css">
+    <link rel="stylesheet" href="css/product-list.css">
+    <link rel="stylesheet" href="css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="css/Sidebar-Menu.css">
+    <link rel="stylesheet" href="css/SIdebar-Responsive-2.css">
+    <link rel="stylesheet" href="css/SIdebar-Responsive-2.css">
+    <link rel="stylesheet" href="css/Simple-Slider.css">
+    <link rel="stylesheet" href="css/sss-Product-List-f.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -64,8 +64,8 @@
 <div class="simple-slider">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url(&quot;assets/img/slider2.jpg&quot;);"></div>
-            <div class="swiper-slide" style="background-image:url(&quot;assets/img/slider3.jpg&quot;);"></div>
+            <div class="swiper-slide" style="background-image:url(https://res.cloudinary.com/dirbnqgl0/image/upload/v1531792215/slider2.jpg);"></div>
+            <div class="swiper-slide" style="background-image:url(https://res.cloudinary.com/dirbnqgl0/image/upload/v1531792215/slider3.jpg);"></div>
         </div>
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
@@ -78,14 +78,14 @@
             <h2 class="text-center">Course</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;">Yoga</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/swimming.jpg"></a><label style="font-size:28px;">Swimming</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/boxing.jpg"></a><label style="font-size:28px;">Boxing</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/basketball.jpg"></a><label style="font-size:28px;">Basketball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/socor.jpg"></a><label style="font-size:28px;">Soccor</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/baseball.jpg"></a><label style="font-size:28px;">Baseball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/badminton.jpg"></a><label style="font-size:28px;">Badminton</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;">Yoga</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/swimming.jpg"></a><label style="font-size:28px;">Swimming</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/boxing.jpg"></a><label style="font-size:28px;">Boxing</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/basketball.jpg"></a><label style="font-size:28px;">Basketball</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/socor.jpg"></a><label style="font-size:28px;">Soccor</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/baseball.jpg"></a><label style="font-size:28px;">Baseball</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/badminton.jpg"></a><label style="font-size:28px;">Badminton</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label></div>
         </div>
     </div>
     <div class="container">
@@ -93,10 +93,10 @@
             <h2 class="text-center">Court</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/basketball_court.jpg"></a><label style="font-size:28px;">Basketball</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/badminton_court.jpg"></a><label style="font-size:28px;">Badminton</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/soccor_court.jpg"></a><label style="font-size:28px;">Soccor</label></div>
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="assets/img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="assets/img/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/desk.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/basketball_court.jpg"></a><label style="font-size:28px;">Basketball</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/badminton_court.jpg"></a><label style="font-size:28px;">Badminton</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/loft.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/soccor_court.jpg"></a><label style="font-size:28px;">Soccor</label></div>
+            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="img/building.jpg" data-lightbox="photos"><img alt="#" class="img-fluid" src="img/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label></div>
         </div>
     </div>
 </div>
@@ -125,22 +125,22 @@
         </form>
     </div>
 </div>
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/DashBoard-light-boostrap.js"></script>
-<script src="assets/js/DashBoard-light-boostrap.js"></script>
-<script src="assets/js/DashBoard-light-boostrap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="js/DashBoard-light-boostrap.js"></script>
+<script src="js/DashBoard-light-boostrap.js"></script>
+<script src="js/DashBoard-light-boostrap.js"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-<script src="assets/js/DashBoard-light-boostrap.js"></script>
+<script src="js/DashBoard-light-boostrap.js"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-<script src="assets/js/DashBoard-light-boostrap.js"></script>
-<script src="assets/js/Dynamic-Table.js"></script>
+<script src="js/DashBoard-light-boostrap.js"></script>
+<script src="js/Dynamic-Table.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-<script src="assets/js/Sidebar-Menu-1.js"></script>
-<script src="assets/js/Sidebar-Menu.js"></script>
-<script src="assets/js/Simple-Slider.js"></script>
-<script src="assets/js/sticky.js"></script>
+<script src="js/Sidebar-Menu-1.js"></script>
+<script src="js/Sidebar-Menu.js"></script>
+<script src="js/Simple-Slider.js"></script>
+<script src="js/sticky.js"></script>
 </body>
 
 </html>l>
