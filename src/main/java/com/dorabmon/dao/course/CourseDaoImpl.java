@@ -1,7 +1,8 @@
-package com.dorabmon.dao;
+package com.dorabmon.dao.course;
 
+import com.dorabmon.dao.DatabaseDao;
+import com.dorabmon.dao.EntityDao;
 import com.dorabmon.model.Course;
-import com.dorabmon.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -59,7 +60,12 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
 
     @Override
     public void Delete(String id) throws SQLException {
-
+        stmt = conn.prepareStatement("CALL DELETE_COURSE_BY_ID(?)");
+        stmt.setInt(1, Integer.parseInt(id));
+        stmt.executeUpdate();
+        if (stmt != null){
+            stmt.close();
+        }
     }
 
 

@@ -25,21 +25,21 @@
 2018-07-15 19:52:32,856 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@7d8995e
 2018-07-15 19:52:32,857 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@130d63be
 2018-07-15 19:52:32,857 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - com.dorabmon.model.User@42a48628
-2018-07-16 16:44:54,773 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@17776a8
-2018-07-16 16:44:54,776 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
-2018-07-16 16:44:55,527 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@473b46c3
-2018-07-16 16:44:55,528 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@516be40f
-2018-07-16 16:44:55,529 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@3c0a50da
-2018-07-16 16:44:55,677 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@23a5fd2
-2018-07-16 16:44:55,678 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@78a2da20
-2018-07-16 16:44:55,678 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@dd3b207
-2018-07-16 16:44:55,679 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@551bdc27
-2018-07-16 16:44:56,731 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@3f200884
-2018-07-16 16:44:56,732 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@4d339552
-2018-07-16 16:44:56,732 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@f0f2775
-2018-07-16 16:44:56,733 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@5a4aa2f2
-2018-07-16 16:48:34,437 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@49c43f4e
-2018-07-16 16:48:34,443 [main] [com.dorabmon.dao.CourseDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-16 16:44:54,773 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@17776a8
+2018-07-16 16:44:54,776 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
+2018-07-16 16:44:55,527 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@473b46c3
+2018-07-16 16:44:55,528 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@516be40f
+2018-07-16 16:44:55,529 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@3c0a50da
+2018-07-16 16:44:55,677 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@23a5fd2
+2018-07-16 16:44:55,678 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@78a2da20
+2018-07-16 16:44:55,678 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@dd3b207
+2018-07-16 16:44:55,679 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@551bdc27
+2018-07-16 16:44:56,731 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@3f200884
+2018-07-16 16:44:56,732 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@4d339552
+2018-07-16 16:44:56,732 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@f0f2775
+2018-07-16 16:44:56,733 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@5a4aa2f2
+2018-07-16 16:48:34,437 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - com.dorabmon.model.Course@49c43f4e
+2018-07-16 16:48:34,443 [main] [com.dorabmon.dao.course.CourseDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
 2018-07-16 20:34:03,766 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - User{student_name='123', password='123', student_id=7, phone_number='123', email='test', membership_start_date='2019-10-09', membership_day=23, student_role='user'}
 2018-07-16 20:34:03,768 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
 2018-07-16 21:33:18,270 [main] [com.dorabmon.dao.UserDaoImpl] [INFO] - User{student_name='123', password='123', student_id=7, phone_number='123', email='test', membership_start_date='2019-10-09', membership_day=23, student_role='user'}
