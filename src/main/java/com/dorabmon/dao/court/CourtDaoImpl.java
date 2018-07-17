@@ -2,7 +2,6 @@ package com.dorabmon.dao.court;
 
 import com.dorabmon.dao.DatabaseDao;
 import com.dorabmon.dao.EntityDao;
-import com.dorabmon.dao.UserDaoImpl;
 import com.dorabmon.model.Court;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

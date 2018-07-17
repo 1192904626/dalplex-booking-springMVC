@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: yiren
@@ -47,21 +48,22 @@
                 <h2>Sign up</h2>
             </div>
         </div>
-        <form id="signupform" >
+        <%--@elvariable id="user" type=""--%>
+        <form action="signup" id="signupform" method="post">
             <div class="form-group">
-                <label for="name">Username</label>
-                <input class="form-control form-control-lg item" placeholder="Username" type="text" id="name" name="username" required
-                       pattern="^[a-zA-Z0-9_]+$" title="only letters and numbers are accepted.e.g.Tom2018">
+                <label for="student_name">Username</label>
+                <input class="form-control form-control-lg item" placeholder="Username" type="text" id="student_name" name="student_name"
+                       pattern="^[a-zA-Z0-9_]+$" title="only letters and numbers are accepted.e.g.Tom2018"/>
             </div>
             <div class="form-group">
-                <label for="email111">Email</label>
-                <input class="form-control form-control-lg item" placeholder="Email" type="email" id="email111" name="email" required>
+                <label for="email">Email</label>
+                <input  class="form-control form-control-lg item" placeholder="Email" type="email" id="email" name="email" />
             </div>
             <div class="form-group">
-                <label for="password">Password</label>
-                <input class="form-control form-control-lg item" type="password" placeholder="Password" id="password" name="password" required
+                <label  for="password">Password</label>
+                <input  class="form-control form-control-lg item" type="password" placeholder="Password" id="password" name="password"
                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{8,}"
-                       title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number.">
+                       title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number."/>
             </div>
             <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup">Sign Up</button>
             <a href="#" style="margin-top:-1px;">Already signed up? Login here.</a>

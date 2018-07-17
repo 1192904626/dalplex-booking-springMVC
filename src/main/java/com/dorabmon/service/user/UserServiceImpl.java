@@ -1,7 +1,6 @@
-package com.dorabmon.service;
+package com.dorabmon.service.user;
 
-import com.dorabmon.dao.UserDao;
-import com.dorabmon.dao.UserDaoImpl;
+import com.dorabmon.dao.user.UserDao;
 import com.dorabmon.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -12,7 +11,7 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
@@ -80,5 +79,14 @@ public class UserServiceImpl implements UserService{
         }catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public User FindByEmail(String email) {
+        try{
+            return userDao.FindByEmail(email);
+        }catch (SQLException e) {
+        throw new RuntimeException(e);
+    }
     }
 }

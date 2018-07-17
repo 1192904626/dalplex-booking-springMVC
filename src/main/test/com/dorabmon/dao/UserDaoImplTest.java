@@ -1,9 +1,9 @@
 package com.dorabmon.dao;
 
+import com.dorabmon.dao.user.UserDao;
+import com.dorabmon.dao.user.UserDaoImpl;
 import com.dorabmon.model.User;
 import org.junit.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.SQLException;
 import java.util.List;

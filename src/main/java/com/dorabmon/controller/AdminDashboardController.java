@@ -1,7 +1,7 @@
 package com.dorabmon.controller;
 
-import com.dorabmon.service.UserService;
-import com.dorabmon.service.UserServiceImpl;
+import com.dorabmon.service.user.UserService;
+import com.dorabmon.service.user.UserServiceImpl;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;

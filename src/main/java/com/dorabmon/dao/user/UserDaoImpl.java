@@ -1,13 +1,12 @@
-package com.dorabmon.dao;
+package com.dorabmon.dao.user;
 
+import com.dorabmon.dao.DatabaseDao;
+import com.dorabmon.dao.EntityDao;
 import com.dorabmon.model.User;
-import com.dorabmon.util.DatabaseConnection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.SimpleDateFormat;
@@ -16,9 +15,10 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>{
+public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User> {
 
     private final static Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
+
 
     public UserDaoImpl() {
         super();
