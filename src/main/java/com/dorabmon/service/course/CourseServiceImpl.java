@@ -1,6 +1,6 @@
 package com.dorabmon.service.course;
 
-import com.dorabmon.dao.CourseDao;
+import com.dorabmon.dao.course.CourseDao;
 import com.dorabmon.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
 

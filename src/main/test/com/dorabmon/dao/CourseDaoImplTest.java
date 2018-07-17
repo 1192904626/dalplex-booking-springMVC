@@ -1,7 +1,7 @@
 package com.dorabmon.dao;
 
+import com.dorabmon.dao.course.CourseDaoImpl;
 import com.dorabmon.model.Course;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
