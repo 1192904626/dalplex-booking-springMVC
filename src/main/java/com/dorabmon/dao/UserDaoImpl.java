@@ -166,4 +166,22 @@ public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>
 
         }
     }
+
+    @Override
+    public User FindByEmail(String email) throws SQLException{
+        User user = null;
+        String FIND_BY_EMAIL = "CALL FIND_USER_BY_EMAIL(?)";
+        stmt = conn.prepareStatement(FIND_BY_EMAIL);
+        stmt.setString(1, email);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()){
+            user =  this.setResult(rs);
+        }
+        rs.close();
+        if (stmt != null){
+            stmt.close();
+        }
+        return user;
+    }
+
 }
