@@ -3,10 +3,12 @@ package com.dorabmon.service.course;
 import com.dorabmon.dao.course.CourseDao;
 import com.dorabmon.model.Course;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
 import java.util.List;
 
+@Service
 public class CourseServiceImpl implements CourseService {
 
     @Autowired
