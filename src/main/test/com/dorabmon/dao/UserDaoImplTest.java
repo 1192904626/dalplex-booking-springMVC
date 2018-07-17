@@ -15,7 +15,7 @@ public class UserDaoImplTest {
 
     UserDao userDao = new UserDaoImpl();
 
-    User user = new User("test","123","123","test","2018-09-01",123,"user");
+    User user = new User("test","123","123","test","2018-09-01",2,"user");
 
 
     @org.junit.jupiter.api.BeforeEach
@@ -46,9 +46,7 @@ public class UserDaoImplTest {
     @Test
     public void update() throws Exception {
         User before = userDao.FindById(7);
-        System.out.println(before.toString());
         before.setStudent_name("yiren");
-        System.out.println(before.toString());
         userDao.Update(before);
         User now = userDao.FindById(7);
         assertEquals("yiren", now.getStudent_name());

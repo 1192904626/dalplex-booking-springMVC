@@ -54,15 +54,16 @@ public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>
     public void Update(User entity) throws SQLException {
         String sql = "CALL UPDATE_USER(?,?,?,?,?,?,?)";
 
+//        variable order should follow the first line (temp variable) in stored procedure
         stmt = conn.prepareStatement(sql);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        stmt.setString(1, entity.getPassword());
-        stmt.setString(2, entity.getStudent_name());
-        stmt.setString(3, entity.getPhone_number());
-        stmt.setString(4, sdf.format(new Date()));
-        stmt.setInt(5, entity.getMembership_day());
-        stmt.setString(6, entity.getStudent_role());
-        stmt.setString(7, entity.getEmail());
+        stmt.setString(2, entity.getPassword());
+        stmt.setString(3, entity.getStudent_name());
+        stmt.setString(4, entity.getPhone_number());
+        stmt.setString(5, sdf.format(new Date()));
+        stmt.setInt(6, entity.getMembership_day());
+        stmt.setString(7, entity.getStudent_role());
+        stmt.setString(1, entity.getEmail());
         stmt.executeUpdate();
 
         if (stmt != null){

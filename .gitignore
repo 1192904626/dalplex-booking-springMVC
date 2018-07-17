@@ -1,6 +1,6 @@
 .idea
 dalplex-booking.iml
-
+target/
 
 # Created by https://www.gitignore.io/api/java-web,intellij
 

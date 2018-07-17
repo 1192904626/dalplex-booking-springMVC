@@ -13,7 +13,7 @@
     <context:annotation-config/>
 
     <!-- SpringMVC  class with annotation @controller is the controller -->
-    <context:component-scan base-package="com.dorabmon.controller">
+    <context:component-scan base-package="com.dorabmon.controller com.dorabmon.service com.dorabmon.dao">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
