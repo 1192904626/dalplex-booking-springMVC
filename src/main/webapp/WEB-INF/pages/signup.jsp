@@ -66,7 +66,7 @@
                        title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number."/>
             </div>
             <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup">Sign Up</button>
-            <a href="#" style="margin-top:-1px;">Already signed up? Login here.</a>
+            <a href="/login" style="margin-top:-1px;">Already signed up? Login here.</a>
         </form>
     </section>
 </main>
