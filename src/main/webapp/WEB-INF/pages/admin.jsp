@@ -77,6 +77,7 @@
                 </div>
             </nav>
             <div id="courtAndCourse">
+                <h3 id="welcomeadmin" style="padding-left: 30px">Welcome Admin!</h3>
             <%--<div id="court_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_court"></iframe></div>--%>
             <%--<div id="course_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_course"></iframe></div>--%>
             </div>
@@ -111,14 +112,16 @@
         $("#admin_check_course").on('click', function(){
             $("#court_list").remove();
             $("#course_list").remove();
+            $("#welcomeadmin").remove();
 
-            $("#courtAndCourse").append("<div id=court_list><iframe style='border:none;'  width=90% height=500 src=/course></iframe></div>");
+            $("#courtAndCourse").append("<div id=court_list><iframe style='border:none;'  width=90% height=500 src=/course/list></iframe></div>");
         });
         $("#admin_check_court").on('click', function(){
             $("#court_list").remove();
             $("#course_list").remove();
+            $("#welcomeadmin").remove();
 
-            $("#courtAndCourse").append("<div id=course_list><iframe style='border:none;'  width=98% height=500 src=/courtlist></iframe></div>");
+            $("#courtAndCourse").append("<div id=course_list><iframe style='border:none;'  width=98% height=500 src=/court/list></iframe></div>");
 
         });
 

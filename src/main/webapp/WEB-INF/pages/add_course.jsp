@@ -20,7 +20,7 @@
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/toggle-menu.css">
+    <link rel="stylesheet" href="../css/toggle-menu.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
@@ -62,12 +62,12 @@
                                         <td>${course.course_start_date}</td>
                                         <td>${course.course_end_date}</td>
                                         <td >
-                                            <a class="btn btn-default">
+                                            <a onclick="editcourse(this)" class="btn btn-default" value=${course.course_id}>
                                                 <i class="material-icons">border_color</i>
                                             </a>
                                         </td>
                                         <td >
-                                            <a class="btn btn-danger" data-toggle="modal" href="#myModal">
+                                            <a onclick="deletecourse(this)" class="btn btn-danger" data-toggle="modal" href="#myModal" value=${course.course_id}>
                                                 <em class="fa fa-trash">
                                                 </em>
                                             </a>
@@ -182,13 +182,14 @@
             <div class="modal-body">
                 <p class="text-center text-muted">Deleted court can not be recovered.</p>
             </div>
-            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="button">Delete</button></div>
+            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button id="deletecourse" value="" class="btn btn-primary" type="button">Delete</button></div>
         </div>
     </div>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- jQuery CDN - Slim version (=without AJAX) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--%>
 <!-- Popper.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->
@@ -204,6 +205,32 @@
             $(this).toggleClass('active');
         });
     });
+    // pass value to modal
+    function deletecourse(element) {
+        var courseid = element.getAttribute('value');
+        $("#deletecourse").val(courseid);
+    };
+
+    $("#deletecourse").click(function(){
+        //get id
+        var courseid = $("#deletecourse").val();
+        $.ajax({
+            url:"/course/"+courseid,
+            type: 'GET',
+            success: function (data, status){
+                if(status == "success"){
+                    location.reload();
+                };
+            }
+        })
+    });
+
+    // edit course
+    function editcourse(element) {
+        var courseid = element.getAttribute('value');
+        alert("course id is: " + courseid);
+    };
+
     $("#submit-course-form").click(function () {
         var course_name = $("#course_name").val();
         var capacity = $("#capacity").val();
