@@ -28,7 +28,7 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="padding-left:30px;">Home</a></li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
                     <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item"  href="badminton.html">Badminton</a>
+                        <a class="dropdown-item"  href="/court/badminton">Badminton</a>
                         <a class="dropdown-item"  href="#">Basketball</a>
                         <a class="dropdown-item"  href="#">Football</a></div>
                 </li>

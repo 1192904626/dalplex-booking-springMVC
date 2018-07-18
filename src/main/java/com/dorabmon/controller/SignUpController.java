@@ -2,6 +2,8 @@ package com.dorabmon.controller;
 
 import com.dorabmon.model.User;
 import com.dorabmon.service.user.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -19,11 +21,13 @@ import java.io.IOException;
 @RequestMapping(value = "/signup")
 public class SignUpController {
 
+    private static final Logger logger = LoggerFactory.getLogger(SignUpController.class);
+
     @Autowired
     private UserService userService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView signUp(){
+    public ModelAndView signUp() {
         return new ModelAndView("signup");
     }
 
@@ -35,7 +39,7 @@ public class SignUpController {
                                 @RequestParam String password) {
         ModelAndView mav;
         HttpSession httpSession = request.getSession();
-        if (userService.FindByEmail(email) == null){
+        if (userService.FindByEmail(email) == null) {
             User user = new User();
             user.setStudent_name(student_name);
             user.setEmail(email);
@@ -43,21 +47,25 @@ public class SignUpController {
             user.setStudent_role("user");
             userService.Insert(user);
 
+            logger.info(user.toString());
+
             httpSession.setAttribute("currentUser", user);
             mav = new ModelAndView("/profile");
             mav.addObject("currentUser", user);
+
+            //send redirection
             try {
                 response.sendRedirect("/profile");
-            }catch (IOException e){
+            } catch (IOException e) {
                 e.printStackTrace();
             }
 
         } else {
             mav = new ModelAndView("signup");
-            mav.addObject("error","This email exists.");
+            mav.addObject("error", "This email exists.");
         }
 
         return new ModelAndView("profile");
 
     }
-    }
+}
