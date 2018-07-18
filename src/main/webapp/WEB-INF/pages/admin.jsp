@@ -46,6 +46,9 @@
                 <li>
                     <a id="admin_check_court"  data-target="#court_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">Court Table</a>
                 </li>
+                <li>
+                    <a id="admin_check_announcement"  data-target="#court_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">Announcement Table</a>
+                </li>
 
             </ul>
         </nav>
@@ -77,7 +80,7 @@
                 </div>
             </nav>
             <div id="courtAndCourse">
-                <h3 id="welcomeadmin" style="padding-left: 30px">Welcome Admin!</h3>
+                <h3 id="welcomeadmin" style="padding-left: 30px">Welcome to the management system!</h3>
             <%--<div id="court_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_court"></iframe></div>--%>
             <%--<div id="course_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_course"></iframe></div>--%>
             </div>
@@ -113,6 +116,7 @@
             $("#court_list").remove();
             $("#course_list").remove();
             $("#welcomeadmin").remove();
+            $("#annoncement_list").remove();
 
             $("#courtAndCourse").append("<div id=court_list><iframe style='border:none;'  width=90% height=500 src=/course/list></iframe></div>");
         });
@@ -120,11 +124,21 @@
             $("#court_list").remove();
             $("#course_list").remove();
             $("#welcomeadmin").remove();
+            $("#annoncement_list").remove();
 
             $("#courtAndCourse").append("<div id=course_list><iframe style='border:none;'  width=98% height=500 src=/court/list></iframe></div>");
 
         });
+        // admin_check_announcement
+        $("#admin_check_announcement").on('click', function(){
+            $("#court_list").remove();
+            $("#course_list").remove();
+            $("#annoncement_list").remove();
+            $("#welcomeadmin").remove();
 
+            $("#courtAndCourse").append("<div id=annoncement_list><iframe style='border:none;'  width=98% height=500 src=/announcement/list></iframe></div>");
+
+        });
 
     });
 
