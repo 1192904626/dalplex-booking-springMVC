@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="css/bootstrapyiren.min.css" >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="fonts/ionicons.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 
@@ -27,7 +28,7 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="padding-left:30px;">Home</a></li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
                     <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item" href="badminton.html">Badminton</a>
+                        <a class="dropdown-item" href="/court/badminton">Badminton</a>
                         <a class="dropdown-item"  href="">Basketball</a>
                         <a class="dropdown-item"  href="">Football</a></div>
                 </li>
