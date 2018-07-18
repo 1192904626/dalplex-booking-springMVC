@@ -43,11 +43,11 @@ public class LoginController {
         User user = userService.Login(email, password);
         if (user != null) {
             httpSession.setAttribute("currentUser", user);
-            mav = new ModelAndView("profile");
+            mav = new ModelAndView("editProfile");
             mav.addObject("currentUser", user);
 
             try {
-                httpServletResponse.sendRedirect("/profile");
+                httpServletResponse.sendRedirect("/profile/edit");
             }catch (IOException e){
                 e.printStackTrace();
             }
