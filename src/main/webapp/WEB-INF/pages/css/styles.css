@@ -27,3 +27,15 @@
   background-color:#c08c0c;
 }
 
+.bulletin {
+  margin-top: 10px;
+  text-align:center;
+}
+
+.bulletin_content{
+  font-size:large;
+}
+
+.bulletin_iterator{
+  font-size:xx-small;
+}

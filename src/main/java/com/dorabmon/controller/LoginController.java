@@ -2,6 +2,8 @@ package com.dorabmon.controller;
 
 import com.dorabmon.model.User;
 import com.dorabmon.service.user.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +18,8 @@ import java.io.IOException;
 
 @Controller
 public class LoginController {
+
+    private static final Logger logger = LoggerFactory.getLogger(LoginController.class);
 
     @Autowired
     private UserService userService;
@@ -42,12 +46,29 @@ public class LoginController {
         ModelAndView mav;
         User user = userService.Login(email, password);
         if (user != null) {
+
             httpSession.setAttribute("currentUser", user);
-            mav = new ModelAndView("profile");
+
+            if (user.getStudent_role().equals("user")){
+                //student role
+                mav = new ModelAndView("profile");
+
+            }else {
+                //admin goes to dashboard
+                mav = new ModelAndView("admin");
+            }
+
+            //add ModelAndView object
             mav.addObject("currentUser", user);
 
+            //send redirection based on roles
             try {
-                httpServletResponse.sendRedirect("/profile");
+                if (user.getStudent_role().equals("user")){
+                    httpServletResponse.sendRedirect("/profile");
+                }else {
+                    httpServletResponse.sendRedirect("/admin");
+                }
+
             }catch (IOException e){
                 e.printStackTrace();
             }
@@ -55,7 +76,6 @@ public class LoginController {
             mav = new ModelAndView("login");
             mav.addObject("loginError", "Username or password is incorrect!");
         }
-        //TODO role
 
         return mav;
     }

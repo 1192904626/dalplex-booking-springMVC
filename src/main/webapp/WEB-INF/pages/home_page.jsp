@@ -55,7 +55,7 @@
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#contact-us" style="font-size:20px;"><strong>Contact</strong></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>About</strong></a></li>
                     <%--<li class="nav-item" role="presentation"><a class="nav-link" href="admin_dashboard.html" style="font-size:20px;"><strong>Admin</strong></a></li>--%>
-                </ul><span class="navbar-text actions"> <a href="student_page.html" class="login" style="font-size:20px;">Log In</a><a class="btn btn-light action-button" role="button" href="#" style="font-size:20px;background-color:#222222;">Sign Up</a></span></div>
+                </ul><span class="navbar-text actions"> <a href="/login" class="login" style="font-size:20px;">Log In</a><a class="btn btn-light action-button" role="button" href="/signup" style="font-size:20px;background-color:#222222;">Sign Up</a></span></div>
         </div>
     </nav>
 </div>
@@ -69,6 +69,13 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
+    </div>
+    <div class="bulletin">
+        <img src="./image/notification.png" alt="notification image" height="42" width="42">
+        <span><Strong>Lastest Announcement:</Strong></span>
+        <a href="#" class="bulletin_iterator">&lt;&lt;</a>
+        <a href="#" id="bulletin_title" class="bulletin_content">Dalplex will be closed at 10:00 pm on Sunday</a>
+        <a href="#" class="bulletin_iterator">&gt;&gt;</a>
     </div>
 </div>
 <div class="photo-gallery">
