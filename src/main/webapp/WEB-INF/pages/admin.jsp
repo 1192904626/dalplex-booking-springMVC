@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,10 +41,13 @@
 
             <ul class="list-unstyled components">
                 <li>
-                    <a  data-target="#course_table"    data-toggle="collapse" href="#course_table" aria-expanded="false" aria-controls="course_table">Course Table</a>
+                    <a id="admin_check_course"  data-target="#course_table"    data-toggle="collapse" aria-expanded="false" aria-controls="course_table">Course Table</a>
                 </li>
                 <li>
-                    <a  data-target="#court_table"    data-toggle="collapse" href="#court_table" aria-expanded="false" aria-controls="court_table">Court Table</a>
+                    <a id="admin_check_court"  data-target="#court_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">Court Table</a>
+                </li>
+                <li>
+                    <a id="admin_check_announcement"  data-target="#court_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">Announcement Table</a>
                 </li>
 
             </ul>
@@ -51,7 +55,6 @@
 
         <!-- Page Content Holder -->
         <div id="content">
-
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
 
@@ -76,193 +79,18 @@
                     </div>
                 </div>
             </nav>
-
-            <div class="table-content parent">
-                <div class="table-content" id="course_table">
-                    <div class="row" >
-                        <h2 class="text-center">Course Table</h2>
-                        <button type="button" class="btn btn-primary add-button" name="add_course" data-toggle="modal" data-target="#addCourseModal">Add a course</button>
-
-                    </div>
-                    <div class="row">
-                        <div id="no-more-tables1" class="admin-table">
-                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
-                                <thead class="cf">
-                                <tr>
-                                    <th>Course Name</th>
-                                    <th>Capacity</th>
-                                    <th>Course Start</th>
-                                    <th>Course End</th>
-                                    <th>Course Day</th>
-                                    <th>Course Time</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <th><button type="button" class="btn btn-danger delete">Delete</button></th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <th><button type="button" class="btn btn-danger delete">Delete</button></th>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="table-content" id="court_table" >
-                    <div class="row" >
-                        <h2 class="text-center">Court Table</h2>
-                        <button type="button" class="btn btn-primary add-button" name="add_court"  data-toggle="modal" data-target="#addCourseModal">Add a court</button>
-
-                    </div>
-                    <div class="row">
-                        <div id="no-more-tables0" class="admin-table">
-                            <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
-                                <thead class="cf">
-                                <tr>
-                                    <th>Course Name</th>
-                                    <th>Capacity</th>
-                                    <th>Course Start</th>
-                                    <th>Course End</th>
-                                    <th>Course Day</th>
-                                    <th>Course Time</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <th><button type="button" class="btn btn-danger delete">Delete</button></th>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <th><button type="button" class="btn btn-danger delete">Delete</button></th>
-                                </tr>
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                </div>
+            <div id="courtAndCourse">
+                <h3 id="welcomeadmin" style="padding-left: 30px">Welcome to the management system!</h3>
+            <%--<div id="court_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_court"></iframe></div>--%>
+            <%--<div id="course_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_course"></iframe></div>--%>
+            </div>
+        </div>
             </div>
         </div>
 
     </div>
+
     <!-- Modal -->
-    <div class="modal fade" id="addCourseModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Course</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                </div>
-                <div class="modal-body">
-                    <form id = "add-course-form" class="form-horizontal" action="/action_page.php" method="post">
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_name">Course Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="course_name" placeholder="Enter course name" name="course_name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="capacity">Capacity</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="capacity" placeholder="capacity" name="capacity" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_start">Course Start</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="course_start"  name="course_start" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_end">Course End</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="course_end"  name="course_end" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6">Course Day</label>
-                            <div class="col-sm-10" id="course_day">
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="course_day_1" value=1>
-                                    <label class="form-check-label" for="course_day_1">1</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="course_day_2" value=2>
-                                    <label class="form-check-label" for="course_day_2">2</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="course_day_3" value=3>
-                                    <label class="form-check-label" for="course_day_3">3</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="course_day_4" value=4>
-                                    <label class="form-check-label" for="course_day_4">4</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="course_day_5" value=5>
-                                    <label class="form-check-label" for="course_day_5">5</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_time_start">Course time start</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="course_time_start" name="course_time_start" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_time_end">Course time end</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="course_time_end"  name="course_time_end" required>
-                            </div>
-                        </div>
-
-                    </form>
-                </div>
-                <div class="modal-footer">
-
-                    <button type="submit" class="btn btn-primary" id="submit-course-form">Submit</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 </div>
 
@@ -282,58 +110,38 @@
             $('#sidebar').toggleClass('active');
             $(this).toggleClass('active');
         });
+
+        // admin check course
+        $("#admin_check_course").on('click', function(){
+            $("#court_list").remove();
+            $("#course_list").remove();
+            $("#welcomeadmin").remove();
+            $("#annoncement_list").remove();
+
+            $("#courtAndCourse").append("<div id=court_list><iframe style='border:none;'  width=90% height=500 src=/course/list></iframe></div>");
+        });
+        $("#admin_check_court").on('click', function(){
+            $("#court_list").remove();
+            $("#course_list").remove();
+            $("#welcomeadmin").remove();
+            $("#annoncement_list").remove();
+
+            $("#courtAndCourse").append("<div id=course_list><iframe style='border:none;'  width=98% height=500 src=/court/list></iframe></div>");
+
+        });
+        // admin_check_announcement
+        $("#admin_check_announcement").on('click', function(){
+            $("#court_list").remove();
+            $("#course_list").remove();
+            $("#annoncement_list").remove();
+            $("#welcomeadmin").remove();
+
+            $("#courtAndCourse").append("<div id=annoncement_list><iframe style='border:none;'  width=98% height=500 src=/announcement/list></iframe></div>");
+
+        });
+
     });
-    $("#submit-course-form").click(function () {
-        var course_name = $("#course_name").val();
-        var capacity = $("#capacity").val();
-        var course_start = $("#course_start").val();
-        var course_end = $("#course_end").val();
-        var course_time_start = $("#course_time_start").val();
-        var course_time_end = $("#course_time_end").val();
-        var course_day_1 = document.getElementById("course_day_1").checked;
-        var course_day_2 = document.getElementById("course_day_2").checked;
-        var course_day_3 = document.getElementById("course_day_3").checked;
-        var course_day_4 = document.getElementById("course_day_4").checked;
-        var course_day_5 = document.getElementById("course_day_5").checked;
-        if ( course_name=="" || capacity=="" || course_start=="" || course_end=="" || course_time_start=="" || course_time_end=="") {
-            if (course_day_1==false && course_day_2==false || course_day_3==false || course_day_3==false || course_day_4==false || course_day_5==false) {
-                alert("Can not have empty value")
-            }
-        } else {
-            $('#addCourseModal').modal('toggle');
-            bootbox.alert("Successfully Added");
-//            pass json object, all form value here
-            $.post ("a.php",{
-                    name : course_name,
-                    capacity: capacity
-//              More variable here
-                },
-                function (data, status) {
-                    window.location.href="";
-                });
-        }
-    });
-    $(".btn.btn-danger.delete").click(function (s) {
-        s.preventDefault()
-        bootbox.confirm({
-            message: "Are you sure",
-            buttons: {
-                confirm: {
-                    label: 'Yes',
-                    className: 'btn-success'
-                },
-                cancel: {
-                    label: 'No',
-                    className: 'btn-danger'
-                }
-            },
-            callback: function (result) {
-                if (result == true) {
-                    bootbox.alert("Successfully Delete");
-                }
-//                console.log('This was logged in the callback: ' + result);
-            }
-        });  });
+
 </script>
 
 </body>

@@ -21,19 +21,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../css/toggle-menu.css">
+
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!-- jQuery CDN - Slim version (=without AJAX) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--%>
-    <!-- Popper.JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 </head>
 <body>
 <div>
@@ -45,8 +37,8 @@
             <div class="table-content parent">
                 <div class="table-content" id="course_table">
                     <div class="row" >
-                        <h2 class="text-center">Court Table</h2>
-                        <button type="button" class="btn btn-primary add-button" name="add_course" data-toggle="modal" data-target="#addCourseModal">Add a court</button>
+                        <h2 class="text-center">Course Table</h2>
+                        <button type="button" class="btn btn-primary add-button" name="add_course" data-toggle="modal" data-target="#addCourseModal">Add a course</button>
 
                     </div>
                     <div class="row">
@@ -54,35 +46,32 @@
                             <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
                                 <thead class="cf">
                                 <tr>
-                                    <th>Court Name</th>
-                                    <th>Court Type</th>
+                                    <th>Course Name</th>
                                     <th>Capacity</th>
+                                    <th>Course Start</th>
+                                    <th>Course End</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${courtList}" var="court">
+                                <c:forEach items="${courseList}" var="course">
                                     <tr>
-                                        <td>${court.courtName}</td>
-                                        <td>${court.courtTpye}</td>
-                                        <td>${court.courtCapacity}</td>
+                                        <td>${course.course_name}</td>
+                                        <td>${course.course_category}</td>
+                                        <td>${course.course_start_date}</td>
+                                        <td>${course.course_end_date}</td>
                                         <td >
-                                            <a onclick="editcourt(this)" class="btn btn-default" value=${court.courtId}>
-                                                <i class="material-icons" >border_color</i>
+                                            <a onclick="editcourse(this)" class="btn btn-default" value=${course.course_id}>
+                                                <i class="material-icons">border_color</i>
                                             </a>
                                         </td>
                                         <td >
-                                            <a onclick="deletecourt(this)" class="btn btn-danger" data-toggle="modal" href="#myModal" value=${court.courtId}>
+                                            <a onclick="deletecourse(this)" class="btn btn-danger" data-toggle="modal" href="#myModal" value=${course.course_id}>
                                                 <em class="fa fa-trash">
                                                 </em>
                                             </a>
                                         </td>
-
-                                        <%--<th>--%>
-                                            <%--<button type="button" class="btn btn-danger delete">Update</button>--%>
-                                            <%--<button type="button" class="btn btn-danger delete">Delete</button>--%>
-                                        <%--</th>--%>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -102,22 +91,16 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Court</h4>
+                    <h4 class="modal-title">Add Course</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                 </div>
                 <div class="modal-body">
                     <form id = "add-course-form" class="form-horizontal" action="/action_page.php" method="post">
                         <div class="form-group">
-                            <label class="control-label col-sm-6" for="court_name">Court Name</label>
+                            <label class="control-label col-sm-6" for="course_name">Course Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="court_name" placeholder="Enter court name" name="court_name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="court_type">Court Type</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="court_type"  name="course_start" required>
+                                <input type="text" class="form-control" id="course_name" placeholder="Enter course name" name="course_name" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -127,9 +110,52 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-6" for="description">Description</label>
+                            <label class="control-label col-sm-6" for="course_start">Course Start</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="description" placeholder="description" name="description" required>
+                                <input type="date" class="form-control" id="course_start"  name="course_start" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="course_end">Course End</label>
+                            <div class="col-sm-10">
+                                <input type="date" class="form-control" id="course_end"  name="course_end" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6">Course Day</label>
+                            <div class="col-sm-10" id="course_day">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="course_day_1" value=1>
+                                    <label class="form-check-label" for="course_day_1">1</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="course_day_2" value=2>
+                                    <label class="form-check-label" for="course_day_2">2</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="course_day_3" value=3>
+                                    <label class="form-check-label" for="course_day_3">3</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="course_day_4" value=4>
+                                    <label class="form-check-label" for="course_day_4">4</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="course_day_5" value=5>
+                                    <label class="form-check-label" for="course_day_5">5</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="course_time_start">Course time start</label>
+                            <div class="col-sm-10">
+                                <input type="time" class="form-control" id="course_time_start" name="course_time_start" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="course_time_end">Course time end</label>
+                            <div class="col-sm-10">
+                                <input type="time" class="form-control" id="course_time_end"  name="course_time_end" required>
                             </div>
                         </div>
 
@@ -156,12 +182,20 @@
             <div class="modal-body">
                 <p class="text-center text-muted">Deleted court can not be recovered.</p>
             </div>
-            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button id="deletecourt" class="btn btn-primary" value="" type="button">Delete</button></div>
+            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button id="deletecourse" value="" class="btn btn-primary" type="button">Delete</button></div>
         </div>
     </div>
 </div>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- jQuery CDN - Slim version (=without AJAX) -->
+<%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--%>
+<!-- Popper.JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 
 <script type="text/javascript">
@@ -170,19 +204,18 @@
             $('#sidebar').toggleClass('active');
             $(this).toggleClass('active');
         });
-
     });
     // pass value to modal
-    function deletecourt(element) {
-      var courtid = element.getAttribute('value');
-        $("#deletecourt").val(courtid);
+    function deletecourse(element) {
+        var courseid = element.getAttribute('value');
+        $("#deletecourse").val(courseid);
     };
 
-    $("#deletecourt").click(function(){
+    $("#deletecourse").click(function(){
         //get id
-        var courtid = $("#deletecourt").val();
+        var courseid = $("#deletecourse").val();
         $.ajax({
-            url:"/court/"+courtid,
+            url:"/course/"+courseid,
             type: 'GET',
             success: function (data, status){
                 if(status == "success"){
@@ -192,13 +225,11 @@
         })
     });
 
-    function editcourt(element) {
-        var courtid = element.getAttribute('value');
-        alert("court id is: " + courtid);
+    // edit course
+    function editcourse(element) {
+        var courseid = element.getAttribute('value');
+        alert("course id is: " + courseid);
     };
-
-
-
 
     $("#submit-course-form").click(function () {
         var course_name = $("#course_name").val();
