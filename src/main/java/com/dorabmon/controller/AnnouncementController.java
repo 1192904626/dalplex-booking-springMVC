@@ -1,7 +1,6 @@
 package com.dorabmon.controller;
 
 import com.dorabmon.model.Annoucement;
-import com.dorabmon.model.Court;
 import com.dorabmon.service.bulletin.AnnouncementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

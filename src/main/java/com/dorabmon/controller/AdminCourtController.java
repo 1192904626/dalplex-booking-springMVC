@@ -1,8 +1,6 @@
 package com.dorabmon.controller;
 
-import com.dorabmon.model.Course;
 import com.dorabmon.model.Court;
-import com.dorabmon.service.course.CourseService;
 import com.dorabmon.service.court.CourtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
