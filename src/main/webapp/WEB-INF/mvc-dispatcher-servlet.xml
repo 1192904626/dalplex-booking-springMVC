@@ -13,7 +13,7 @@
     <context:annotation-config/>
 
     <!-- SpringMVC  class with annotation @controller is the controller -->
-    <context:component-scan base-package="com.dorabmon.controller">
+    <context:component-scan base-package="com.dorabmon.controller com.dorabmon.service com.dorabmon.dao">
         <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
@@ -21,6 +21,7 @@
     <mvc:resources mapping="/css/**" location="/WEB-INF/pages/css/"/>
     <mvc:resources mapping="/js/**" location="/WEB-INF/pages/js/"/>
     <mvc:resources mapping="/image/**" location="/WEB-INF/pages/image/"/>
+    <mvc:resources mapping="/fonts/**" location="WEB-INF/pages/fonts/"/>
 
     <!-- configure annotation driven, bond request parameters with controller parameters -->
     <mvc:annotation-driven/>
@@ -41,25 +42,23 @@
 
 
 
-    <!--setting login.jsp handler interceptor-->
-    <!--<mvc:interceptors>-->
-        <!--<mvc:interceptor>-->
-            <!--<mvc:mapping path="/**"/>-->
-            <!--<mvc:exclude-mapping path="/js/**" />-->
-            <!--<mvc:exclude-mapping path="/css/**" />-->
-            <!--<mvc:exclude-mapping path="/image/**" />-->
-            <!--<mvc:exclude-mapping path="/signup" />-->
-            <!--<bean id="loginInterceptor" class="com.dorabmon.util.LoginHandlerInterceptor"></bean>-->
-        <!--</mvc:interceptor>-->
-    <!--</mvc:interceptors>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/js/**" />
+            <mvc:exclude-mapping path="/css/**" />
+            <mvc:exclude-mapping path="/image/**" />
+            <mvc:exclude-mapping path="/signup" />
+            <bean id="loginInterceptor" class="com.dorabmon.util.LoginHandlerInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
-    <!--exception-->
-    <!--<bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">-->
-        <!--<property name="exceptionMappings">-->
-            <!--<props>-->
-                <!--<prop key="com.group4.controller.CustomException">redirect:/signin</prop>-->
-            <!--</props>-->
-        <!--</property>-->
+    <bean id="exceptionResolver" class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionMappings">
+            <props>
+                <prop key="com.group4.controller.CustomException">redirect:/login</prop>
+            </props>
+        </property>
 
-    <!--</bean>-->
+    </bean>
 </beans>

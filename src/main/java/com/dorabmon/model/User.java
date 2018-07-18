@@ -8,11 +8,22 @@ public class User {
     private String email;
     private String membership_start_date;
     private int membership_day;
+    private String student_role;
 
     public User() {
     }
 
-    public User(String student_name, String password, Integer student_id, String phone_number, String email, String membership_start_date, int membership_day) {
+    public User(String student_name, String password, String phone_number, String email, String membership_start_date, int membership_day, String student_role) {
+        this.student_name = student_name;
+        this.password = password;
+        this.phone_number = phone_number;
+        this.email = email;
+        this.membership_start_date = membership_start_date;
+        this.membership_day = membership_day;
+        this.student_role = student_role;
+    }
+
+    public User(String student_name, String password, int student_id, String phone_number, String email, String membership_start_date, int membership_day, String student_role) {
         this.student_name = student_name;
         this.password = password;
         this.student_id = student_id;
@@ -20,6 +31,15 @@ public class User {
         this.email = email;
         this.membership_start_date = membership_start_date;
         this.membership_day = membership_day;
+        this.student_role = student_role;
+    }
+
+    public String getStudent_role() {
+        return student_role;
+    }
+
+    public void setStudent_role(String student_role) {
+        this.student_role = student_role;
     }
 
     public int getStudent_id() {
@@ -77,4 +97,20 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "student_name='" + student_name + '\'' +
+                ", password='" + password + '\'' +
+                ", student_id=" + student_id +
+                ", phone_number='" + phone_number + '\'' +
+                ", email='" + email + '\'' +
+                ", membership_start_date='" + membership_start_date + '\'' +
+                ", membership_day=" + membership_day +
+                ", student_role='" + student_role + '\'' +
+                '}';
+    }
+
+
 }
