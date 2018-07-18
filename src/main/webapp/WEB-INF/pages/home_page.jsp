@@ -70,6 +70,13 @@
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>
+    <div class="bulletin">
+        <img src="./image/notification.png" alt="notification image" height="42" width="42">
+        <span><Strong>Lastest Announcement:</Strong></span>
+        <a href="#" class="bulletin_iterator">&lt;&lt;</a>
+        <a href="#" id="bulletin_title" class="bulletin_content">Dalplex will be closed at 10:00 pm on Sunday</a>
+        <a href="#" class="bulletin_iterator">&gt;&gt;</a>
+    </div>
 </div>
 <div class="photo-gallery">
     <div class="container" id="course-display">
