@@ -1,11 +1,7 @@
 package com.dorabmon.controller;
 
 import com.dorabmon.model.Course;
-import com.dorabmon.model.Court;
 import com.dorabmon.service.course.CourseService;
-import com.dorabmon.service.court.CourtService;
-import com.dorabmon.service.user.UserService;
-import com.dorabmon.service.user.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,19 +12,14 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-public class AdminDashboardController {
-
+public class AdminCourseController {
     @Autowired
     private CourseService courseService;
-
-    @RequestMapping(value = "/dashboard" ,method = RequestMethod.GET)
-    public ModelAndView admin (HttpServletRequest httpServletRequest) {
-
-        return new ModelAndView("admin");
+    @RequestMapping(value = "/course", method = RequestMethod.GET)
+    public ModelAndView addCourse (HttpServletRequest httpServletRequest) {
+        ModelAndView modelAndView = new ModelAndView("add_course");
+        List<Course> courseList = courseService.FindAll();
+        modelAndView.addObject("courseList", courseList);
+        return modelAndView;
     }
-
-
-
-
-
 }
