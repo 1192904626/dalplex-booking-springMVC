@@ -61,7 +61,7 @@ public class DBCPUtil {
         Connection connection = null;
         try{
             connection = dataSource.getConnection();
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false);
         }
         catch(SQLException e){
             logger.error(e.getMessage());

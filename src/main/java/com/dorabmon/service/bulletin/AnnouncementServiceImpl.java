@@ -1,7 +1,10 @@
 package com.dorabmon.service.bulletin;
 
 import com.dorabmon.dao.bulletin.AnnouncementDao;
+import com.dorabmon.dao.user.UserDaoImpl;
 import com.dorabmon.model.Annoucement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +16,8 @@ public class AnnouncementServiceImpl implements AnnouncementService {
 
     @Autowired
     protected AnnouncementDao announcementDaoImpl;
+
+    private final static Logger logger = LoggerFactory.getLogger(AnnouncementServiceImpl.class);
 
 
     @Override
@@ -69,14 +74,17 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     @Override
     public void Delete(String id) {
 
+    }
+
+    @Override
+    public boolean deleteAnnoucementById(String id) {
         try {
-
             announcementDaoImpl.Delete(id);
-
+            return true;
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            logger.error("Delete Announcement Error: " + e.getMessage());
+            return false;
         }
-
     }
 
     @Override

@@ -64,7 +64,7 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
         Connection conn = dbpool.getConnection();
         PreparedStatement stmt = conn.prepareStatement("CALL DELETE_ANNOUNCEMENT_BY_ID(?)");
         stmt.setInt(1, Integer.valueOf(id));
-        stmt.executeUpdate();
+        int result = stmt.executeUpdate();
         if (stmt != null){
             stmt.close();
         }

@@ -11,4 +11,6 @@ public interface AnnouncementService extends BaseService<Annoucement> {
     Annoucement FindAnouncementById(int id);
 
     List<Annoucement> listAnouncementByPages(int offset, int rows);
+
+    boolean deleteAnnoucementById(String id);
 }
