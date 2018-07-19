@@ -5,13 +5,15 @@ import com.dorabmon.model.Course;
 import com.dorabmon.model.User;
 
 import java.sql.SQLException;
+import java.util.List;
 
-public interface student_courseDao {
+public interface StudentCourseDao {
     void Insert(User user, Course course) throws SQLException;
     void Update(User user, Course course) throws SQLException;
     void Delete(User user, Course course) throws SQLException;
 
-    FindById(int id) throws SQLException;
+
+    List<Course> FindCourseByStudentId(User user) throws SQLException;
 
 
 }
