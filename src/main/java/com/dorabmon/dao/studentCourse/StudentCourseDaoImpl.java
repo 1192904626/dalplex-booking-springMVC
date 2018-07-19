@@ -1,16 +1,13 @@
-package com.dorabmon.dao.student_course;
+package com.dorabmon.dao.studentCourse;
 
 import com.dorabmon.dao.DatabaseDao;
 import com.dorabmon.dao.course.CourseDao;
-import com.dorabmon.dao.course.CourseDaoImpl;
-import com.dorabmon.dao.user.UserDaoImpl;
 import com.dorabmon.model.Course;
 import com.dorabmon.model.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.w3c.dom.Entity;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

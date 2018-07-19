@@ -1,6 +1,6 @@
 package com.dorabmon.service.studentCourse;
 
-import com.dorabmon.dao.student_course.StudentCourseDao;
+import com.dorabmon.dao.studentCourse.StudentCourseDao;
 import com.dorabmon.model.Course;
 import com.dorabmon.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,10 +46,13 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     @Override
     public List<Course> FindCourseByStudentId(User user) {
         try {
-            studentCourseDao.FindCourseByStudentId(user);
+            return studentCourseDao.FindCourseByStudentId(user);
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
+
     }
+
+
 }
 

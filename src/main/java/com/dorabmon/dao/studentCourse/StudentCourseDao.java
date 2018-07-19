@@ -1,4 +1,4 @@
-package com.dorabmon.dao.student_course;
+package com.dorabmon.dao.studentCourse;
 
 import com.dorabmon.dao.BaseDao;
 import com.dorabmon.model.Course;
