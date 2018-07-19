@@ -11,7 +11,7 @@ public interface student_courseDao {
     void Update(User user, Course course) throws SQLException;
     void Delete(User user, Course course) throws SQLException;
 
-    FindById(int id) throws SQLException;
+//    FindById(int id) throws SQLException;
 
 
 }

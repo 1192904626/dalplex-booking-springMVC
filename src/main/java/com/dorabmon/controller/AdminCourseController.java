@@ -29,10 +29,8 @@ public class AdminCourseController {
     @RequestMapping(value = "/{courseid}", method = RequestMethod.GET)
     public ModelAndView coursedelete (@PathVariable("courseid") String courseid, HttpServletRequest httpServletRequest) {
         courseService.Delete(courseid);
-        // return new list
+        // return
         ModelAndView modelAndView = new ModelAndView("add_course");
-        List<Course> courseList = courseService.FindAll();
-        modelAndView.addObject("courseList", courseList);
         return modelAndView;
     }
 }

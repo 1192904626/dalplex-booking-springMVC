@@ -30,10 +30,8 @@ public class AdminCourtController {
     @RequestMapping(value = "/{courtid}", method = RequestMethod.GET)
     public ModelAndView courtdelete (@PathVariable("courtid") String courtid, HttpServletRequest httpServletRequest) {
         courtService.Delete(courtid);
-        // return new list
+        // return
         ModelAndView modelAndView = new ModelAndView("add_court");
-        List<Court> courtList = courtService.FindAll();
-        modelAndView.addObject("courtList", courtList);
         return modelAndView;
     }
 
