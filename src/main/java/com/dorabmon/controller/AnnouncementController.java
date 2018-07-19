@@ -29,12 +29,8 @@ public class AnnouncementController {
     @RequestMapping(value = "/{announcementid}", method = RequestMethod.GET)
     public ModelAndView courtdelete (@PathVariable("announcementid") String announcementid, HttpServletRequest httpServletRequest) {
         announcementServiceImpl.Delete(announcementid);
-        // return new list
+        // return
         ModelAndView modelAndView = new ModelAndView("announcement");
-
-        List<Annoucement> annoucementList = announcementServiceImpl.listAnouncementByPages(0, 5);
-        modelAndView.addObject("announcementList", annoucementList);
-
         return modelAndView;
     }
 }
