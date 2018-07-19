@@ -1,5 +1,6 @@
 package com.dorabmon.service;
 
+import com.dorabmon.dao.user.UserDao;
 import com.dorabmon.model.User;
 import com.dorabmon.service.user.UserService;
 import com.dorabmon.service.user.UserServiceImpl;
@@ -34,6 +35,10 @@ class UserServiceImplTest {
 
     @Test
     void findById() {
+
+        databaseConnection.getConnection();
+        User u =userService.FindById(28);
+        assertEquals("email@qq.com",u.getEmail());
     }
 
     @Test

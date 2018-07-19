@@ -107,3 +107,5 @@
 2018-07-16 22:08:07,911 [main] [com.dorabmon.dao.user.UserDaoImpl] [INFO] - User{student_name='yiren', password='123', student_id=7, phone_number='123', email='test', membership_start_date='2018-07-16', membership_day=23, student_role='user'}
 2018-07-16 22:08:07,911 [main] [com.dorabmon.dao.user.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.
 >>>>>>> dev-course
+2018-07-17 23:03:30,547 [main] [com.dorabmon.dao.user.UserDaoImpl] [INFO] - User{student_name='js', password='$2a$10$rHspHjaA.TDR876PCCeEou9F6Bw3Y/e5Eipnl3Y/lt8kVdq2PgMWy', student_id=28, phone_number='null', email='email@qq.com', membership_start_date='2018-07-17', membership_day=0, student_role='user'}
+2018-07-17 23:03:30,550 [main] [com.dorabmon.dao.user.UserDaoImpl] [INFO] - Database Connection and PreparedStatement have been closed.

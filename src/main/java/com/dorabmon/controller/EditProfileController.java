@@ -2,7 +2,10 @@ package com.dorabmon.controller;
 
 import com.dorabmon.model.User;
 import com.dorabmon.service.user.UserService;
+import com.dorabmon.service.user.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -20,20 +23,19 @@ public class EditProfileController {
     @Autowired
     private UserService userService;
 
+//    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
     @RequestMapping(value = "/profile/edit", method = RequestMethod.GET)
     public ModelAndView getEditProfile(HttpServletRequest request) {
-        if (request.getSession().getAttribute("currentUser") != null){
+        if (request.getSession().getAttribute("currentUser") != null) {
             ModelAndView mav = new ModelAndView("editProfile");
             User currentUser = (User) request.getSession().getAttribute("currentUser");
             mav.addObject("currentUser", currentUser);
 
             return mav;
-        }else {
+        } else {
             return new ModelAndView("login");
         }
-
-//        ModelAndView mav = new ModelAndView("editProfile");
-//        return mav;
 
     }
 
@@ -44,46 +46,49 @@ public class EditProfileController {
                                         @RequestParam String phoneNum,
                                         @RequestParam String password,
                                         HttpServletRequest request,
-                                        HttpServletResponse response) throws IOException {
+                                        HttpServletResponse response) {
         ModelAndView mav;
+        HttpSession session = request.getSession();
+        if (session.getAttribute("currentUser") != null) {
 
-        if(request.getSession().getAttribute("currentUser") != null)
-        {
-
-            //User user = (User) request.getSession().getAttribute("currentUser");
             User user = userService.FindByEmail(userEmail);
-
             user.setStudent_name(userName);
             user.setPhone_number(phoneNum);
-            user.setEmail(userEmail);
 
-            System.out.println(user.getStudent_name()+","+user.getPhone_number()+"+"+user.getEmail());
+            mav = new ModelAndView("profile");
 
-            mav= new ModelAndView("profile");
 
-//            if(!user.getPassword().equals(password))
-//            {
-//                user.setPassword(password);
-//
-//            }
+            if (user.getPassword().equals(password)) {
 
-            user.setPassword(password);
+                userService.UpdateSamePwd(user);
+            } else {
 
-            userService.Update(user);
+                user.setPassword(password);
 
-            System.out.println(user.getStudent_name()+","+user.getPhone_number()+"+"+user.getEmail());
+                userService.Update(user);
+                // mav.addObject("currentUser",user);
 
-            mav.addObject("currentUser",user);
-            response.sendRedirect("/profile");
+            }
+            mav.addObject("currentUser", user);
+
+            try {
+                response.sendRedirect("/profile");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             return mav;
+
         }
 
-        response.sendRedirect("/login");
+        try {
+            response.sendRedirect("/login");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         return new ModelAndView("login");
-
-
-
     }
 
 }
+

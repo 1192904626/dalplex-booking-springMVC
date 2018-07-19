@@ -62,6 +62,10 @@ public class UserDaoImplTest {
 
     @Test
     public void findById() throws Exception {
+
+        User u = userDao.FindById(28);
+        System.out.println(u.getEmail());
+
     }
 
     @Test

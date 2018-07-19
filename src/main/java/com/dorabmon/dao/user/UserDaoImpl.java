@@ -184,4 +184,21 @@ public class UserDaoImpl extends DatabaseDao implements UserDao, EntityDao<User>
         return user;
     }
 
+//    public static void main (String [] args)
+//    {
+//        User u = new User();
+//        u.setEmail("222@222.com");
+//        u.setStudent_name("xx233");
+//        u.setPassword("99999Yyyy");
+//        UserDaoImpl userDao = new UserDaoImpl();
+//        try {
+//            userDao.Insert(u);
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+
+
+
 }

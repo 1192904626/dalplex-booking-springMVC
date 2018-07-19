@@ -8,4 +8,5 @@ import java.sql.SQLException;
 public interface UserService extends BaseService<User> {
     User Login(String email, String password);
     User FindByEmail(String email);
+    void UpdateSamePwd(User entity);
 }

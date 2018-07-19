@@ -16,7 +16,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-    public PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
+    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+
 
     @Override
     public void Insert(User entity) {
@@ -33,6 +35,17 @@ public class UserServiceImpl implements UserService {
     @Override
     public void Update(User entity) {
         try {
+            entity.setPassword(passwordEncoder.encode(entity.getPassword()));
+            userDao.Update(entity);
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public void UpdateSamePwd(User entity) {
+        try {
+            //entity.setPassword(passwordEncoder.encode(entity.getPassword()));
             userDao.Update(entity);
         }catch (SQLException e) {
             throw new RuntimeException(e);
@@ -84,7 +97,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public User FindByEmail(String email) {
         try{
-            return userDao.FindByEmail(email);
+            User user = userDao.FindByEmail(email);
+            if(user!=null)
+            {
+                return user;
+            }
+            else return null;
+            //return userDao.FindByEmail(email);
         }catch (SQLException e) {
         throw new RuntimeException(e);
     }
