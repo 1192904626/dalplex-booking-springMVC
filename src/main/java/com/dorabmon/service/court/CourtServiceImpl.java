@@ -2,6 +2,8 @@ package com.dorabmon.service.court;
 
 import com.dorabmon.dao.court.CourtDao;
 import com.dorabmon.model.Court;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +12,8 @@ import java.util.List;
 
 @Service
 public class CourtServiceImpl implements CourtService {
+
+    private final static Logger logger = LoggerFactory.getLogger(CourtServiceImpl.class);
 
     @Autowired
     private CourtDao courtDao;
@@ -57,5 +61,20 @@ public class CourtServiceImpl implements CourtService {
         }catch (SQLException e){
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public List<Court> listCourtsByCourtType(String court_type) {
+
+        List<Court> courtList = null;
+        try {
+
+            courtList = courtDao.listCourtsByCourtType(court_type);
+
+        } catch (SQLException e) {
+            logger.error("Error listCourtsByCourtType:" + e.getMessage());
+            e.printStackTrace();
+        }
+        return courtList;
     }
 }

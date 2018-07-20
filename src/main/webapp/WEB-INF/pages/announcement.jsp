@@ -34,6 +34,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
+    <script src="../js/announcement.js"></script>
 </head>
 <body>
 <div>
@@ -156,102 +157,12 @@
             <div class="modal-body">
                 <p class="text-center text-muted">Deleted court can not be recovered.</p>
             </div>
-            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button id="deleteannouncement" class="btn btn-primary" value="" type="button">Delete</button></div>
+            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button id="deleteannouncement" class="btn btn-primary" value="" type="button" onclick="deleteConfirm()">Delete</button></div>
         </div>
     </div>
 </div>
 </div>
 
-
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-            $(this).toggleClass('active');
-        });
-
-    });
-    // pass value to modal
-    function deleteannouncement(element) {
-        var announcementid = element.getAttribute('value');
-        $("#deleteannouncement").val(announcementid);
-    };
-
-    $("#deleteannouncement").click(function(){
-        //get id
-        var announcementid = $("#deleteannouncement").val();
-        $.ajax({
-            url:"/announcement/"+announcementid,
-            type: 'GET',
-            success: function (data, status){
-                if(status == "success"){
-                    location.reload();
-                };
-            }
-        })
-    });
-
-    function editannouncement(element) {
-        var announcementid = element.getAttribute('value');
-        alert("announcement id is: " + announcementid);
-    };
-
-
-
-
-    $("#submit-course-form").click(function () {
-        var course_name = $("#course_name").val();
-        var capacity = $("#capacity").val();
-        var course_start = $("#course_start").val();
-        var course_end = $("#course_end").val();
-        var course_time_start = $("#course_time_start").val();
-        var course_time_end = $("#course_time_end").val();
-        var course_day_1 = document.getElementById("course_day_1").checked;
-        var course_day_2 = document.getElementById("course_day_2").checked;
-        var course_day_3 = document.getElementById("course_day_3").checked;
-        var course_day_4 = document.getElementById("course_day_4").checked;
-        var course_day_5 = document.getElementById("course_day_5").checked;
-        if ( course_name=="" || capacity=="" || course_start=="" || course_end=="" || course_time_start=="" || course_time_end=="") {
-            if (course_day_1==false && course_day_2==false || course_day_3==false || course_day_3==false || course_day_4==false || course_day_5==false) {
-                alert("Can not have empty value")
-            }
-        } else {
-            $('#addCourseModal').modal('toggle');
-            bootbox.alert("Successfully Added");
-//            pass json object, all form value here
-            $.post ("a.php",{
-                    name : course_name,
-                    capacity: capacity
-//              More variable here
-                },
-                function (data, status) {
-                    window.location.href="";
-                });
-        }
-    });
-    $(".btn.btn-danger.delete").click(function (s) {
-        s.preventDefault()
-        bootbox.confirm({
-            message: "Are you sure",
-            buttons: {
-                confirm: {
-                    label: 'Yes',
-                    className: 'btn-success'
-                },
-                cancel: {
-                    label: 'No',
-                    className: 'btn-danger'
-                }
-            },
-            callback: function (result) {
-                if (result == true) {
-                    bootbox.alert("Successfully Delete");
-                }
-//                console.log('This was logged in the callback: ' + result);
-            }
-        });  });
-</script>
 
 </body>
 
