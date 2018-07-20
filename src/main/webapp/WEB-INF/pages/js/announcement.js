@@ -27,7 +27,7 @@ function deleteConfirm(){
                 alert(data.errorMessage);
             }
         }
-    })
+    });
 }
 
 function editannouncement(element) {
@@ -92,4 +92,4 @@ $(".btn.btn-danger.delete").click(function (s) {
 
 });
 
-//# sourceURL=dynamicScript.js
+//# sourceURL=announcement.js

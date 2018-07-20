@@ -5,6 +5,7 @@
   Time: 20:38
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -13,13 +14,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DalplexBooking</title>
-    <link rel="stylesheet" href="../css/bootstrapyiren.min.css" >
+    <link rel="stylesheet" href="../../css/bootstrapyiren.min.css" >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="../fonts/ionicons.min.css">
-    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../../fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../../css/normalize.css">
 </head>
 
 <body>
+<div style="display:none;">
+    <input id="court_type" value="<c:out value="${court_type}"/>"/>
+</div>
+
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
     <div class="container"><a class="navbar-brand logo" href="#">DalplexBooking</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse"
@@ -28,9 +33,11 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="padding-left:30px;">Home</a></li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
                     <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item"  href="/court/badminton">Badminton</a>
-                        <a class="dropdown-item"  href="#">Basketball</a>
-                        <a class="dropdown-item"  href="#">Football</a></div>
+                        <a class="dropdown-item"  href="/studentCourt/pages/tennis">tennis</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
+                    </div>
                 </li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Classes&nbsp;</a>
                     <div class="dropdown-menu" role="menu"><a class="dropdown-item"  href="#">First Item</a><a class="dropdown-item"  href="#">Second Item</a><a class="dropdown-item"  href="#">Third Item</a></div>
@@ -46,69 +53,12 @@
         <div class="container">
 
             <div class="heading" style="margin-top:-39px;margin-bottom:74px;">
-                <h2>Badminton courts</h2>
-                <input type="date" class="form-control-lg" style="margin-top:20px;margin-bottom:-20px;" /></div>
+                <h2>${court_type} courts</h2>
+                <input type="date" class="form-control-lg" style="margin-top:20px;margin-bottom:-20px;" id="date_id" />
+            </div>
             <div style="margin:46px;"></div>
-            <div class="row" style="margin-top:-20px;">
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image">
-                        <h3>Badminton Court 1</h3>
-                        <h4>Location: Dalplex Gym</h4>
-                        <a class="btn btn-outline-primary btn-sm" role="button" href="#"
-                           data-toggle="modal" data-target="#myModal2">Book now</a>
-                        <div class="tags"><a href="#" style="color:rgb(14,160,255);">available</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image">
-                        <h3>Badminton Court 2</h3>
-                        <h4>Location: Dalplex Gym</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">Book now</a>
-                        <div class="tags" style="color:rgb(14,160,255);"><a href="#" style="color:rgb(14,160,255);">Available</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image project-card-no-image-red">
-                        <h3>Badminton Court 3</h3>
-                        <h4>Location: Dalplex Gym</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                        <div class="tags"><a href="#" style="color:rgb(239,84,84);">Full</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image project-card-no-image-red">
-                        <h3>Badminton Court 4</h3>
-                        <h4>Location: Dalplex Gym</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See More</a>
-                        <div class="tags"><a href="#" style="color:rgb(239,84,84);">Full</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image">
-                        <h3>Badminton Court 5</h3>
-                        <h4>Location: Dalplex Gym</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">Book now</a>
-                        <div class="tags"><a href="#" style="color:rgb(14,160,255);">Available</a></div>
+            <div class="row" style="margin-top:-20px;" id="court_content">
 
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image project-card-no-image-gray">
-                        <h3>Badminton Court 6</h3>
-                        <h4>Location: Dalplex Gym</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">See more</a>
-                        <div class="tags"><a href="#" style="color:rgb(171, 178, 185);">Past</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image">
-                        <h3>Badminton Court 7</h3>
-                        <h4>Location: Dalplex Gym</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">Book now</a>
-                        <div class="tags"><a href="#" style="color:rgb(14,160,255);">Available</a></div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="project-card-no-image">
-                        <h3>Badminton Court 8</h3>
-                        <h4>Location: Dalplex Gym</h4><a class="btn btn-outline-primary btn-sm" role="button" href="#">Book now</a>
-                        <div class="tags"><a href="#" style="color:rgb(14,160,255);">Available</a></div>
-                    </div>
-                </div>
 
             </div>
         </div>
@@ -144,10 +94,10 @@
         </div>
     </div>
 </div>
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
-<script src="../js/theme.js"></script>
-
+<script src="../../js/jquery.min.js"></script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/theme.js"></script>
+<script src="../../js/court.js"></script>
 </body>
 
 </html>

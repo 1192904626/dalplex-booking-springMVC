@@ -136,4 +136,25 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
         }
         return courtList;
     }
+
+    @Override
+    public List<Court> listCourtsByCourtType(String court_type) throws SQLException{
+        List<Court> courtList = new ArrayList<>();
+
+        String sql = "select * from zyzhong.court_table where court_type = ?";
+        stmt = conn.prepareStatement(sql);
+        stmt.setString(1, court_type);
+
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()){
+            courtList.add(this.setResult(rs));
+        }
+        rs.close();
+
+        if (stmt != null){
+            stmt.close();
+        }
+
+        return courtList;
+    }
 }

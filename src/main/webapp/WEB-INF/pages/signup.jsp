@@ -28,9 +28,11 @@
                 <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="padding-left:30px;">Home</a></li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
                     <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item" href="badminton.html">Badminton</a>
-                        <a class="dropdown-item"  href="">Basketball</a>
-                        <a class="dropdown-item"  href="">Football</a></div>
+                        <a class="dropdown-item"  href="/studentCourt/pages/tennis">tennis</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
+                    </div>
                 </li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Classes&nbsp;</a>
                     <div class="dropdown-menu" role="menu"><a class="dropdown-item"  href="#">First Item</a><a class="dropdown-item"  href="#">Second Item</a><a class="dropdown-item"  href="#">Third Item</a></div>
