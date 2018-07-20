@@ -16,6 +16,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="../fonts/ionicons.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <style>
+        .loginError{
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -45,6 +51,9 @@
         <div class="container" style="margin-top:-40px;margin-bottom:-20px;">
             <div class="heading">
                 <h2>Sign in</h2>
+                <hr>
+                <h4 class="loginError">${loginError}</h4>
+
             </div>
         </div>
         <form id="signupform" action="/login" method="post">
@@ -60,7 +69,7 @@
                        title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number.">
             </div>
             <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup">Sign In</button>
-            <a href="/signup" style="margin-top:-1px;">Don't have an account? Sign up here.</a>
+            Don't have an account? <a href="/signup" style="margin-top:-1px;">Sign up here.</a>
         </form>
     </section>
 </main>

@@ -43,7 +43,7 @@ public class LoginController {
         User user = userService.Login(email, password);
         if (user != null) {
             httpSession.setAttribute("currentUser", user);
-            mav = new ModelAndView("editProfile");
+            mav = new ModelAndView("profile");
             mav.addObject("currentUser", user);
 
             try {
