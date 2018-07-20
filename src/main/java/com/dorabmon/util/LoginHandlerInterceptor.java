@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 
 public class LoginHandlerInterceptor implements HandlerInterceptor{
 
-    private static Logger logger = LoggerFactory.getLogger(LoginHandlerInterceptor.class);
+    private static final Logger logger = LoggerFactory.getLogger(LoginHandlerInterceptor.class);
     private static String[] urlSets= {"/", "login", "signup"};
 
     @Autowired
@@ -41,6 +41,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor{
             }else {
                 httpServletRequest.getRequestDispatcher("/login")
                         .forward(httpServletRequest, httpServletResponse);
+                logger.info("preHandle() intercepted");
                 return false;
             }
 

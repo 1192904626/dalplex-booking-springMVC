@@ -33,29 +33,5 @@ public class DatabaseConnection {
     }
 
 
-    public void close(Connection con) {
-        if (con != null) {
-            try {
-                con.close();
-            } catch (SQLException e) {
-                // e.printStackTrace();
-                logger.error(e.getMessage());
-                throw new RuntimeException(e);
-            }
-        }
 
-    }
-
-    public void close(Statement stmt) {
-        if (stmt != null) {
-            try {
-                stmt.close();
-            } catch (SQLException e) {
-                // e.printStackTrace();
-                logger.error(e.getMessage());
-                throw new RuntimeException(e);
-            }
-        }
-
-    }
 }
