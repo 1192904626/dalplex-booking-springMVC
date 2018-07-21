@@ -25,7 +25,7 @@ public class AdminCourtController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/list", method = RequestMethod.GET)
+    @RequestMapping(value = "/list", method = RequestMethod.POST)
     public ModelAndView addCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest){
         courtService.Insert(court);
         return courtlist(httpServletRequest);

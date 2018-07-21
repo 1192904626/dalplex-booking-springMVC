@@ -44,7 +44,10 @@ public class UserDaoImpl implements UserDao, EntityDao<User> {
         if (rs.next()) {
             entity.setStudent_id((rs.getInt(1)));
         }
-        stmt.close();
+        if(stmt != null){
+            stmt.close();
+        }
+
 
     }
 
