@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse"
              id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html" style="padding-left:30px;">Home</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="/" style="padding-left:30px;">Home</a></li>
                 <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
                     <div class="dropdown-menu" role="menu">
                         <a class="dropdown-item"  href="/studentCourt/pages/tennis">tennis</a>

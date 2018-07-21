@@ -27,12 +27,11 @@ public class SignUpController {
     private UserService userService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView signUp() {
+    public ModelAndView signUp(HttpServletRequest request) {
         return new ModelAndView("signup");
     }
 
     @RequestMapping(method = RequestMethod.POST)
-
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
                                 @RequestParam String student_name,
                                 @RequestParam String email,
