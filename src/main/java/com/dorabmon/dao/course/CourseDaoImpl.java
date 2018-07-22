@@ -111,11 +111,6 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
         } catch (SQLException e) {
             logger.error(e.getSQLState()+e.getMessage());
             throw new RuntimeException(e);
-        } finally {
-//            databaseConnection.close(conn);
-            databaseConnection.close(stmt);
-            logger.info("Database Connection and PreparedStatement have been closed.");
-
         }
     }
 

@@ -27,23 +27,20 @@ public class SignUpController {
     private UserService userService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView signUp() {
+    public ModelAndView signUp(HttpServletRequest request) {
         return new ModelAndView("signup");
     }
 
     @RequestMapping(method = RequestMethod.POST)
-
     public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
-                                @RequestParam String student_name,
-                                @RequestParam String email,
-                                @RequestParam String password) {
+                                User user) {
         ModelAndView mav;
         HttpSession httpSession = request.getSession();
-        if (userService.FindByEmail(email) == null) {
-            User user = new User();
-            user.setStudent_name(student_name);
-            user.setEmail(email);
-            user.setPassword(password);
+        if (userService.FindByEmail(user.getEmail()) == null) {
+//            User user = new User();
+//            user.setStudent_name(student_name);
+//            user.setEmail(email);
+//            user.setPassword(password);
             user.setStudent_role("user");
             userService.Insert(user);
 

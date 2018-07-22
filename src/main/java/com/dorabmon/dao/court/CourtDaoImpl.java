@@ -47,7 +47,7 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
         //TODO
         stmt = conn.prepareStatement("CALL INSERT_COURT_RETURN(?,?,?,?,@VAL)");
         stmt.setString(1, entity.getCourtName());
-        stmt.setString(2, entity.getCourtTpye());
+        stmt.setString(2, entity.getCourtType());
         stmt.setInt(3, entity.getCourtCapacity());
         stmt.setString(4, entity.getCourtDescription());
 
@@ -67,7 +67,7 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
 
         stmt.setInt(1, entity.getCourtId());
         stmt.setString(2, entity.getCourtName());
-        stmt.setString(3, entity.getCourtTpye());
+        stmt.setString(3, entity.getCourtType());
         stmt.setInt(4, entity.getCourtCapacity());
         stmt.setString(5, entity.getCourtDescription());
 
