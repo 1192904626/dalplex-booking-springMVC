@@ -46,7 +46,7 @@
                 <div class="table-content" id="course_table">
                     <div class="row" >
                         <h2 class="text-center">Court Table</h2>
-                        <button type="button" class="btn btn-primary add-button" name="add_course" data-toggle="modal" data-target="#addCourseModal">Add a court</button>
+                        <button type="button" id="add_court" class="btn btn-primary add-button" name="add_course" data-toggle="modal" data-target="#addCourseModal">Add a court</button>
 
                     </div>
                     <div class="row">
@@ -70,7 +70,7 @@
                                         <td>${court.courtCapacity}</td>
                                         <td>${court.courtDescription}</td>
                                         <td >
-                                            <a onclick="editcourt(this)" class="btn btn-default" value=${court.courtId} data-toggle="modal" data-target="#addCourseModal">
+                                            <a onclick="editcourt(this)" class="btn btn-default" value=${court.courtId} data-toggle="modal" data-target="#editCourseModal">
                                                 <i class="material-icons" >border_color</i>
                                             </a>
                                         </td>
@@ -135,12 +135,7 @@
                                 <input type="number" class="form-control" id="capacity" placeholder="Capacity" name="courtCapacity" required>
                             </div>
                         </div>
-                    <div class="form-group" style="display: none">
-                        <label class="control-label col-sm-6" for="capacity">Id</label>
-                        <div class="col-sm-10" id="attachId">
-                            <%--<input type="number" class="form-control" id="capacity" placeholder="Capacity" name="courtCapacity" required>--%>
-                        </div>
-                    </div>
+
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="description">Location</label>
                             <div class="col-sm-10">
@@ -162,6 +157,66 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                 </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="editCourseModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="modal_title_edit">Edit Court</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <form id = "edit-court-form" class="form-horizontal" action="" method="post">
+
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="court_name">Court Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="court_name_edit" placeholder="Enter court name" name="courtName" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="court_type">Court Type</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="court_type_edit"  placeholder="Select court type" name="courtType" list="team_list" required>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="capacity">Capacity</label>
+                            <div class="col-sm-10">
+                                <input type="number" class="form-control" id="capacity_edit" placeholder="Capacity" name="courtCapacity" required>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label class="control-label col-sm-6" for="capacity">Id</label>
+                            <div class="col-sm-10" id="attachId">
+                                <input type="number" id="noneId"  name="courtId" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="description">Location</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="description_edit" placeholder="Location" name="courtDescription" list="location_list" required>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-primary" id="submit-course-form_edit">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
                 </form>
             </div>
 
@@ -214,21 +269,24 @@
         })
     });
 
+
+
+
+
     function editcourt(element) {
         var courtid = element.getAttribute('value');
-        $("#modal_title").html("Edit Court");
 
         $.ajax({
             url:"/court/admin/"+ courtid,
             type: "GET",
             success: function (data, status) {
                 if(status == "success"){
-                    $("#court_name").attr('value', data.courtName);
-                    $("#court_type").attr('value', data.courtType);
-                    $("#capacity").attr('value', data.courtCapacity);
-                    $("#description").attr('value', data.courtDescription);
-                    $("#add-course-form").attr('action', '/court/admin/' + data.courtId);
-                    $("#attachId").append("<input name='courtId' value=" + data.courtId + ">");
+                    $("#court_name_edit").attr('value', data.courtName);
+                    $("#court_type_edit").attr('value', data.courtType);
+                    $("#capacity_edit").attr('value', data.courtCapacity);
+                    $("#description_edit").attr('value', data.courtDescription);
+                    $("#edit-court-form").attr('action', '/court/admin/' + data.courtId);
+                    $("#noneId").attr('value', + data.courtId );
                 }
             }
         });
