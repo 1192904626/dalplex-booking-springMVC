@@ -7,17 +7,24 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    pageContext.setAttribute("basePath",basePath);
+
+%>
 <!DOCTYPE html>
 <html>
 
 <head>
+    <base href="<%=basePath%>" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DalplexBooking</title>
-    <link rel="stylesheet" href="../../css/bootstrapyiren.min.css" >
+    <link rel="stylesheet" href="css/bootstrapyiren.min.css" >
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="../../fonts/ionicons.min.css">
-    <link rel="stylesheet" href="../../css/normalize.css">
+    <link rel="stylesheet" href="fonts/ionicons.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
 </head>
 
 <body>
@@ -75,29 +82,23 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color: #0ea0ff">
-                    <h4 style="color: #ffffff">Badminton Court 1</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <label for="startTime">Start Time</label>
-                        <input type="datetime-local" id="startTime" class="form-control" />
-                    </div>
-                    <div class="form-group">
-                        <label for="endTime">End Time</label>
-                        <input type="datetime-local" id="endTime" class="form-control" />
-                    </div>
+                    <h4 id="id_h4" style="color: #ffffff"></h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body" id='modal-body-id' style="margin-left:auto;margin-right:auto;">
 
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button>
-                    <button class="btn btn-primary" type="button">Book</button></div>
+                <div class="modal-footer">
+                    <button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button>
+                    <%--<button class="btn btn-primary" type="button">Book</button>--%>
+                    <button class="btn btn-light" type="button" id="book_btn_id" onclick="courtBookTrigger(this)" value="" disabled>Book</button>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<script src="../../js/jquery.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/theme.js"></script>
-<script src="../../js/court.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/court.js"></script>
 </body>
 
 </html>
