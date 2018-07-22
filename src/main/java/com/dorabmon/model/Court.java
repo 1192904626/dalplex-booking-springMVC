@@ -6,6 +6,7 @@ public class Court {
     private String courtTpye;
     private int courtCapacity;
     private String courtDescription;
+    private int remains = 12;
 
     public Court() {
     }
@@ -63,5 +64,13 @@ public class Court {
 
     public void setCourtDescription(String courtDescription) {
         this.courtDescription = courtDescription;
+    }
+
+    public int getRemains() {
+        return remains;
+    }
+
+    public void setRemains(int remains) {
+        this.remains = remains;
     }
 }
