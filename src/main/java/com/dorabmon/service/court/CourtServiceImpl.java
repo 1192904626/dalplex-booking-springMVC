@@ -59,6 +59,11 @@ public class CourtServiceImpl implements CourtService {
     }
 
     @Override
+    public void UpdateSamePwd(Court entity) {
+
+    }
+
+    @Override
     public Court FindById(int id) {
         try {
             return courtDao.FindById(id);

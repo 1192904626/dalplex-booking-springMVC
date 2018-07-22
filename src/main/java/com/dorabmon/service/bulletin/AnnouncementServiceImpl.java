@@ -77,6 +77,11 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     }
 
     @Override
+    public void UpdateSamePwd(Annoucement entity) {
+
+    }
+
+    @Override
     public boolean deleteAnnoucementById(String id) {
         try {
             announcementDaoImpl.Delete(id);
@@ -96,4 +101,5 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     public List<Annoucement> FindAll() {
         return null;
     }
+
 }

@@ -40,6 +40,16 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void UpdateSamePwd(User entity) {
+        try {
+            //entity.setPassword(passwordEncoder.encode(entity.getPassword()));
+            userDao.Update(entity);
+        }catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public void Delete(String id) {
         try {
             userDao.Delete(id);
