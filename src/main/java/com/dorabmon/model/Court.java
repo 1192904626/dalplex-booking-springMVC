@@ -3,24 +3,24 @@ package com.dorabmon.model;
 public class Court {
     private int courtId;
     private String courtName;
-    private String courtTpye;
+    private String courtType;
     private int courtCapacity;
     private String courtDescription;
 
     public Court() {
     }
 
-    public Court(String courtName, String courtTpye, int courtCapacity, String courtDescription) {
+    public Court(String courtName, String courtType, int courtCapacity, String courtDescription) {
         this.courtName = courtName;
-        this.courtTpye = courtTpye;
+        this.courtType = courtType;
         this.courtCapacity = courtCapacity;
         this.courtDescription = courtDescription;
     }
 
-    public Court(int courtId, String courtName, String courtTpye, int courtCapacity, String courtDescription) {
+    public Court(int courtId, String courtName, String courtType, int courtCapacity, String courtDescription) {
         this.courtId = courtId;
         this.courtName = courtName;
-        this.courtTpye = courtTpye;
+        this.courtType = courtType;
         this.courtCapacity = courtCapacity;
         this.courtDescription = courtDescription;
     }
@@ -41,12 +41,12 @@ public class Court {
         this.courtName = courtName;
     }
 
-    public String getCourtTpye() {
-        return courtTpye;
+    public String getCourtType() {
+        return courtType;
     }
 
-    public void setCourtTpye(String courtTpye) {
-        this.courtTpye = courtTpye;
+    public void setCourtType(String courtType) {
+        this.courtType = courtType;
     }
 
     public int getCourtCapacity() {

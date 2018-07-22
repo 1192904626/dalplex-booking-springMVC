@@ -57,6 +57,7 @@
                                     <th>Court Name</th>
                                     <th>Court Type</th>
                                     <th>Capacity</th>
+                                    <th>Location</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -65,10 +66,11 @@
                                 <c:forEach items="${courtList}" var="court">
                                     <tr>
                                         <td>${court.courtName}</td>
-                                        <td>${court.courtTpye}</td>
+                                        <td>${court.courtType}</td>
                                         <td>${court.courtCapacity}</td>
+                                        <td>${court.courtDescription}</td>
                                         <td >
-                                            <a onclick="editcourt(this)" class="btn btn-default" value=${court.courtId}>
+                                            <a onclick="editcourt(this)" class="btn btn-default" value=${court.courtId} data-toggle="modal" data-target="#addCourseModal">
                                                 <i class="material-icons" >border_color</i>
                                             </a>
                                         </td>
@@ -102,38 +104,57 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Court</h4>
+                    <h4 class="modal-title" id="modal_title">Add Court</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                 </div>
+                <form id = "add-course-form" class="form-horizontal" action="/court/list" method="post">
+
                 <div class="modal-body">
-                    <form id = "add-course-form" class="form-horizontal" action="/action_page.php" method="post">
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="court_name">Court Name</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="court_name" placeholder="Enter court name" name="court_name" required>
+                                <input type="text" class="form-control" id="court_name" placeholder="Enter court name" name="courtName" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="court_type">Court Type</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="court_type"  name="course_start" required>
+                                <input type="text" class="form-control" id="court_type"  placeholder="Select court type" name="courtType" list="team_list" required>
+                                <datalist id="team_list">
+                                    <option>soccer</option>
+                                    <option>basketball</option>
+                                    <option>tennis</option>
+                                    <option>common</option>
+                                </datalist>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="capacity">Capacity</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="capacity" placeholder="capacity" name="capacity" required>
+                                <input type="number" class="form-control" id="capacity" placeholder="Capacity" name="courtCapacity" required>
                             </div>
                         </div>
+                    <div class="form-group" style="display: none">
+                        <label class="control-label col-sm-6" for="capacity">Id</label>
+                        <div class="col-sm-10" id="attachId">
+                            <%--<input type="number" class="form-control" id="capacity" placeholder="Capacity" name="courtCapacity" required>--%>
+                        </div>
+                    </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-6" for="description">Description</label>
+                            <label class="control-label col-sm-6" for="description">Location</label>
                             <div class="col-sm-10">
-                                <input type="number" class="form-control" id="description" placeholder="description" name="description" required>
+                                <input type="text" class="form-control" id="description" placeholder="Location" name="courtDescription" list="location_list" required>
+                                <datalist id="location_list">
+                                    <option>Sexton Gym</option>
+                                    <option>Studley Gym</option>
+                                    <option>Dalplex</option>
+                                    <option>Fitness Centre</option>
+                                </datalist>
                             </div>
                         </div>
 
-                    </form>
+
                 </div>
                 <div class="modal-footer">
 
@@ -141,6 +162,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                 </div>
+                </form>
             </div>
 
         </div>
@@ -194,7 +216,22 @@
 
     function editcourt(element) {
         var courtid = element.getAttribute('value');
-        alert("court id is: " + courtid);
+        $("#modal_title").html("Edit Court");
+
+        $.ajax({
+            url:"/court/admin/"+ courtid,
+            type: "GET",
+            success: function (data, status) {
+                if(status == "success"){
+                    $("#court_name").attr('value', data.courtName);
+                    $("#court_type").attr('value', data.courtType);
+                    $("#capacity").attr('value', data.courtCapacity);
+                    $("#description").attr('value', data.courtDescription);
+                    $("#add-course-form").attr('action', '/court/admin/' + data.courtId);
+                    $("#attachId").append("<input name='courtId' value=" + data.courtId + ">");
+                }
+            }
+        });
     };
 
 

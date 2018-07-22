@@ -25,11 +25,13 @@ public class LoginController {
     private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(HttpServletRequest httpServletRequest) {
+    public ModelAndView login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         if (httpServletRequest.getSession().getAttribute("currentUser") != null){
             ModelAndView mav = new ModelAndView("/profile");
             User currentUser = (User) httpServletRequest.getSession().getAttribute("currentUser");
             mav.addObject("currentUser", currentUser);
+
+            sendRedirectToProfile(httpServletResponse, currentUser);
             return mav;
         }else {
             return new ModelAndView("login");
@@ -62,22 +64,26 @@ public class LoginController {
             mav.addObject("currentUser", user);
 
             //send redirection based on roles
-            try {
-                if (user.getStudent_role().equals("user")){
-                    httpServletResponse.sendRedirect("/profile");
-                }else {
-                    httpServletResponse.sendRedirect("/admin");
-                }
-
-            }catch (IOException e){
-                e.printStackTrace();
-            }
+            sendRedirectToProfile(httpServletResponse, user);
         } else {
             mav = new ModelAndView("login");
             mav.addObject("loginError", "Username or password is incorrect!");
         }
 
         return mav;
+    }
+
+    private void sendRedirectToProfile(HttpServletResponse httpServletResponse, User user) {
+        try {
+            if (user.getStudent_role().equals("user")){
+                httpServletResponse.sendRedirect("/profile");
+            }else {
+                httpServletResponse.sendRedirect("/admin");
+            }
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
     }
 
 
