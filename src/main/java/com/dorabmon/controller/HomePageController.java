@@ -27,7 +27,7 @@ public class HomePageController {
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView admin (HttpServletRequest httpServletRequest) {
 
-        ModelAndView mav = new ModelAndView("home_page");
+        ModelAndView mav = new ModelAndView("homePage");
         List<Course> courseList = new ArrayList<>();
         courseList = courseService.FindAll();
         mav.addObject("courseList", courseList);
