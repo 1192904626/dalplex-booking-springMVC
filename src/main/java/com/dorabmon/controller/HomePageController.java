@@ -2,6 +2,7 @@ package com.dorabmon.controller;
 
 import com.dorabmon.model.Course;
 import com.dorabmon.model.Court;
+import com.dorabmon.model.User;
 import com.dorabmon.service.course.CourseService;
 import com.dorabmon.service.court.CourtService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,17 +26,33 @@ public class HomePageController {
     private CourtService courtService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView admin (HttpServletRequest httpServletRequest) {
+    public ModelAndView admin(HttpServletRequest httpServletRequest) {
 
-        ModelAndView mav = new ModelAndView("homePage");
-        List<Course> courseList = new ArrayList<>();
-        courseList = courseService.FindAll();
-        mav.addObject("courseList", courseList);
+        ModelAndView mav;
 
-        List<Court> courtList = new ArrayList<>();
-        courtList = courtService.FindAll();
-        mav.addObject("courtList", courtList);
-        return mav;
+        if (httpServletRequest.getSession().getAttribute("currentUser") != null) {
+            mav = new ModelAndView("homePage");
+            User user = (User) httpServletRequest.getSession().getAttribute("currentUser");
+            mav.addObject("currentUser", user);
+
+            return mav;
+
+        }
+        return new ModelAndView("homePage");
     }
-
 }
+
+
+//
+//
+//        List<Course> courseList = new ArrayList<>();
+//        courseList = courseService.FindAll();
+//        mav.addObject("courseList", courseList);
+//
+//        List<Court> courtList = new ArrayList<>();
+//        courtList = courtService.FindAll();
+//        mav.addObject("courtList", courtList);
+//        return mav;
+//    }
+
+

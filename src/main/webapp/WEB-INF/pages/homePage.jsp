@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: js
@@ -50,7 +51,33 @@
                         <%--<a class="dropdown-item"  href="#">Explore More >></a>--%>
                     <%--</div>--%>
                 <%--</li>--%>
+
+                    <c:set var="userStatus" scope="session" value="${currentUser.email}"/>
+                    <c:if test="${userStatus == null || userStatus==''}">
                 <li class="nav-item" ><a class="nav-link" href="/login">Sign in</a></li>
+                    </c:if>
+                    <c:if test="${userStatus != null && userStatus != ''}" >
+                        <%--<li class="nav-item" ><a class="nav-link" href="/student_page">BooK Now</a></li>--%>
+
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>
+                        <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>
+                        <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
+                        </div>
+                        </li>
+
+                        <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>--%>
+                        <%--<div class="dropdown-menu" role="menu">--%>
+                        <%--<a class="dropdown-item"  href="#">Yoga</a>--%>
+                        <%--<a class="dropdown-item"  href="#">Spin</a>--%>
+                        <%--<a class="dropdown-item"  href="#">AquaFit</a>--%>
+                        <%--<a class="dropdown-item"  href="#">Explore More >></a>--%>
+                        <%--</div>--%>
+                        <%--</li>--%>
+
+                    </c:if>
                 <li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>
             </ul>
         </div>
