@@ -27,7 +27,7 @@ public class LoginController {
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public ModelAndView login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
         if (httpServletRequest.getSession().getAttribute("currentUser") != null){
-            ModelAndView mav = new ModelAndView("/profile");
+            ModelAndView mav = new ModelAndView("student_page");
             User currentUser = (User) httpServletRequest.getSession().getAttribute("currentUser");
             mav.addObject("currentUser", currentUser);
 
@@ -53,7 +53,7 @@ public class LoginController {
 
             if (user.getStudent_role().equals("user")){
                 //student role
-                mav = new ModelAndView("profile");
+                mav = new ModelAndView("student_page");
 
             }else {
                 //admin goes to dashboard
@@ -76,7 +76,7 @@ public class LoginController {
     private void sendRedirectToProfile(HttpServletResponse httpServletResponse, User user) {
         try {
             if (user.getStudent_role().equals("user")){
-                httpServletResponse.sendRedirect("/profile");
+                httpServletResponse.sendRedirect("/student_page");
             }else {
                 httpServletResponse.sendRedirect("/admin");
             }
