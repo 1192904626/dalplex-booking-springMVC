@@ -26,19 +26,24 @@
              id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item" role="presentation"><a class="nav-link" href="/" style="padding-left:30px;">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
-                    <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item"  href="/studentCourt/pages/tennis">tennis</a>
-                        <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
-                        <a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>
-                        <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
-                    </div>
-                </li>
-                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Classes&nbsp;</a>
-                    <div class="dropdown-menu" role="menu"><a class="dropdown-item"  href="#">First Item</a><a class="dropdown-item"  href="#">Second Item</a><a class="dropdown-item"  href="#">Third Item</a></div>
-                </li>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/login">Sign in</a></li>
-                <li class="nav-item" role="presentation"><a class="nav-link active" href="/signup">Sign up</a></li>
+                <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>--%>
+                    <%--<div class="dropdown-menu" role="menu">--%>
+                        <%--<a class="dropdown-item"  href="/studentCourt/pages/tennis">tennis</a>--%>
+                        <%--<a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>--%>
+                        <%--<a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>--%>
+                        <%--<a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>--%>
+                    <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="nav-item" role="presentation"><a class="nav-link" href="/course/list" style="padding-left:30px;">Class</a></li>--%>
+
+                <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>--%>
+                    <%--<div class="dropdown-menu" role="menu">--%>
+                        <%--<a class="dropdown-item"  href="/course/list">First Item</a>--%>
+                        <%--<a class="dropdown-item"  href="#">Second Item</a>--%>
+                        <%--<a class="dropdown-item"  href="#">Third Item</a></div>--%>
+                <%--</li>--%>
+                <%--<li class="nav-item" role="presentation"><a class="nav-link" href="/login">Sign in</a></li>--%>
+                <%--<li class="nav-item" role="presentation"><a class="nav-link active" href="/signup">Sign up</a></li>--%>
             </ul>
         </div>
     </div>
