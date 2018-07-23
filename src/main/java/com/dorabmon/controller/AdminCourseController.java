@@ -5,12 +5,11 @@ import com.dorabmon.model.Court;
 import com.dorabmon.service.course.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -26,11 +25,53 @@ public class AdminCourseController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/{courseid}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public String coursedelete (@PathVariable("courseid") String courseid, HttpServletRequest httpServletRequest) {
+        try{
+            courseService.Delete(courseid);
+            return "success";
+        }catch (Exception e){
+            return "fail";
+        }
+
+    }
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public ModelAndView courseUpdate (@ModelAttribute Course course,  HttpServletRequest httpServletRequest) {
+        try{
+            courseService.Update(course);
+            ModelAndView modelAndView = new ModelAndView("add_course");
+            List<Course> courseList = courseService.FindAll();
+            modelAndView.addObject("courseList", courseList);
+            return modelAndView;
+        }catch (Exception e){
+            return null;
+        }
+
+    }
     @RequestMapping(value = "/{courseid}", method = RequestMethod.GET)
-    public ModelAndView coursedelete (@PathVariable("courseid") String courseid, HttpServletRequest httpServletRequest) {
-        courseService.Delete(courseid);
-        // return
-        ModelAndView modelAndView = new ModelAndView("add_course");
-        return modelAndView;
+    @ResponseBody
+    public Course courseFetch (@PathVariable("courseid") int courseid, HttpServletRequest httpServletRequest) {
+        try{
+            return courseService.FindById(courseid);
+        }catch (Exception e){
+            return null;
+        }
+
+    }
+
+    @RequestMapping(value = "/list", method = RequestMethod.POST)
+    @ResponseBody
+    public ModelAndView courseInsert (@ModelAttribute Course course, HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        try{
+            courseService.Insert(course);
+            // redirect to list course
+            ModelAndView modelAndView = new ModelAndView("add_course");
+            List<Course> courseList = courseService.FindAll();
+            modelAndView.addObject("courseList", courseList);
+            return modelAndView;
+        }catch (Exception e){
+            return null;
+        }
     }
 }

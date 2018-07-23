@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ziyunzhong
@@ -71,10 +72,22 @@
             <h2 class="text-center">My Course</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 101</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
-                <button
-                        class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
-            </div>
+            <c:forEach items="${studentCourseList}" var="studentCourse">
+                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                    <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
+                        <img  class="img-fluid" src=${studentCourse.course_cover_image_link}>
+                    </a>
+                    <label style="font-size:28px;padding-left:0px;">${studentCourse.course_name}</label>
+                    <label style="font-size:19px;padding-left:0px;width:100%;">${studentCourse.course_start_date}</label>
+                        <button class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2" onclick="deletecourse(this)" value=${studentCourse.course_id}>Delete</button>
+                </div>
+            </c:forEach>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 101</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--<button--%>
+                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+            <%--</div>--%>
+
+
             <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button--%>
                         <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
@@ -96,9 +109,22 @@
             <h2 class="text-center">Coming Course</h2>
         </div>
         <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 102</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
-                <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>
-            </div>
+            <%--<div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item">--%>
+                <%--<a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a>--%>
+                <%--<label style="font-size:28px;padding-left:0px;width:100%;">Yoga 102</label>--%>
+                <%--<label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
+            <%--</div>--%>
+
+            <c:forEach items="${comingCourseList}" var="comingCourse">
+                <div class="col-sm-6 col-md-4 col-lg-3 item">
+                    <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
+                        <img  class="img-fluid" src=${comingCourse.course_cover_image_link}>
+                    </a>
+                    <label style="font-size:28px;padding-left:0px;">${comingCourse.course_name}</label>
+                    <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>
+                </div>
+            </c:forEach>
             <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
             <%--</div>--%>
@@ -184,7 +210,7 @@
                 <div class="modal-body">
                     <p class="text-center text-muted">Deleted item can not be recovered.</p >
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="button">Delete</button></div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button class="btn btn-primary" type="button" id="deletecourse">Delete</button></div>
             </div>
         </div>
     </div>
@@ -228,7 +254,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Confirm</button></div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>
             </div>
         </div>
 
@@ -265,22 +291,48 @@
 <script src="js/Simple-Slider.js"></script>
 <script src="js/sticky.js"></script>
 <script type="text/javascript">
-    // $("#sync_google_cal").click(function () {
-    //     // console.log("google cal api");
-    //     $.post("quickstart.php",{
-    //
-    //
-    //
-    //
-    //         },
-    //         function (data, status) {
-    //             window.location.href="quickstart.php";
-    //         });
-    //
-    // });
-    $("#sync_google_cal").click(function(){
-        $("#content-php").load("quickstart.php");
+    // pass value to modal
+    function deletecourse(element) {
+        var courseid = element.getAttribute('value');
+        $("#deletecourse").val(courseid);
+    };
+
+    $("#deletecourse").click(function(){
+        //get id
+        var courseid = $("#deletecourse").val();
+        $.ajax({
+            url:"/student_page/"+courseid,
+            type: 'GET',
+            success: function (data, status){
+                if(status == "success"){
+                    location.reload();
+                };
+            }
+        })
     });
+
+    function insertcourse(element) {
+        var courseid = element.getAttribute('value');
+        $("#insertcourse").val(courseid);
+    };
+
+    $("#insertcourse").click(function(){
+        //get id
+        var courseid = $("#insertcourse").val();
+        $.ajax({
+            url:"/student_page/"+courseid,
+            type: 'POST',
+            success: function (data, status){
+                if(status == "success"){
+                    location.reload();
+                };
+            }
+        })
+    });
+
+    // $("#sync_google_cal").click(function(){
+    //     $("#content-php").load("quickstart.php");
+    // });
 </script>
 </body>
 

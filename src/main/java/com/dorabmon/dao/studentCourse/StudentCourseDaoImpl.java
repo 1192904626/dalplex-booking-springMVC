@@ -27,11 +27,11 @@ public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDa
 
 
     @Override
-    public void Insert(User user, Course course) throws SQLException {
+    public void Insert(int userid, int courseid) throws SQLException {
             String sql = "CALL INSERT_STUDENT_COURSE_RETURN(?,?,@VAL)";
             stmt = conn.prepareStatement(sql);
-            stmt.setInt(1,user.getStudent_id());
-            stmt.setInt(2, course.getCourse_id());
+            stmt.setInt(1,userid);
+            stmt.setInt(2, courseid);
             stmt.executeUpdate();
 
             stmt.close();
@@ -39,7 +39,7 @@ public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDa
     }
 
     @Override
-    public void Update(User user, Course course) throws SQLException {
+    public void Update(int userid, int courseid) throws SQLException {
 //        String sql = "CALL UPDATE_STUDENT_COURSE_RETURN(?,?,@VAL)";
 //        stmt = conn.prepareStatement(sql);
 //        stmt.setInt(1,user.getStudent_id());
@@ -51,11 +51,11 @@ public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDa
     }
 
     @Override
-    public void Delete(User user, Course course) throws SQLException {
+    public void Delete(int userid, int courseid) throws SQLException {
         String sql = "CALL DELETE_STUDENT_COURSE_BY_COURSE_ID(?,?)";
         stmt = conn.prepareStatement(sql);
-        stmt.setInt(1,user.getStudent_id());
-        stmt.setInt(2, course.getCourse_id());
+        stmt.setInt(1,userid);
+        stmt.setInt(2, courseid);
         stmt.executeUpdate();
 
         if (stmt != null) {
@@ -67,20 +67,28 @@ public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDa
     }
 
     @Override
-    public List<Course> FindCourseByStudentId(User user) throws SQLException {
-        List<Course> courseList = new ArrayList<>();
-        stmt = conn.prepareStatement("FIND_STUDENT_COURSE_BY_STUDENT_ID");
+    public List<Integer> FindCourseByStudentId(User user) throws SQLException {
+        List<Integer> courseIdList = new ArrayList<Integer>();
+        String sql = "CALL FIND_STUDENT_COURSE_BY_STUDENT_ID(?)";
+        stmt = conn.prepareStatement(sql);
+        stmt.setInt(1,user.getStudent_id());
+
+        //ResultSet rs = stmt.executeQuery();
+//        while (rs.next()) {
+//            Course course = courseDao.FindById(rs.getInt("course_id"));
+//            courseIdList.add(rs);
+//        }
+
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
-            Course course = courseDao.FindById(rs.getInt("course_id"));
-            courseList.add(course);
+            courseIdList.add(rs.getInt("course_id"));
         }
         rs.close();
         if (stmt != null) {
             stmt.close();
         }
 
-        return courseList;
+        return courseIdList;
     }
 
 

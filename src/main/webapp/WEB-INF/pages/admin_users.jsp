@@ -37,41 +37,30 @@
             <div class="table-content parent">
                 <div class="table-content" id="course_table">
                     <div class="row" >
-                        <h2 class="text-center">Course Table</h2>
-                        <button type="button" class="btn btn-primary add-button" name="add_course" data-toggle="modal" data-target="#addCourseModal">Add a course</button>
-
+                        <h2 class="text-center">User Table</h2>
                     </div>
                     <div class="row">
                         <div id="no-more-tables1" class="admin-table">
                             <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
                                 <thead class="cf">
                                 <tr>
-                                    <th>Course Name</th>
-                                    <th>Capacity</th>
-                                    <th>Course Start</th>
-                                    <th>Course End</th>
-                                    <th>Edit</th>
-                                    <th>Delete</th>
+                                    <th>User Name</th>
+                                    <th>Phone number</th>
+                                    <th>Email</th>
+                                    <th>Membership start date</th>
+                                    <th>Membership day</th>
+                                    <th>Role</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <c:forEach items="${courseList}" var="course">
+                                <c:forEach items="${userList}" var="user">
                                     <tr>
-                                        <td>${course.course_name}</td>
-                                        <td>${course.course_category}</td>
-                                        <td>${course.course_start_date}</td>
-                                        <td>${course.course_end_date}</td>
-                                        <td >
-                                            <a onclick="editcourse(this)" class="btn btn-default" value=${course.course_id} data-toggle="modal" data-target="#editCourseModal">
-                                                <i class="material-icons">border_color</i>
-                                            </a>
-                                        </td>
-                                        <td >
-                                            <a onclick="deletecourse(this)" class="btn btn-danger" data-toggle="modal" href="#myModal" value=${course.course_id}>
-                                                <em class="fa fa-trash">
-                                                </em>
-                                            </a>
-                                        </td>
+                                        <td>${user.student_name}</td>
+                                        <td>${user.phone_number}</td>
+                                        <td>${user.email}</td>
+                                        <td>${user.membership_start_date}</td>
+                                        <td>${user.membership_day}</td>
+                                        <td>${user.student_role}</td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -167,107 +156,8 @@
         </div>
     </div>
 
-    <div class="modal fade" id="editCourseModal" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title" id="modal_title_edit">Edit Course</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-
-                </div>
-                <form id = "edit_course_form" class="form-horizontal" action="/course/update" method="post">
-
-                    <div class="modal-body">
-
-                        <div class="form-group" style="display: none">
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="edit_course_id"  name="course_id" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_name">Course Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_course_name" placeholder="Enter course name" name="course_name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_category">Category</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_course_category"  placeholder="Select course type" name="course_category" list="edit_team_list" required>
-                                <datalist id="edit_team_list">
-                                    <option>Soccer</option>
-                                    <option>Basketball</option>
-                                    <option>Swimming</option>
-                                    <option>Yoga</option>
-                                </datalist>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_start">Course Start</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="edit_course_start"  name="course_start_date" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_end">Course End</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="edit_course_end"  name="course_end_date" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_instructor">Course Instructor</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_course_instructor" placeholder="Enter Instructor name" name="course_instructor" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_time_start">Course time start</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="edit_course_time_start" name="course_start_time" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_time_end">Course time end</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="edit_course_time_end"  name="course_end_time" required>
-                            </div>
-                        </div>
-                        <%--https://res.cloudinary.com/dirbnqgl0/image/upload/v1530819678/course_cover/socor.jpg--%>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_cover_image_link">Course Cover Image</label>
-                            <div class="col-sm-10">
-                                <input type="file" accept="image/*" class="form-control" id="edit_course_cover_image_link"  name="course_cover_image_link" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="submit-course-_edit">Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </div>
-
 </div>
 
-<div id="popup"><div role="dialog" tabindex="-1" class="modal fade" id="myModal">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4>Are you sure to delete?</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-            <div class="modal-body">
-                <p class="text-center text-muted">Deleted course can not be recovered.</p>
-            </div>
-            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button><button id="deletecourse" value="" class="btn btn-primary" type="button">Delete</button></div>
-        </div>
-    </div>
-</div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -281,7 +171,6 @@
 
 
 <script src="../js/admin_course.js"></script>
-
 
 </body>
 

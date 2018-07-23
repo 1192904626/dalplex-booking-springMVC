@@ -33,29 +33,25 @@ public class AdminCourtController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)
-    public ModelAndView addCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
+    public void addCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
                                  HttpServletResponse httpServletResponse){
 
         courtService.Insert(court);
-        ModelAndView modelAndView = getCourtListModelAndView();
 
-        try {
-            httpServletResponse.sendRedirect("/court/list");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sendRedirectToCourtList(httpServletResponse);
 
-        return modelAndView;
     }
 
     @RequestMapping(value = "/{courtid}", method = RequestMethod.GET)
-    public ModelAndView courtdelete (@PathVariable("courtid") String courtid, HttpServletRequest httpServletRequest) {
-        courtService.Delete(courtid);
-        // return
-        ModelAndView modelAndView = new ModelAndView("add_court");
-        return modelAndView;
+    @ResponseBody
+    public String courtdelete (@PathVariable("courtid") String courtid, HttpServletRequest httpServletRequest) {
+        try{
+            courtService.Delete(courtid);
+            return "success";
+        }catch (Exception e){
+            return "fail";
+        }
     }
-
 
     @RequestMapping(value = "admin/{courtid}", method = RequestMethod.GET)
     @ResponseBody
@@ -68,19 +64,20 @@ public class AdminCourtController {
 
 
     @RequestMapping(value = "admin/{courtid}", method = RequestMethod.POST)
-    public ModelAndView updateCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
+    public void updateCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
                                     HttpServletResponse httpServletResponse){
         courtService.Update(court);
 
-        ModelAndView modelAndView = new ModelAndView("add_court");
+        sendRedirectToCourtList(httpServletResponse);
 
+    }
+
+    private void sendRedirectToCourtList(HttpServletResponse httpServletResponse) {
         try {
             httpServletResponse.sendRedirect("/court/list");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return modelAndView;
     }
 
 

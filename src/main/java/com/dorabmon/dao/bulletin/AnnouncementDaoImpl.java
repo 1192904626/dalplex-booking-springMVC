@@ -47,9 +47,9 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
         PreparedStatement stmt = conn.prepareStatement("CALL UPDATE_ANNOUNCEMENT(?, ?, ?, ?)");
 
         stmt.setInt(1, entity.getId());
-        stmt.setString(1, entity.getTitle());
-        stmt.setString(2, entity.getContent());
-        stmt.setDate(3, entity.getValidUntil());
+        stmt.setString(2, entity.getTitle());
+        stmt.setString(3, entity.getContent());
+        stmt.setDate(4, entity.getValidUntil());
 
         stmt.executeUpdate();
         if (stmt != null){

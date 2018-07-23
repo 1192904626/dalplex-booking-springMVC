@@ -3,34 +3,61 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
     });
-
 });
 // pass value to modal
-function deleteannouncement(element) {
-    var announcementid = element.getAttribute('value');
-    $("#deleteannouncement").val(announcementid);
+function deletecourse(element) {
+    var courseid = element.getAttribute('value');
+    $("#deletecourse").val(courseid);
 };
 
-function deleteConfirm(){
+$("#deletecourse").click(function(){
     //get id
-    var announcementid = $("#deleteannouncement").val();
+    var courseid = $("#deletecourse").val();
     $.ajax({
-        url:"/announcement/"+announcementid,
+        url:"/course/"+courseid,
         type: 'DELETE',
-        dataType: 'json',
         success: function (data, status){
-            if(data.result == true){
-
+            if(status == "success"){
                 location.reload();
-            }
-            else{
-                alert(data.errorMessage);
+            } else {
+                alert("Delete course " + data);
+            };
+
+        }
+    })
+});
+
+// edit course
+function editcourse(element) {
+    var courseid = element.getAttribute('value');
+    // get course based on id
+    $.ajax({
+        url:"/course/"+ courseid,
+        type: "GET",
+        success: function (course, status) {
+            if(course != null){
+                $("#edit_course_id").attr('value', course.course_id);
+                $("#edit_course_name").attr('value', course.course_name);
+                $("#edit_course_category").attr('value', course.course_category);
+                $("#edit_course_start").attr('value', course.course_start_date);
+                $("#edit_course_end").attr('value', course.course_end_date);
+                $("#edit_course_instructor").attr('value', course.course_instructor)
+                $("#edit_course_time_start").attr('value', course.course_start_time);
+                $("#edit_course_time_end").attr('value', course.course_end_time);
+                $("#edit_course_cover_image_link").attr('value', course.course_cover_image_link);
             }
         }
     });
-}
 
 
+
+
+
+
+
+
+
+};
 
 $("#submit-course-form").click(function () {
     var course_name = $("#course_name").val();
@@ -82,39 +109,4 @@ $(".btn.btn-danger.delete").click(function (s) {
             }
 //                console.log('This was logged in the callback: ' + result);
         }
-    });
-
-});
-
-
-// Date.prototype.toDateInputValue = (function() {
-//     var local = new Date(this);
-//     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-//     return local.toJSON().slice(0,10);
-// });
-//
-//
-// document.getElementById("validUntil").value=new Date().toDateInputValue();
-
-
-
-function editannouncement(element) {
-    var announcementid = element.getAttribute('value');
-
-    $.ajax({
-        url:"/announcement/admin/"+ announcementid,
-        type: "GET",
-        success: function (data, status) {
-            if(status == "success"){
-                $("#edit_title").attr('value', data.title);
-                $("#edit_validUntil").attr('value', data.validUntil);
-                $("#edit_content").attr('value', data.content);
-                $("#edit_id").attr('value', data.id);
-                $("#edit-course-form").attr('action', '/announcement/admin/' + data.courtId);
-            }
-        }
-    });
-};
-
-
-//# sourceURL=announcement.js
+    });  });
