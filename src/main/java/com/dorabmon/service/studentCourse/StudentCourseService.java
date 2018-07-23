@@ -7,11 +7,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface StudentCourseService {
-    void Insert(User user, Course course);
-    void Update(User user, Course course);
-    void Delete(User user, Course course);
+    void Insert(int userid, int courseid);
+    void Update(int userid, int courseid);
+    void Delete(int userid, int courseid);
 
 
-    List<Course> FindCourseByStudentId(User user);
+    List<Integer> FindCourseIdListByStudentId(User user);
+
+    List<Course> FindCourseListByStudentId(User user);
 
 }
