@@ -59,6 +59,8 @@
                     <c:if test="${userStatus != null && userStatus != ''}" >
                         <%--<li class="nav-item" ><a class="nav-link" href="/student_page">BooK Now</a></li>--%>
 
+                        <li class="nav-item" ><a class="nav-link" href="/student_page">MyBooking</a></li>
+
                         <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>
                         <div class="dropdown-menu" role="menu">
                         <a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>
@@ -68,14 +70,14 @@
                         </div>
                         </li>
 
-                        <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>--%>
-                        <%--<div class="dropdown-menu" role="menu">--%>
-                        <%--<a class="dropdown-item"  href="#">Yoga</a>--%>
-                        <%--<a class="dropdown-item"  href="#">Spin</a>--%>
-                        <%--<a class="dropdown-item"  href="#">AquaFit</a>--%>
-                        <%--<a class="dropdown-item"  href="#">Explore More >></a>--%>
-                        <%--</div>--%>
-                        <%--</li>--%>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>
+                        <div class="dropdown-menu" role="menu">
+                        <a class="dropdown-item"  href="#">Yoga</a>
+                        <a class="dropdown-item"  href="#">Spin</a>
+                        <a class="dropdown-item"  href="#">AquaFit</a>
+                        <a class="dropdown-item"  href="#">Explore More >></a>
+                        </div>
+                        </li>
 
                     </c:if>
                 <li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>
@@ -161,7 +163,6 @@
         </div>
     </div>
 </section>
-</main>
 
 <%--<section class="portfolio-block website gradient">--%>
     <%--<div class="container">--%>
@@ -174,6 +175,29 @@
         <%--</div>--%>
     <%--</div>--%>
 <%--</section>--%>
+
+<br>
+<section>
+    <div class="info">
+        <h2 class="text-center">Where are we ?</h2>
+        <p class="text-center">Dalplex, Dalhousie University </p>
+        <p class="text-center">6260 South Street, Halifax, NS  B3H 4R2 </p>
+    </div>
+
+    <div class="align-content-center">
+        <div style="width: 100%">
+            <iframe class="align-content-center" width="100%" height="500" src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=6260%20South%20Street+(Dalplex)&amp;ie=UTF8&amp;t=&amp;z=15&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                <a href="https://www.maps.ie/create-google-map/">Dalplex</a>
+            </iframe>
+        </div><br />
+    </div>
+
+    <%--<div>--%>
+    <%--<iframe allowfullscreen frameborder="20" width="100%" height="300" src="https://www.google.com/maps/place/Dalplex/@44.6340049,-63.5935187,17z/data=!3m1!4b1!4m5!3m4!1s0x4b5a223075e6d9d7:0x1fa05d93b92f2e98!8m2!3d44.6340011!4d-63.5913247"></iframe>--%>
+
+    <%--</div>--%>
+
+</section>
 
 <section>
 
@@ -193,6 +217,10 @@
     </div>
 
 </section>
+<br>
+
+</main>
+
 <footer class="page-footer">
     <div class="container">
         <div class="links">
