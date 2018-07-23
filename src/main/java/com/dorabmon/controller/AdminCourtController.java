@@ -33,19 +33,13 @@ public class AdminCourtController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)
-    public ModelAndView addCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
+    public void addCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
                                  HttpServletResponse httpServletResponse){
 
         courtService.Insert(court);
-        ModelAndView modelAndView = getCourtListModelAndView();
 
-        try {
-            httpServletResponse.sendRedirect("/court/list");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sendRedirectToCourtList(httpServletResponse);
 
-        return modelAndView;
     }
 
     @RequestMapping(value = "/{courtid}", method = RequestMethod.GET)
@@ -70,19 +64,20 @@ public class AdminCourtController {
 
 
     @RequestMapping(value = "admin/{courtid}", method = RequestMethod.POST)
-    public ModelAndView updateCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
+    public void updateCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
                                     HttpServletResponse httpServletResponse){
         courtService.Update(court);
 
-        ModelAndView modelAndView = new ModelAndView("add_court");
+        sendRedirectToCourtList(httpServletResponse);
 
+    }
+
+    private void sendRedirectToCourtList(HttpServletResponse httpServletResponse) {
         try {
             httpServletResponse.sendRedirect("/court/list");
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        return modelAndView;
     }
 
 

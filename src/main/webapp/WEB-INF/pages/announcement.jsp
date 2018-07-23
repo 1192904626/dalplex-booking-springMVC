@@ -69,7 +69,7 @@
                                         <td>${announcement.content}</td>
                                         <td>${announcement.validUntil}</td>
                                         <td >
-                                            <a onclick="editannouncement(this)" class="btn btn-default" value=${announcement.id}>
+                                            <a onclick="editannouncement(this)" class="btn btn-default" value=${announcement.id} data-toggle="modal" data-target="#editCourseModal">
                                                 <i class="material-icons" >border_color</i>
                                             </a>
                                         </td>
@@ -98,43 +98,38 @@
     </div>
     <!-- Modal -->
     <div class="modal fade" id="addCourseModal" role="dialog">
-        <div class="modal-dialog">
+    <div class="modal-dialog">
 
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Add Announcement</h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Add Announcement</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
 
-                </div>
+            </div>
+            <form id = "add-course-form" class="form-horizontal" action="/announcement/list" method="post">
                 <div class="modal-body">
-                    <form id = "add-course-form" class="form-horizontal" action="/action_page.php" method="post">
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="court_name">Court Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="court_name" placeholder="Enter court name" name="court_name" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="court_type">Court Type</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="court_type"  name="course_start" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="capacity">Capacity</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="capacity" placeholder="capacity" name="capacity" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="description">Description</label>
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="description" placeholder="description" name="description" required>
-                            </div>
-                        </div>
 
-                    </form>
+                    <div class="form-group">
+                        <label class="control-label col-sm-6" for="title">Title</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="title" placeholder="Enter title" name="title" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-6" for="validUntil">Valid until</label>
+                        <div class="col-sm-10">
+                            <input type="datetime-local" class="form-control" id="validUntil"  name="validUntil" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-6" for="a_content">Content</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="a_content" placeholder="Say something" name="content" required>
+                        </div>
+                    </div>
+
+
                 </div>
                 <div class="modal-footer">
 
@@ -142,6 +137,59 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
                 </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+    <div class="modal fade" id="editCourseModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Edit Announcement</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+                </div>
+                <form id = "edit-course-form" class="form-horizontal" action="/announcement/list" method="post">
+                    <div class="modal-body">
+
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="edit_title">Title</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="edit_title" placeholder="Enter title" name="title" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="edit_validUntil">Valid until</label>
+                            <div class="col-sm-10">
+                                <input type="datetime-local" class="form-control" id="edit_validUntil"  name="validUntil" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6" for="edit_content">Content</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="edit_content" placeholder="Say something" name="content" required>
+                            </div>
+                        </div>
+                        <div class="form-group" style="display: none">
+                            <label class="control-label col-sm-6" for="edit_id">Content</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="edit_id" placeholder="Say something" name="id" required>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+
+                        <button type="submit" class="btn btn-primary" id="submit-course-form_edit">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+                    </div>
+                </form>
             </div>
 
         </div>

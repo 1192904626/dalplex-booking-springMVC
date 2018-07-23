@@ -30,12 +30,6 @@ function deleteConfirm(){
     });
 }
 
-function editannouncement(element) {
-    var announcementid = element.getAttribute('value');
-    alert("announcement id is: " + announcementid);
-};
-
-
 
 
 $("#submit-course-form").click(function () {
@@ -91,5 +85,36 @@ $(".btn.btn-danger.delete").click(function (s) {
     });
 
 });
+
+
+// Date.prototype.toDateInputValue = (function() {
+//     var local = new Date(this);
+//     local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
+//     return local.toJSON().slice(0,10);
+// });
+//
+//
+// document.getElementById("validUntil").value=new Date().toDateInputValue();
+
+
+
+function editannouncement(element) {
+    var announcementid = element.getAttribute('value');
+
+    $.ajax({
+        url:"/announcement/admin/"+ announcementid,
+        type: "GET",
+        success: function (data, status) {
+            if(status == "success"){
+                $("#edit_title").attr('value', data.title);
+                $("#edit_validUntil").attr('value', data.validUntil);
+                $("#edit_content").attr('value', data.content);
+                $("#edit_id").attr('value', data.id);
+                $("#edit-course-form").attr('action', '/announcement/admin/' + data.courtId);
+            }
+        }
+    });
+};
+
 
 //# sourceURL=announcement.js
