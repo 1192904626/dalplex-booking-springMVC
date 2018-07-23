@@ -20,6 +20,8 @@ $("#deletecourt").click(function(){
         success: function (data, status){
             if(status == "success"){
                 location.reload();
+            }else {
+                alert("Delete court " + data);
             };
         }
     })

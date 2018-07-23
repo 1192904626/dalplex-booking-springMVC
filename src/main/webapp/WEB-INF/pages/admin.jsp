@@ -49,6 +49,9 @@
                 <li>
                     <a id="admin_check_announcement"  data-target="#court_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">Announcement Table</a>
                 </li>
+                <li>
+                    <a id="admin_check_user"  data-target="#user_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">User Table</a>
+                </li>
 
             </ul>
         </nav>
@@ -103,46 +106,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
-
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('#sidebarCollapse').on('click', function () {
-            $('#sidebar').toggleClass('active');
-            $(this).toggleClass('active');
-        });
-
-        // admin check course
-        $("#admin_check_course").on('click', function(){
-            $("#court_list").remove();
-            $("#course_list").remove();
-            $("#welcomeadmin").remove();
-            $("#annoncement_list").remove();
-
-            $("#courtAndCourse").append("<div id=court_list><iframe style='border:none;'  width=90% height=500 src=/course/list></iframe></div>");
-        });
-        $("#admin_check_court").on('click', function(){
-            $("#court_list").remove();
-            $("#course_list").remove();
-            $("#welcomeadmin").remove();
-            $("#annoncement_list").remove();
-
-            $("#courtAndCourse").append("<div id=course_list><iframe style='border:none;'  width=98% height=500 src=/court/list></iframe></div>");
-
-        });
-        // admin_check_announcement
-        $("#admin_check_announcement").on('click', function(){
-            $("#court_list").remove();
-            $("#course_list").remove();
-            $("#annoncement_list").remove();
-            $("#welcomeadmin").remove();
-
-            $("#courtAndCourse").append("<div id=annoncement_list><iframe style='border:none;'  width=98% height=500 src=/announcement/list></iframe></div>");
-
-        });
-
-    });
-
-</script>
+<script src="../js/adminhome.js"></script>
 
 </body>
 

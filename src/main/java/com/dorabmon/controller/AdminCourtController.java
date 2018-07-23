@@ -49,13 +49,15 @@ public class AdminCourtController {
     }
 
     @RequestMapping(value = "/{courtid}", method = RequestMethod.GET)
-    public ModelAndView courtdelete (@PathVariable("courtid") String courtid, HttpServletRequest httpServletRequest) {
-        courtService.Delete(courtid);
-        // return
-        ModelAndView modelAndView = new ModelAndView("add_court");
-        return modelAndView;
+    @ResponseBody
+    public String courtdelete (@PathVariable("courtid") String courtid, HttpServletRequest httpServletRequest) {
+        try{
+            courtService.Delete(courtid);
+            return "success";
+        }catch (Exception e){
+            return "fail";
+        }
     }
-
 
     @RequestMapping(value = "admin/{courtid}", method = RequestMethod.GET)
     @ResponseBody
