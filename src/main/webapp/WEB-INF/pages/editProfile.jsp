@@ -38,6 +38,14 @@
 <%--</div>--%>
 <%--</nav>--%>
 
+<script>
+    function msg() {
+        var info = confirm("Leave current page without saving changes !");
+        return info;
+    }
+
+</script>
+
 <div class="container">
     <h1>Edit Profile</h1>
     <hr>
@@ -103,7 +111,7 @@
                 </div>
             </form>
 
-            <a class="col-md-8" href="/profile">Back</a>
+            <a class="col-md-8" href="/student_page" onclick="msg()">Back</a>
         </div>
     </div>
 </div>

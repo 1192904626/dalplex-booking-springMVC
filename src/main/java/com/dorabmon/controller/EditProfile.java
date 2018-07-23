@@ -31,6 +31,7 @@ public class EditProfile {
 
             return mav;
         } else {
+
             return new ModelAndView("login");
         }
 
@@ -52,7 +53,7 @@ public class EditProfile {
             user.setStudent_name(userName);
             user.setPhone_number(phoneNum);
 
-            mav = new ModelAndView("profile");
+            mav = new ModelAndView("student_page");
 
 
             if (user.getPassword().equals(password)) {
@@ -67,24 +68,33 @@ public class EditProfile {
 
             }
             mav.addObject("currentUser", user);
+            sendRedirectToEditProfile(response,"/student_page");
 
-            try {
-                response.sendRedirect("/profile");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+//            try {
+//                response.sendRedirect("/student_page");
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
 
             return mav;
 
         }
 
-        try {
-            response.sendRedirect("/login");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        sendRedirectToEditProfile(response,"/login");
 
         return new ModelAndView("login");
     }
+
+    private void sendRedirectToEditProfile(HttpServletResponse httpServletResponse, String url) {
+        try {
+            httpServletResponse.sendRedirect(url);
+
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+
+
 
 }

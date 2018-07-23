@@ -56,6 +56,9 @@
         <div class="container" style="margin-top:-40px;margin-bottom:-20px;">
             <div class="heading">
                 <h2>Sign in</h2>
+                <hr>
+                <h4 class="loginError">${loginError}</h4>
+
             </div>
         </div>
         <form id="signupform" action="/login" method="post">

@@ -61,7 +61,7 @@
                     </li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>Contact</strong></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>About</strong></a></li>
-                </ul><span class="navbar-text actions"> <a href="#" class="login" style="font-size:20px;">Log In</a><a class="btn btn-light action-button" role="button" href="#" style="font-size:20px;background-color:#222222;">Sign Up</a></span></div>
+                </ul><span class="navbar-text actions"> <a href="/profile/edit" class="login" style="font-size:20px;">Profile</a><a class="btn btn-light action-button" role="button" href="/logout" style="font-size:20px;background-color:#222222;">Logout</a></span></div>
         </div>
     </nav>
 </div>
