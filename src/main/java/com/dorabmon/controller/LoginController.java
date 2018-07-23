@@ -25,14 +25,17 @@ public class LoginController {
     private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+    public ModelAndView login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+    {
         if (httpServletRequest.getSession().getAttribute("currentUser") != null){
             ModelAndView mav = new ModelAndView("homePage");
             User currentUser = (User) httpServletRequest.getSession().getAttribute("currentUser");
             mav.addObject("currentUser", currentUser);
             sendRedirectToProfile(httpServletResponse, currentUser);
             return mav;
-        }else {
+        }
+        else
+            {
             return new ModelAndView("login");
         }
     }
@@ -83,6 +86,5 @@ public class LoginController {
             e.printStackTrace();
         }
     }
-
 
 }
