@@ -46,6 +46,7 @@
 <main class="page hire-me-page">
     <section class="portfolio-block hire-me">
         <h1>Welcome</h1>
+        <a href="/profile/edit">Edit</a>
     </section>
 </main>
 <footer class="page-footer">

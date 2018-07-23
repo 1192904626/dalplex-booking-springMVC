@@ -42,6 +42,11 @@ public class CourseServiceImpl implements CourseService {
     }
 
     @Override
+    public void UpdateSamePwd(Course entity) {
+
+    }
+
+    @Override
     public Course FindById(int id) {
         try{
             return courseDao.FindById(id);
