@@ -108,7 +108,7 @@
                     <div class="form-group">
                         <label class="control-label col-sm-6" for="validUntil">Valid until</label>
                         <div class="col-sm-10">
-                            <input type="datetime-local" class="form-control" id="validUntil"  name="validUntil" required>
+                            <input type="date" class="form-control" id="validUntil"  name="validUntil" required>
                         </div>
                     </div>
                     <div class="form-group">
@@ -154,7 +154,7 @@
                         <div class="form-group">
                             <label class="control-label col-sm-6" for="edit_validUntil">Valid until</label>
                             <div class="col-sm-10">
-                                <input type="datetime-local" class="form-control" id="edit_validUntil"  name="validUntil" required>
+                                <input type="date" class="form-control" id="edit_validUntil"  name="validUntil" required>
                             </div>
                         </div>
                         <div class="form-group">

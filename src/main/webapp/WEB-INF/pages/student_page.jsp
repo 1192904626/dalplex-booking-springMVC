@@ -50,7 +50,7 @@
 
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient" >
     <div class="container">
-        <a class="navbar-brand logo" href="#">DalplexBooking</a>
+        <a class="navbar-brand logo" href="/">DalplexBooking</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon"></span>
@@ -303,64 +303,64 @@
             </div>
         </div>
     </div>
-    <%--<div class="modal fade" role="dialog" tabindex="-1" id="myModal">--%>
-        <%--<div class="modal-dialog" role="document">--%>
-            <%--<div class="modal-content">--%>
-                <%--<div class="modal-header">--%>
-                    <%--<h4>Book Course Form</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>--%>
-                <%--<div class="modal-body">--%>
-                    <%--<form class="form-horizontal" role="form">--%>
-                        <%--<div class="form-group">--%>
-                            <%--<label  class="col-sm-2 control-label"--%>
-                                    <%--for="inputEmail3">Email</label>--%>
-                            <%--<div class="col-sm-10">--%>
-                                <%--<input type="email" class="form-control"--%>
-                                       <%--id="inputEmail3" placeholder="Email"/>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="form-group">--%>
-                            <%--<label  class="col-sm-2 control-label"--%>
-                                    <%--for="inputStudentName">Name</label>--%>
-                            <%--<div class="col-sm-10">--%>
-                                <%--<input type="text" class="form-control"--%>
-                                       <%--id="inputStudentName" placeholder="Name on ID"/>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="form-group">--%>
-                            <%--<label  class="col-sm-2 control-label"--%>
-                                    <%--for="inputPhoneNumber">#Phone</label>--%>
-                            <%--<div class="col-sm-10">--%>
-                                <%--<input type="text" class="form-control"--%>
-                                       <%--id="inputPhoneNumber" placeholder="Phone number"/>--%>
-                            <%--</div>--%>
-                        <%--</div>--%>
-                        <%--<div class="form-group">--%>
-                            <%--<div class="col-sm-10">--%>
-                                <%--<button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>--%>
+    <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Book Course Form</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label"
+                                    for="inputEmail3">Email</label>
+                            <div class="col-sm-10">
+                                <input type="email" class="form-control"
+                                       id="inputEmail3" placeholder="Email"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label"
+                                    for="inputStudentName">Name</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"
+                                       id="inputStudentName" placeholder="Name on ID"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-sm-2 control-label"
+                                    for="inputPhoneNumber">#Phone</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control"
+                                       id="inputPhoneNumber" placeholder="Phone number"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-10">
+                                <button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>
 
 
-                            <%--</div>--%>
-                        <%--</div>--%>
-                    <%--</form>--%>
-                <%--</div>--%>
-                <%--<div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>
+            </div>
+        </div>
 
-    <%--</div>--%>
-    <%--<div class="modal fade" id="google-modal" tabindex="-1" role="dialog"  aria-hidden="true">--%>
-        <%--<div class="modal-dialog">--%>
-            <%--<div class="modal-content">--%>
-                <%--<div class="modal-header">--%>
-                    <%--<h4>Sign in to Google</h4>--%>
-                    <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>--%>
-                <%--<div class="modal-body"><div id="content-php"></div></div>--%>
-                <%--<div class="modal-footer">--%>
-                    <%--<div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Confirm</button></div>--%>
-                <%--</div>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
+    </div>
+    <div class="modal fade" id="google-modal" tabindex="-1" role="dialog"  aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Sign in to Google</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body"><div id="content-php"></div></div>
+                <div class="modal-footer">
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Confirm</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 
