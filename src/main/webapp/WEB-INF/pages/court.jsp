@@ -14,7 +14,7 @@
 
 %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <base href="<%=basePath%>" />
@@ -77,13 +77,6 @@
     </div>
 </footer>
 
-<script>
-    function contactInfo() {
-        var info = confirm("Contact us via Email: DalplexBookingInfo@dorabmon.org");
-        return info;
-    }
-
-</script>
 <div class="book-course-modal">
     <div role="dialog" tabindex="-1" class="modal fade" id="myModal2">
         <div class="modal-dialog" role="document">

@@ -147,10 +147,19 @@ function loadAllCourts(){
 
 $( document ).ready(function() {
 
-    $('#date_id').val(new Date().toDateInputValue());
-    document.getElementById("date_id").addEventListener("change", loadAllCourts);
+    var newDate = new Date(new Date().getTime() + 24 * 60 * 60 * 1000).toDateInputValue();
+
+    $('#date_id').val(newDate);
+    $('#date_id').attr("min", newDate);
+
     loadAllCourts();
+    document.getElementById("date_id").addEventListener("change", loadAllCourts);
 
 });
+
+function contactInfo() {
+    var info = confirm("Contact us via Email: DalplexBookingInfo@dorabmon.org");
+    return info;
+}
 
 //# sourceURL=court.js
