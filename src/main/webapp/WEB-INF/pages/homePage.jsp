@@ -107,8 +107,11 @@
     <section class="portfolio-block call-to-action border-bottom">
         <div class="container">
             <div class="d-flex justify-content-center align-items-center content">
-                <h3>Upcoming Event</h3>
-                <p style="width:400px;height:100px;">The&nbsp;<strong>Family/All-Gender locker room on the lower level is still open</strong>&nbsp;– swimwear must be worn when showering and clothing in mandatory in common areas. Please use the cubicles for changing.</p>
+                <h3>Announcements</h3>
+                <div id="homeAnnouncement">
+
+
+                </div>
                 <button class="btn btn-outline-primary btn-lg" type="button" style="margin-left:30px">JOIN NOW</button>
             </div>
         </div>
@@ -247,7 +250,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 <script src="js/Simple-Slider.js"></script>
 <script src="js/theme.js"></script>
-
+<script src="js/homePage.js"></script>
 
 </body>
 </html>

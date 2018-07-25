@@ -21,6 +21,15 @@ public class AnnouncementController {
     @Autowired
     private AnnouncementService announcementServiceImpl;
 
+    @RequestMapping(value = "/homePageList", method = RequestMethod.GET)
+    @ResponseBody
+    public List<Annoucement> loadAnnouncement(HttpServletRequest hsq){
+
+        List<Annoucement> annoucementList = announcementServiceImpl.listAnouncementByPages(0, 5);
+        return annoucementList;
+
+    }
+
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView LoadTraining(HttpServletRequest hsq){
         ModelAndView modelAndView = getAnnouncementListModelAndView();
