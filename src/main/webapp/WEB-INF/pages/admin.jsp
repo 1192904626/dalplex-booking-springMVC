@@ -16,17 +16,21 @@
 
     <title>Admin Dashboard</title>
 
-    <link href="http://protostrap.com/Assets/gv/css/gv.bootstrap-form.css" rel="stylesheet" type="text/css" />
+    <link href="http://protostrap.com/Assets/gv/css/gv.bootstrap-form.css" rel="stylesheet" type="text/css"/>
     <!-- Bootstrap CSS CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+          integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/toggle-menu.css">
 
 
-
     <!-- Font Awesome JS -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+            integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+            crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+            integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+            crossorigin="anonymous"></script>
 
 </head>
 
@@ -41,16 +45,20 @@
 
             <ul class="list-unstyled components">
                 <li>
-                    <a id="admin_check_course"  data-target="#course_table"    data-toggle="collapse" aria-expanded="false" aria-controls="course_table">Course Table</a>
+                    <a id="admin_check_course" data-target="#course_table" data-toggle="collapse" aria-expanded="false"
+                       aria-controls="course_table">Course Table</a>
                 </li>
                 <li>
-                    <a id="admin_check_court"  data-target="#court_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">Court Table</a>
+                    <a id="admin_check_court" data-target="#court_table" data-toggle="collapse" aria-expanded="false"
+                       aria-controls="court_table">Court Table</a>
                 </li>
                 <li>
-                    <a id="admin_check_announcement"  data-target="#court_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">Announcement Table</a>
+                    <a id="admin_check_announcement" data-target="#court_table" data-toggle="collapse"
+                       aria-expanded="false" aria-controls="court_table">Announcement Table</a>
                 </li>
                 <li>
-                    <a id="admin_check_user"  data-target="#user_table"    data-toggle="collapse" aria-expanded="false" aria-controls="court_table">User Table</a>
+                    <a id="admin_check_user" data-target="#user_table" data-toggle="collapse" aria-expanded="false"
+                       aria-controls="court_table">User Table</a>
                 </li>
 
             </ul>
@@ -66,7 +74,9 @@
                         <span></span>
                         <span></span>
                     </button>
-                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-align-justify"></i>
                     </button>
 
@@ -76,7 +86,7 @@
                                 <a class="nav-link" href="/">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Log out</a>
+                                <a class="nav-link" href="/logout">Log out</a>
                             </li>
                         </ul>
                     </div>
@@ -84,25 +94,31 @@
             </nav>
             <div id="courtAndCourse">
                 <h3 id="welcomeadmin" style="padding-left: 30px">Welcome to the management system!</h3>
-            <%--<div id="court_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_court"></iframe></div>--%>
-            <%--<div id="course_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_course"></iframe></div>--%>
+                <%--<div id="court_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_court"></iframe></div>--%>
+                <%--<div id="course_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_course"></iframe></div>--%>
             </div>
         </div>
-            </div>
-        </div>
-
     </div>
+</div>
 
-    <!-- Modal -->
+</div>
+
+<!-- Modal -->
 
 </div>
 
 <!-- jQuery CDN - Slim version (=without AJAX) -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
 <!-- Popper.JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
 <!-- Bootstrap JS -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 

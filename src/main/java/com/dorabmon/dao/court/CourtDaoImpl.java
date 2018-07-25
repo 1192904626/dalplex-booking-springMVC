@@ -3,23 +3,25 @@ package com.dorabmon.dao.court;
 import com.dorabmon.dao.DatabaseDao;
 import com.dorabmon.dao.EntityDao;
 import com.dorabmon.model.Court;
+import com.dorabmon.util.DBCPUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Court> {
+public class CourtDaoImpl implements CourtDao, EntityDao<Court> {
 
     private final static Logger logger = LoggerFactory.getLogger(CourtDaoImpl.class);
 
-    public CourtDaoImpl() {
-        super();
-    }
+    private DBCPUtil dbcpUtil = DBCPUtil.getInstance();
+
 
     @Override
     public Court setResult() {
@@ -37,15 +39,17 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
                     rs.getString("description")
             );
             return court;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
     public void Insert(Court entity) throws SQLException {
-        //TODO
-        stmt = conn.prepareStatement("CALL INSERT_COURT_RETURN(?,?,?,?,@VAL)");
+
+        Connection conn = dbcpUtil.getConnection();
+
+        PreparedStatement stmt = conn.prepareStatement("CALL INSERT_COURT_RETURN(?,?,?,?,@VAL)");
         stmt.setString(1, entity.getCourtName());
         stmt.setString(2, entity.getCourtType());
         stmt.setInt(3, entity.getCourtCapacity());
@@ -53,17 +57,18 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
 
         stmt.executeUpdate();
         ResultSet rs = stmt.getResultSet();
-        if (rs.next()){
+        if (rs.next()) {
             entity.setCourtId(rs.getInt(1));
         }
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
     }
 
     @Override
     public void Update(Court entity) throws SQLException {
-        stmt = conn.prepareStatement("CALL UPDATE_COURT(?,?,?,?,?)");
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("CALL UPDATE_COURT(?,?,?,?,?)");
 
         stmt.setInt(1, entity.getCourtId());
         stmt.setString(2, entity.getCourtName());
@@ -72,18 +77,18 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
         stmt.setString(5, entity.getCourtDescription());
 
         stmt.executeUpdate();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
     }
 
     @Override
     public void Delete(String id) throws SQLException {
-        //TODO
-        stmt = conn.prepareStatement("CALL DELETE_COURT_BY_ID(?)");
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("CALL DELETE_COURT_BY_ID(?)");
         stmt.setInt(1, Integer.parseInt(id));
         stmt.executeUpdate();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
 
@@ -92,15 +97,16 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
     @Override
     public Court FindById(int id) throws SQLException {
 //        TODO
-        stmt = conn.prepareStatement("CALL FIND_COURT_BY_ID(?)");
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("CALL FIND_COURT_BY_ID(?)");
         stmt.setInt(1, id);
         Court court = null;
         ResultSet rs = stmt.executeQuery();
-        while (rs.next()){
+        while (rs.next()) {
             court = this.setResult(rs);
         }
         rs.close();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
         return court;
@@ -109,14 +115,15 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
     @Override
     public List<Court> FindAll() throws SQLException {
 
+        Connection conn = dbcpUtil.getConnection();
         List<Court> courtList = new ArrayList<>();
-        stmt = conn.prepareStatement("CALL LIST_ALL_COURT");
+        PreparedStatement stmt = conn.prepareStatement("CALL LIST_ALL_COURT");
         ResultSet rs = stmt.executeQuery();
-        while (rs.next()){
+        while (rs.next()) {
             courtList.add(this.setResult(rs));
         }
         rs.close();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
         return courtList;
@@ -124,34 +131,36 @@ public class CourtDaoImpl extends DatabaseDao implements CourtDao, EntityDao<Cou
 
     @Override
     public List<Court> FindAll(String query) throws SQLException {
+        Connection conn = dbcpUtil.getConnection();
         List<Court> courtList = new ArrayList<>();
-        stmt = conn.prepareStatement(query);
+        PreparedStatement stmt = conn.prepareStatement(query);
         ResultSet rs = stmt.executeQuery();
-        while (rs.next()){
+        while (rs.next()) {
             courtList.add(this.setResult(rs));
         }
         rs.close();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
         return courtList;
     }
 
     @Override
-    public List<Court> listCourtsByCourtType(String court_type) throws SQLException{
+    public List<Court> listCourtsByCourtType(String court_type) throws SQLException {
         List<Court> courtList = new ArrayList<>();
 
+        Connection conn = dbcpUtil.getConnection();
         String sql = "select * from zyzhong.court_table where court_type = ?";
-        stmt = conn.prepareStatement(sql);
+        PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setString(1, court_type);
 
         ResultSet rs = stmt.executeQuery();
-        while (rs.next()){
+        while (rs.next()) {
             courtList.add(this.setResult(rs));
         }
         rs.close();
 
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
 

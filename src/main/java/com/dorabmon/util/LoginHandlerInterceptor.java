@@ -12,13 +12,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class LoginHandlerInterceptor implements HandlerInterceptor{
+public class LoginHandlerInterceptor implements HandlerInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginHandlerInterceptor.class);
-    private static String[] urlSets= {"/", "login", "signup"};
+    private static String[] urlSets = {"/", "login", "signup"};
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
@@ -29,23 +29,25 @@ public class LoginHandlerInterceptor implements HandlerInterceptor{
         try {
             HttpSession httpSession = httpServletRequest.getSession();
             User user = (User) httpSession.getAttribute("currentUser");
-            for (String urlSet : urlSets){
-                if (url.contains(urlSet)){
+            //httpSession.setMaxInactiveInterval(10);
+
+            for (String urlSet : urlSets) {
+                if (url.contains(urlSet)) {
                     return true;
                 }
             }
-            if (url.endsWith("/")){
+            if (url.endsWith("/")) {
                 return true;
-            }else if (user != null){
+            } else if (user != null) {
                 return true;
-            }else {
+            } else {
                 httpServletRequest.getRequestDispatcher("/login")
                         .forward(httpServletRequest, httpServletResponse);
                 logger.info("preHandle() intercepted");
                 return false;
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
 

@@ -20,6 +20,7 @@ import java.util.List;
 public class UserDaoImpl implements UserDao, EntityDao<User> {
 
     private final static Logger logger = LoggerFactory.getLogger(UserDaoImpl.class);
+
     private DBCPUtil dbcpUtil = DBCPUtil.getInstance();
 
 

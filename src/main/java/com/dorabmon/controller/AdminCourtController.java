@@ -20,7 +20,7 @@ public class AdminCourtController {
     private CourtService courtService;
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView courtlist (HttpServletRequest httpServletRequest) {
+    public ModelAndView courtlist(HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = getCourtListModelAndView();
         return modelAndView;
     }
@@ -34,7 +34,7 @@ public class AdminCourtController {
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public void addCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
-                                 HttpServletResponse httpServletResponse){
+                         HttpServletResponse httpServletResponse) {
 
         courtService.Insert(court);
 
@@ -44,11 +44,11 @@ public class AdminCourtController {
 
     @RequestMapping(value = "/{courtid}", method = RequestMethod.GET)
     @ResponseBody
-    public String courtdelete (@PathVariable("courtid") String courtid, HttpServletRequest httpServletRequest) {
-        try{
+    public String courtdelete(@PathVariable("courtid") String courtid, HttpServletRequest httpServletRequest) {
+        try {
             courtService.Delete(courtid);
             return "success";
-        }catch (Exception e){
+        } catch (Exception e) {
             return "fail";
         }
     }
@@ -56,7 +56,7 @@ public class AdminCourtController {
     @RequestMapping(value = "admin/{courtid}", method = RequestMethod.GET)
     @ResponseBody
     public Court getCourt(@PathVariable("courtid") int courtid,
-                          HttpServletRequest httpServletRequest){
+                          HttpServletRequest httpServletRequest) {
 
         return courtService.FindById(courtid);
 
@@ -65,7 +65,7 @@ public class AdminCourtController {
 
     @RequestMapping(value = "admin/{courtid}", method = RequestMethod.POST)
     public void updateCourt(@ModelAttribute Court court, HttpServletRequest httpServletRequest,
-                                    HttpServletResponse httpServletResponse){
+                            HttpServletResponse httpServletResponse) {
         courtService.Update(court);
 
         sendRedirectToCourtList(httpServletResponse);
@@ -83,7 +83,7 @@ public class AdminCourtController {
 
     @RequestMapping(value = "admin/list", method = RequestMethod.GET)
     @ResponseBody
-    public List<Court> getCourt(HttpServletRequest httpServletRequest){
+    public List<Court> getCourt(HttpServletRequest httpServletRequest) {
 
         return courtService.FindAll();
     }

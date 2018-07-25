@@ -18,8 +18,9 @@ import java.util.List;
 public class AdminUserController {
     @Autowired
     private UserService userService;
+
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView addCourse (HttpServletRequest httpServletRequest) {
+    public ModelAndView addCourse(HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("admin_users");
         List<User> userList = userService.FindAll();
         modelAndView.addObject("userList", userList);

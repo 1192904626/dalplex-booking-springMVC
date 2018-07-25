@@ -68,7 +68,7 @@ public class EditProfile {
 
             }
             mav.addObject("currentUser", user);
-            sendRedirectToEditProfile(response,"/student_page");
+            sendRedirectToEditProfile(response, "/student_page");
 
 //            try {
 //                response.sendRedirect("/student_page");
@@ -80,7 +80,7 @@ public class EditProfile {
 
         }
 
-        sendRedirectToEditProfile(response,"/login");
+        sendRedirectToEditProfile(response, "/login");
 
         return new ModelAndView("login");
     }
@@ -89,12 +89,10 @@ public class EditProfile {
         try {
             httpServletResponse.sendRedirect(url);
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
 
 
 }

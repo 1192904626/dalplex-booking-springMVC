@@ -23,7 +23,7 @@ public class AnnouncementController {
 
     @RequestMapping(value = "/homePageList", method = RequestMethod.GET)
     @ResponseBody
-    public List<Annoucement> loadAnnouncement(HttpServletRequest hsq){
+    public List<Annoucement> loadAnnouncement(HttpServletRequest hsq) {
 
         List<Annoucement> annoucementList = announcementServiceImpl.listAnouncementByPages(0, 5);
         return annoucementList;
@@ -31,7 +31,7 @@ public class AnnouncementController {
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public ModelAndView LoadTraining(HttpServletRequest hsq){
+    public ModelAndView LoadTraining(HttpServletRequest hsq) {
         ModelAndView modelAndView = getAnnouncementListModelAndView();
         return modelAndView;
     }
@@ -45,7 +45,7 @@ public class AnnouncementController {
 
     @RequestMapping(value = "/list", method = RequestMethod.POST)
     public void addAnnouncement(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse,
-                                        Annoucement annoucement){
+                                Annoucement annoucement) {
 
         announcementServiceImpl.Insert(annoucement);
 
@@ -56,7 +56,7 @@ public class AnnouncementController {
 
     @RequestMapping(value = "admin/{announcementid}", method = RequestMethod.POST)
     public void updateCourt(@ModelAttribute Annoucement annoucement, HttpServletRequest httpServletRequest,
-                                    HttpServletResponse httpServletResponse){
+                            HttpServletResponse httpServletResponse) {
         announcementServiceImpl.Update(annoucement);
 
         sendRedirectToAnnouncementList(httpServletResponse);
@@ -74,7 +74,7 @@ public class AnnouncementController {
     @RequestMapping(value = "admin/{announcementid}", method = RequestMethod.GET)
     @ResponseBody
     public Annoucement getAnnouncementJson(@PathVariable("announcementid") int announcementid,
-                          HttpServletRequest httpServletRequest){
+                                           HttpServletRequest httpServletRequest) {
 
         return announcementServiceImpl.FindAnouncementById(announcementid);
 
@@ -83,13 +83,12 @@ public class AnnouncementController {
 
     @ResponseBody
     @RequestMapping(value = "/{announcementid}", method = RequestMethod.DELETE)
-    public ResultResponse courtdelete (@PathVariable("announcementid") String announcementid, HttpServletRequest httpServletRequest) {
+    public ResultResponse courtdelete(@PathVariable("announcementid") String announcementid, HttpServletRequest httpServletRequest) {
         boolean result = announcementServiceImpl.deleteAnnoucementById(announcementid);
 
-        if(result){
+        if (result) {
             return new ResultResponse(true);
-        }
-        else{
+        } else {
             return new ResultResponse(false, "Delete Announcement Failure");
         }
     }

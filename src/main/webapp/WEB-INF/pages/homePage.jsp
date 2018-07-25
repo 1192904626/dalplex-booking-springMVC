@@ -26,7 +26,7 @@
 
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient" >
     <div class="container">
-        <a class="navbar-brand logo" href="#">DalplexBooking</a>
+        <a class="navbar-brand logo" href="/">DalplexBooking</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon"></span>
