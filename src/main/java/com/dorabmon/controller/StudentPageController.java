@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class StudentPageController {
     private StudentCourseService studentCourseService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView admin (HttpServletRequest httpServletRequest) {
+    public ModelAndView admin (HttpServletRequest httpServletRequest,HttpServletResponse httpServletResponse) {
 
         ModelAndView mav = new ModelAndView("student_page");
         List<Course> studentCourseList = new ArrayList<>();
@@ -41,7 +42,13 @@ public class StudentPageController {
         User user = (User) httpSession.getAttribute("currentUser");
 
         if (user == null) {
-            ModelAndView mav1 = new ModelAndView("home_page");
+            ModelAndView mav1 = new ModelAndView("homePage");
+            try {
+                httpServletResponse.sendRedirect("/");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
             return mav1;
         }
 
