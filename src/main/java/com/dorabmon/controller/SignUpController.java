@@ -47,12 +47,12 @@ public class SignUpController {
             logger.info(user.toString());
 
             httpSession.setAttribute("currentUser", user);
-            mav = new ModelAndView("/profile");
+            mav = new ModelAndView("student_page");
             mav.addObject("currentUser", user);
 
             //send redirection
             try {
-                response.sendRedirect("/profile");
+                response.sendRedirect("/student_page");
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -62,7 +62,7 @@ public class SignUpController {
             mav.addObject("error", "This email exists.");
         }
 
-        return new ModelAndView("profile");
+        return new ModelAndView("student_page");
 
     }
 }

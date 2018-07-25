@@ -13,18 +13,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>home_page</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700">
-    <link rel="stylesheet" href="fonts/ionicons.min.css">
+    <%--<link rel="stylesheet" href="css/bootstrap.min.css">--%>
+    <%--<link rel="stylesheet" href="fonts/ionicons.min.css">--%>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
-    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
     <link rel="stylesheet" href="css/Article-List.css">
     <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="css/Data-Table.css">
     <link rel="stylesheet" href="css/Data-Table.css">
     <link rel="stylesheet" href="css/Dynamic-Table.css">
     <link rel="stylesheet" href="css/Footer-Basic.css">
@@ -33,39 +27,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="css/Lightbox-Gallery.css">
-    <link rel="stylesheet" href="css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="css/Newsletter-Subscription-Form.css">
+    <%--<link rel="stylesheet" href="css/Navigation-with-Button.css">--%>
+    <%--<link rel="stylesheet" href="css/Navigation-with-Search.css">--%>
     <link rel="stylesheet" href="css/product-list.css">
-    <link rel="stylesheet" href="css/Registration-Form-with-Photo.css">
     <link rel="stylesheet" href="css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="css/SIdebar-Responsive-2.css">
     <link rel="stylesheet" href="css/SIdebar-Responsive-2.css">
     <link rel="stylesheet" href="css/Simple-Slider.css">
     <link rel="stylesheet" href="css/sss-Product-List-f.css">
     <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="css/bootstrapyiren.min.css" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="fonts/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <link rel="stylesheet" href="css/Simple-Slider.css">
+    <link rel="stylesheet" href="css/Newsletter-Subscription-Form.css">
 </head>
 
 <body>
-<div>
-    <nav class="navbar navbar-light navbar-expand-md sticky-top navigation-clean-button" style="background-color:#c08c0c;color:#222222;" data-toggle="sticky-onscroll">
-        <div class="container"><a class="navbar-brand" href="index.html" style="font-size:29px;">Dalplex Booking</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div
-                    class="collapse navbar-collapse" id="navcol-1">
-                <ul class="nav navbar-nav mr-auto">
-                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size:20px;"><strong>Course</strong>&nbsp;</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                    </li>
-                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="font-size:20px;"><strong>Court</strong>&nbsp;</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" href="#">First Item</a><a class="dropdown-item" href="#">Second Item</a><a class="dropdown-item" href="#">Third Item</a></div>
-                    </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>Contact</strong></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-size:20px;"><strong>About</strong></a></li>
-                </ul><span class="navbar-text actions"> <a href="/profile/edit" class="login" style="font-size:20px;">Profile</a><a class="btn btn-light action-button" role="button" href="/logout" style="font-size:20px;background-color:#222222;">Logout</a></span></div>
+
+
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient" >
+    <div class="container">
+        <a class="navbar-brand logo" href="#">DalplexBooking</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <%--<li class="dropdown">--%>
+                    <%--<a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>--%>
+                <%--<div class="dropdown-menu" role="menu">--%>
+                <%--<a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>--%>
+                <%--<a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>--%>
+                <%--<a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>--%>
+                <%--<a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>--%>
+                <%--</div>--%>
+                <%--</li>--%>
+                <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>--%>
+                <%--<div class="dropdown-menu" role="menu">--%>
+                <%--<a class="dropdown-item"  href="#">Yoga</a>--%>
+                <%--<a class="dropdown-item"  href="#">Spin</a>--%>
+                <%--<a class="dropdown-item"  href="#">AquaFit</a>--%>
+                <%--<a class="dropdown-item"  href="#">Explore More >></a>--%>
+                <%--</div>--%>
+                <%--</li>--%>
+                <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
+
+                <li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>
+            </ul>
         </div>
-    </nav>
-</div>
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<section>
 <div class="photo-gallery">
     <div class="container">
         <div class="intro">
@@ -102,7 +123,9 @@
             </div>
         </div>
     </div>
-</div>
+</section>
+
+<section>
 <div class="photo-gallery">
     <div class="container">
         <div class="intro">
@@ -148,6 +171,11 @@
             <%--</div>--%>
         </div>
     </div>
+</div>
+
+</section>
+<section>
+    <div class="photo-gallery">
     <div class="container">
         <div class="intro">
             <h2 class="text-center">My Court</h2>
@@ -171,42 +199,103 @@
             <%--</div>--%>
         </div>
     </div>
-</div><div class="container time-table">
-    <h2 class="text-center" >Booking Court</h2>
-
-</div>
-<div class="footer-basic">
-    <footer>
-        <div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>
-        <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Home</a></li>
-            <li class="list-inline-item"><a href="#">Services</a></li>
-            <li class="list-inline-item"><a href="#">About</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-        </ul>
-        <p class="copyright">Dalplex booking system © 2017</p>
-    </footer>
-</div>
-<div class="newsletter-subscribe">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">Subscribe for our Newsletter</h2>
-            <p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>
-        </div>
-        <form class="form-inline" method="post">
-            <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>
-            <div class="form-group"><button class="btn btn-primary" type="submit">Subscribe </button></div>
-        </form>
     </div>
-</div><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+</section>
+
+<section>
+    <div class="photo-gallery">
+    <div class="container time-table">
+    <h2 class="text-center" >Booking Court</h2>
+        <br>
+        <h5 class="text-center">
+            Contact us by Email: dalplexBooking@dorabmon.org
+        </h5>
+
+        <h5 class="text-center">
+            Contact us by Phone: 902-888-2333
+        </h5>
+    </div>
+    </div>
+
+</section>
+
+<section>
+
+    <div class="newsletter-subscribe">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Subscribe for our Newsletter</h2>
+                <p class="text-center">Keep watching our lasted news </p>
+            </div>
+            <form class="form-inline" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="Your Email"></div>
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit">Subscribe </button></div>
+            </form>
+        </div>
+    </div>
+
+
+</section>
+
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="links">
+            <a href="#">About</a>
+            <a href="#" onclick="contactInfo()">Contact</a>
+            <a href="#">Terms of use</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="icon ion-social-facebook"></i></a>
+            <a href="#"><i class="icon ion-social-instagram-outline"></i></a>
+            <a href="#"><i class="icon ion-social-twitter"></i></a>
+        </div>
+    </div>
+</footer>
+<script>
+    function contactInfo() {
+        var info = confirm("Contact us via Email: DalplexBookingInfo@dorabmon.org");
+        return info;
+    }
+
+</script>
+
+
+<%--<div class="footer-basic">--%>
+    <%--<footer>--%>
+        <%--<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>--%>
+        <%--<ul class="list-inline">--%>
+            <%--<li class="list-inline-item"><a href="#">Home</a></li>--%>
+            <%--<li class="list-inline-item"><a href="#">Services</a></li>--%>
+            <%--<li class="list-inline-item"><a href="#">About</a></li>--%>
+            <%--<li class="list-inline-item"><a href="#">Terms</a></li>--%>
+            <%--<li class="list-inline-item"><a href="#">Privacy Policy</a></li>--%>
+        <%--</ul>--%>
+        <%--<p class="copyright">Dalplex booking system © 2017</p>--%>
+    <%--</footer>--%>
+<%--</div>--%>
+<%--<div class="newsletter-subscribe">--%>
+    <%--<div class="container">--%>
+        <%--<div class="intro">--%>
+            <%--<h2 class="text-center">Subscribe for our Newsletter</h2>--%>
+            <%--<p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>--%>
+        <%--</div>--%>
+        <%--<form class="form-inline" method="post">--%>
+            <%--<div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>--%>
+            <%--<div class="form-group"><button class="btn btn-primary" type="submit">Subscribe </button></div>--%>
+        <%--</form>--%>
+    <%--</div>--%>
+<%--</div><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">--%>
 
 <div class="book-course-modal">
     <div role="dialog" tabindex="-1" class="modal fade" id="myModal2">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4>Are you sure to delete?</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <h4>Are you sure to delete?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                 <div class="modal-body">
                     <p class="text-center text-muted">Deleted item can not be recovered.</p >
                 </div>
@@ -214,78 +303,77 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>Book Course Form</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label  class="col-sm-2 control-label"
-                                    for="inputEmail3">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control"
-                                       id="inputEmail3" placeholder="Email"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label  class="col-sm-2 control-label"
-                                    for="inputStudentName">Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control"
-                                       id="inputStudentName" placeholder="Name on ID"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label  class="col-sm-2 control-label"
-                                    for="inputPhoneNumber">#Phone</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control"
-                                       id="inputPhoneNumber" placeholder="Phone number"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>
+    <%--<div class="modal fade" role="dialog" tabindex="-1" id="myModal">--%>
+        <%--<div class="modal-dialog" role="document">--%>
+            <%--<div class="modal-content">--%>
+                <%--<div class="modal-header">--%>
+                    <%--<h4>Book Course Form</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>--%>
+                <%--<div class="modal-body">--%>
+                    <%--<form class="form-horizontal" role="form">--%>
+                        <%--<div class="form-group">--%>
+                            <%--<label  class="col-sm-2 control-label"--%>
+                                    <%--for="inputEmail3">Email</label>--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<input type="email" class="form-control"--%>
+                                       <%--id="inputEmail3" placeholder="Email"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="form-group">--%>
+                            <%--<label  class="col-sm-2 control-label"--%>
+                                    <%--for="inputStudentName">Name</label>--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<input type="text" class="form-control"--%>
+                                       <%--id="inputStudentName" placeholder="Name on ID"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="form-group">--%>
+                            <%--<label  class="col-sm-2 control-label"--%>
+                                    <%--for="inputPhoneNumber">#Phone</label>--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<input type="text" class="form-control"--%>
+                                       <%--id="inputPhoneNumber" placeholder="Phone number"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="form-group">--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>--%>
 
 
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>
-            </div>
-        </div>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                    <%--</form>--%>
+                <%--</div>--%>
+                <%--<div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
 
-    </div>
-    <div class="modal fade" id="google-modal" tabindex="-1" role="dialog"  aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>Sign in to Google</h4>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body"><div id="content-php"></div></div>
-                <div class="modal-footer">
-                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Confirm</button></div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <%--</div>--%>
+    <%--<div class="modal fade" id="google-modal" tabindex="-1" role="dialog"  aria-hidden="true">--%>
+        <%--<div class="modal-dialog">--%>
+            <%--<div class="modal-content">--%>
+                <%--<div class="modal-header">--%>
+                    <%--<h4>Sign in to Google</h4>--%>
+                    <%--<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>--%>
+                <%--<div class="modal-body"><div id="content-php"></div></div>--%>
+                <%--<div class="modal-footer">--%>
+                    <%--<div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Confirm</button></div>--%>
+                <%--</div>--%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
 
 </div>
+
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/DashBoard-light-boostrap.js"></script>
-<script src="js/DashBoard-light-boostrap.js"></script>
-<script src="js/DashBoard-light-boostrap.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+<script src="js/Simple-Slider.js"></script>
+<script src="js/theme.js"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
 <script src="js/DashBoard-light-boostrap.js"></script>
 <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-<script src="js/DashBoard-light-boostrap.js"></script>
 <script src="js/Dynamic-Table.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 <script src="js/Sidebar-Menu-1.js"></script>
 <script src="js/Sidebar-Menu.js"></script>
 <script src="js/Simple-Slider.js"></script>
@@ -334,6 +422,8 @@
     //     $("#content-php").load("quickstart.php");
     // });
 </script>
+
+
 </body>
 
 </html>
