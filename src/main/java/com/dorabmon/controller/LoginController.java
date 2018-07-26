@@ -76,7 +76,7 @@ public class LoginController {
             if (user.getStudent_role().equals("user")) {
                 httpServletResponse.sendRedirect("/");
             } else {
-                httpServletResponse.sendRedirect("/admin");
+                httpServletResponse.sendRedirect("/dashboard");
             }
 
         } catch (IOException e) {
