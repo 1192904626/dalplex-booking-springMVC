@@ -67,14 +67,6 @@
                 <c:if test="${userStatus != null && userStatus != ''}" >
                     <li class="nav-item" ><a class="nav-link" href="/student_page">MyBooking</a></li>
 
-                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>
-                        <div class="dropdown-menu" role="menu">
-                            <a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>
-                            <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
-                            <a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>
-                            <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
-                        </div>
-                    </li>
                     <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
                 </c:if>
                 <%--<li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>--%>
@@ -154,6 +146,21 @@
 </div>
 <hr>
 
+<footer class="page-footer">
+    <div class="container">
+        <div class="links">
+            <a href="#">About</a>
+            <a href="#" onclick="contactInfo()">Contact</a>
+            <a href="#">Terms of use</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="icon ion-social-facebook"></i></a>
+            <a href="#"><i class="icon ion-social-instagram-outline"></i></a>
+            <a href="#"><i class="icon ion-social-twitter"></i></a>
+        </div>
+    </div>
+</footer>
+
 <%--<footer class="page-footer">--%>
 <%--<div class="container">--%>
 <%--<div class="links"><a href="#">About me</a><a href="#">Contact me</a><a href="#">Projects</a></div>--%>
@@ -161,16 +168,13 @@
 <%--</div>--%>
 <%--</footer>--%>
 
-<script src="..js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <%--<script src="../js/Profile-Edit-Form.js"></script>--%>
 <script src="../js/theme.js"></script>
 
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-<script src="js/Simple-Slider.js"></script>
-<script src="js/theme.js"></script>
+<script src="../js/Simple-Slider.js"></script>
 
 </body>
 <%--<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>--%>
