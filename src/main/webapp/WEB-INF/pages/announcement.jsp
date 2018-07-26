@@ -8,7 +8,7 @@
 
     if(serverName.indexOf("azurewebsites")>-1)
     {
-        basePath = request.getScheme()+"://"+request.getServerName()+path+"/";
+        basePath = "https://"+request.getServerName()+path+"/";
     }
     else
     {
