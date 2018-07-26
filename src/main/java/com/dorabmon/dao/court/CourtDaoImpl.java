@@ -185,7 +185,7 @@ public class CourtDaoImpl implements CourtDao, EntityDao<Court> {
         Court court = null;
         while (rs.next()) {
             court = this.setResult(rs);
-            court.setCourtDescription(rs.getString("book_time"));
+            court.setBook_time(rs.getTimestamp("book_time"));
             courtList.add(court);
         }
         rs.close();

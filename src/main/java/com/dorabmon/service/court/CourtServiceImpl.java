@@ -5,11 +5,13 @@ import com.dorabmon.dao.court.CourtDao;
 import com.dorabmon.model.Court;
 import com.dorabmon.model.CourtBooking;
 import com.dorabmon.util.ConstantsUitls;
+import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.util.Date;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -206,9 +208,19 @@ public class CourtServiceImpl implements CourtService {
         try {
 
             courtList = courtDao.FindCourtIdListByStudentId(studentId);
+            Timestamp timestamp = new Timestamp(System.currentTimeMillis());
+
+            if(courtList!=null && courtList.size() > 0){
+
+                for(Court court : courtList){
+                    if(court.getBook_time().before(timestamp)){
+                        court.setIs_expired(true);
+                    }
+                }
+            }
 
         } catch (SQLException e) {
-            logger.error("Error FindCourtIdListByStudentId:" + e.getMessage());
+            logger.error("Error listCourtsByStudentID:" + e.getMessage());
             e.printStackTrace();
         }
         return courtList;
