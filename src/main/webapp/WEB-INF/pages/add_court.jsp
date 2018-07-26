@@ -7,16 +7,11 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-    String path = request.getContextPath();
-    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
-    pageContext.setAttribute("basePath", basePath);
-%>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <base href="<%=basePath%>"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -27,7 +22,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
-    <link rel="stylesheet" href="css/toggle-menu.css">
+    <link rel="stylesheet" href="../css/toggle-menu.css">
     <!-- Font Awesome JS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -275,7 +270,7 @@
         crossorigin="anonymous"></script>
 
 
-<script src="js/admin_court.js"></script>
+<script src="../js/admin_court.js"></script>
 
 </body>
 

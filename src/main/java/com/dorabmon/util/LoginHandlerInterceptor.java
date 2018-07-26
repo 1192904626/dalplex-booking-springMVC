@@ -29,7 +29,7 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
         try {
             HttpSession httpSession = httpServletRequest.getSession();
             User user = (User) httpSession.getAttribute("currentUser");
-            //httpSession.setMaxInactiveInterval(10);
+            httpSession.setMaxInactiveInterval(1800);
 
             for (String urlSet : urlSets) {
                 if (url.contains(urlSet)) {
