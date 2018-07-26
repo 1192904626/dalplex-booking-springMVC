@@ -118,7 +118,7 @@ function loadAllCourts(){
                     $("#court_content").append(`<div class="col-md-6 col-lg-4">
                         <div class="project-card-no-image">
                             <h3>${court.courtName}</h3>
-                            <h4>${court.courtDescription}</h4>
+                            <h4>Location: ${court.courtDescription}</h4>
                             <a class="btn btn-outline-primary btn-sm" role="button" href="#"
                                data-toggle="modal" data-target="#myModal2" value="${court.courtId}#${court.courtName}" onclick="bookNowTrigger(this)">Book now</a>
                             <div class="tags"><a href="#" style="color:rgb(14,160,255);">available</a></div>
@@ -131,7 +131,7 @@ function loadAllCourts(){
                         <div class="project-card-no-image project-card-no-image-red">
                         <input id="${court.courtId}" type="hidden" value="${court.courtId}"/>
                         <h3>${court.courtName}</h3>
-                        <h4>${court.courtDescription}</h4>
+                        <h4>Location: ${court.courtDescription}</h4>
                         <a role="button" href="#" style="color:rgb(211,211,211);" value="${court.courtId}">Book now</a>
                     <div class="tags"><a href="#" style="color:rgb(239,84,84);">Full</a></div>
                     </div>
