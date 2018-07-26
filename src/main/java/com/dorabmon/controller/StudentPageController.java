@@ -37,6 +37,7 @@ public class StudentPageController {
         ModelAndView mav = new ModelAndView("student_page");
         List<Course> studentCourseList = new ArrayList<>();
         List<Course> comingCourseList = new ArrayList<>();
+        List<Court> studentCourtList = new ArrayList<>();
 
         HttpSession httpSession = httpServletRequest.getSession();
         User user = (User) httpSession.getAttribute("currentUser");
@@ -52,6 +53,8 @@ public class StudentPageController {
             return mav1;
         }
 
+
+
         // student's course
 //        User user = new User("Ye Fang","123456","902111111","ye.fang@dal.ca","2017-09-01",300,"user");
         studentCourseList = studentCourseService.FindCourseListByStudentId(user); // pass a user from other view
@@ -61,7 +64,9 @@ public class StudentPageController {
         comingCourseList = courseService.FindAll();
         mav.addObject("comingCourseList",comingCourseList);
 
-        // return court by id
+        // render court by student ID
+        studentCourtList = courtService.listCourtsByStudentID(user.getStudent_id());
+        mav.addObject("studentCourtList",studentCourtList);
 
 
 
@@ -93,6 +98,9 @@ public ModelAndView courseinsert (@PathVariable("insert") String courseid, HttpS
     ModelAndView modelAndView = new ModelAndView("student_page");
     return modelAndView;
 }
+
+
+
 
 
 

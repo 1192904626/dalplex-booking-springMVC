@@ -166,10 +166,20 @@
                 <h2 class="text-center">My Court</h2>
             </div>
             <div class="row photos">
-                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball_court.jpg"></image></a><label style="font-size:28px;">Basketball 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
-                    <button
-                            class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
-                </div>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball_court.jpg"></image></a><label style="font-size:28px;">Basketball 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                    <%--<button--%>
+                            <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--</div>--%>
+                <c:forEach items="${studentCourtList}" var="studentCourt">
+                    <div class="col-sm-6 col-md-4 col-lg-3 item">
+                        <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
+                            <img  class="img-fluid" src="https://res.cloudinary.com/dirbnqgl0/image/upload/v1531855119/basketball_court.jpg">
+                        </a>
+                        <label style="font-size:28px;padding-left:0px;">${studentCourt.courtName}</label>
+                        <p>${studentCourt.courtDescription}<p>
+                        <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>--%>
+                    </div>
+                </c:forEach>
                 <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button--%>
                 <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>

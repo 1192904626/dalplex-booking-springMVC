@@ -16,4 +16,6 @@ public interface CourtService extends BaseService<Court> {
 
     boolean createCourtBooking(Integer student_id, Integer court_id, Integer hourofday, String dateStr);
 
+
+    List<Court> listCourtsByStudentID (int studentId);
 }

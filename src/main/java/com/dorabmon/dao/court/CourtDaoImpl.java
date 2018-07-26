@@ -3,6 +3,7 @@ package com.dorabmon.dao.court;
 import com.dorabmon.dao.DatabaseDao;
 import com.dorabmon.dao.EntityDao;
 import com.dorabmon.model.Court;
+import com.dorabmon.model.User;
 import com.dorabmon.util.DBCPUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -165,5 +166,31 @@ public class CourtDaoImpl implements CourtDao, EntityDao<Court> {
         }
 
         return courtList;
+    }
+
+    @Override
+    public List<Court> FindCourtIdListByStudentId(int userid) throws SQLException {
+        List<Court> courtList = new ArrayList<>();
+        Connection conn = dbcpUtil.getConnection();
+
+        String sql = "select b.court_id,b.court_type, b.court_name,b.description, b.capacity from " +
+                "  court_booking_table a inner join court_table b " +
+                "  on a.court_id = b.court_id " +
+                "where a.student_id = ? " +
+                "group by b.court_id,b.court_type, b.court_name,b.description, b.capacity";
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1,userid);
+
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            courtList.add(this.setResult(rs));
+        }
+        rs.close();
+        stmt.close();
+
+
+        return courtList;
+
     }
 }

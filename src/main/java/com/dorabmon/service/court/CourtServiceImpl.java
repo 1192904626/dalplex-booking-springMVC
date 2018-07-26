@@ -199,6 +199,21 @@ public class CourtServiceImpl implements CourtService {
 
     }
 
+    @Override
+    public List<Court> listCourtsByStudentID(int studentId) {
+        List<Court> courtList = listCourtsByStudentID(studentId);
+
+        try {
+
+            courtList = courtDao.FindCourtIdListByStudentId(studentId);
+
+        } catch (SQLException e) {
+            logger.error("Error FindCourtIdListByStudentId:" + e.getMessage());
+            e.printStackTrace();
+        }
+        return courtList;
+    }
+
     private java.sql.Timestamp getSQLDate(String dateStr) {
 
         java.sql.Timestamp ts = java.sql.Timestamp.valueOf(dateStr);
