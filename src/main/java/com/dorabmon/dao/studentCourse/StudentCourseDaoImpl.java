@@ -1,40 +1,35 @@
 package com.dorabmon.dao.studentCourse;
 
-import com.dorabmon.dao.DatabaseDao;
-import com.dorabmon.dao.course.CourseDao;
-import com.dorabmon.model.Course;
+
 import com.dorabmon.model.User;
+import com.dorabmon.util.DBCPUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDao {
+public class StudentCourseDaoImpl implements StudentCourseDao {
     private final static Logger logger = LoggerFactory.getLogger(StudentCourseDaoImpl.class);
 
-    @Autowired
-    private CourseDao courseDao;
-
-    public StudentCourseDaoImpl() {
-        super();
-    }
-
+    private DBCPUtil dbcpUtil = DBCPUtil.getInstance();
 
     @Override
     public void Insert(int userid, int courseid) throws SQLException {
-            String sql = "CALL INSERT_STUDENT_COURSE_RETURN(?,?,@VAL)";
-            stmt = conn.prepareStatement(sql);
-            stmt.setInt(1,userid);
-            stmt.setInt(2, courseid);
-            stmt.executeUpdate();
+        String sql = "CALL INSERT_STUDENT_COURSE_RETURN(?,?,@VAL)";
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, userid);
+        stmt.setInt(2, courseid);
+        stmt.executeUpdate();
 
-            stmt.close();
+        stmt.close();
 
     }
 
@@ -53,8 +48,9 @@ public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDa
     @Override
     public void Delete(int userid, int courseid) throws SQLException {
         String sql = "CALL DELETE_STUDENT_COURSE_BY_COURSE_ID(?,?)";
-        stmt = conn.prepareStatement(sql);
-        stmt.setInt(1,userid);
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, userid);
         stmt.setInt(2, courseid);
         stmt.executeUpdate();
 
@@ -63,15 +59,15 @@ public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDa
         }
 
 
-
     }
 
     @Override
     public List<Integer> FindCourseByStudentId(User user) throws SQLException {
         List<Integer> courseIdList = new ArrayList<Integer>();
         String sql = "CALL FIND_STUDENT_COURSE_BY_STUDENT_ID(?)";
-        stmt = conn.prepareStatement(sql);
-        stmt.setInt(1,user.getStudent_id());
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, user.getStudent_id());
 
         //ResultSet rs = stmt.executeQuery();
 //        while (rs.next()) {
@@ -90,8 +86,6 @@ public class StudentCourseDaoImpl extends DatabaseDao implements StudentCourseDa
 
         return courseIdList;
     }
-
-
 
 
 }

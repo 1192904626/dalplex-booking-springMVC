@@ -3,10 +3,13 @@ package com.dorabmon.dao.course;
 import com.dorabmon.dao.DatabaseDao;
 import com.dorabmon.dao.EntityDao;
 import com.dorabmon.model.Course;
+import com.dorabmon.util.DBCPUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DateFormat;
@@ -16,20 +19,21 @@ import java.util.Date;
 import java.util.List;
 
 @Repository
-public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<Course> {
+public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
 
     private final static Logger logger = LoggerFactory.getLogger(CourseDaoImpl.class);
 
-    public CourseDaoImpl() { super(); }
+    private DBCPUtil dbcpUtil = DBCPUtil.getInstance();
 
 
     @Override
     public void Insert(Course entity) throws SQLException {
         try {
             String sql = "CALL INSERT_COURSE_RETURN(?,?,?,?,?,?,?,?,@VAL)";
-            stmt = conn.prepareStatement(sql);
+            Connection conn = dbcpUtil.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, entity.getCourse_name());
-            stmt.setString(2,entity.getCourse_category());
+            stmt.setString(2, entity.getCourse_category());
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
             stmt.setString(3, sdf.format(new Date())); // course_start_date
             stmt.setString(4, sdf.format(new Date())); // course_end_date
@@ -37,7 +41,7 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
             DateFormat tmf = new SimpleDateFormat("HH:mm:ss");
             stmt.setString(5, tmf.format(new Date()));
             stmt.setString(6, tmf.format(new Date()));
-            stmt.setString(7,entity.getCourse_instructor());
+            stmt.setString(7, entity.getCourse_instructor());
             stmt.setString(8, entity.getCourse_cover_image_link());
             stmt.executeUpdate();
 
@@ -56,10 +60,11 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
     @Override
     public void Update(Course entity) throws SQLException {
         String sql = "CALL UPDATE_COURSE(?,?,?,?,?,?,?,?,?)";
-        stmt = conn.prepareStatement(sql);
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
 
         stmt.setInt(1, entity.getCourse_id());
-        stmt.setString(2,entity.getCourse_name());
+        stmt.setString(2, entity.getCourse_name());
         stmt.setString(3, entity.getCourse_category());
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
@@ -79,17 +84,18 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
 
         stmt.executeUpdate();
 
-        if(stmt != null) {
+        if (stmt != null) {
             stmt.close();
         }
     }
 
     @Override
     public void Delete(String id) throws SQLException {
-        stmt = conn.prepareStatement("CALL DELETE_COURSE_BY_ID(?)");
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement("CALL DELETE_COURSE_BY_ID(?)");
         stmt.setInt(1, Integer.parseInt(id));
         stmt.executeUpdate();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
     }
@@ -100,16 +106,17 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
         try {
             Course course = null;
             String FIND_BY_ID = "CALL FIND_COURSE_BY_ID(?)";
-            stmt = conn.prepareStatement(FIND_BY_ID);
+            Connection conn = dbcpUtil.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(FIND_BY_ID);
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()){
-                course =  this.setResult(rs);
+            while (rs.next()) {
+                course = this.setResult(rs);
             }
             rs.close();
             return course;
         } catch (SQLException e) {
-            logger.error(e.getSQLState()+e.getMessage());
+            logger.error(e.getSQLState() + e.getMessage());
             throw new RuntimeException(e);
         }
     }
@@ -118,15 +125,16 @@ public class CourseDaoImpl extends DatabaseDao implements CourseDao, EntityDao<C
     public List FindAll() throws SQLException {
         List<Course> courseList = new ArrayList<>();
         try {
-            stmt = conn.prepareStatement("CALL LIST_ALL_COURSE");
+            Connection conn = dbcpUtil.getConnection();
+            PreparedStatement stmt = conn.prepareStatement("CALL LIST_ALL_COURSE");
             ResultSet rs = stmt.executeQuery();
-            while (rs.next()){
+            while (rs.next()) {
                 courseList.add(this.setResult(rs));
             }
             rs.close();
             stmt.close();
             return courseList;
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }

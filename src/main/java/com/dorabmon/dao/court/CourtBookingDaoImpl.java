@@ -18,6 +18,7 @@ import java.util.Map;
 public class CourtBookingDaoImpl implements CourtBookingDao, EntityDao<CourtBooking> {
 
     private final static Logger logger = LoggerFactory.getLogger(CourtBookingDaoImpl.class);
+
     private DBCPUtil dbpool = DBCPUtil.getInstance();
 
 
@@ -69,14 +70,14 @@ public class CourtBookingDaoImpl implements CourtBookingDao, EntityDao<CourtBook
         Map<Integer, Integer> courtBookingMap = new HashMap<Integer, Integer>();
 
         StringBuilder stringBuilder = new StringBuilder();
-        for(Integer str : courtIdArr){
+        for (Integer str : courtIdArr) {
             stringBuilder.append("?,");
         }
 
         PreparedStatement stmt = null;
         String sql = "select court_id, count(*) as num " +
                 "from court_booking_table where book_time between ? and ? " +
-                "and court_id IN(" + stringBuilder.deleteCharAt(stringBuilder.length() - 1) +") " +
+                "and court_id IN(" + stringBuilder.deleteCharAt(stringBuilder.length() - 1) + ") " +
                 "group by court_id;";
 
         int index = 0;
@@ -85,7 +86,7 @@ public class CourtBookingDaoImpl implements CourtBookingDao, EntityDao<CourtBook
         stmt.setString(++index, date + " 00:00:00");
         stmt.setString(++index, date + " 23:59:59");
 
-        for(Integer courtId : courtIdArr){
+        for (Integer courtId : courtIdArr) {
             stmt.setInt(++index, courtId);
         }
 
@@ -119,8 +120,7 @@ public class CourtBookingDaoImpl implements CourtBookingDao, EntityDao<CourtBook
             courtBooking.setStudent_id(student_id);
             courtBooking.setBook_time(book_time);
 
-        }
-        catch (SQLException e){
+        } catch (SQLException e) {
 
             logger.error("setResult Error:" + e.getMessage());
             throw new RuntimeException(e);
@@ -129,7 +129,7 @@ public class CourtBookingDaoImpl implements CourtBookingDao, EntityDao<CourtBook
     }
 
     @Override
-    public List<CourtBooking> showOccupiedPeriodsByCourtIdAndDate(Integer court_id, String date) throws SQLException{
+    public List<CourtBooking> showOccupiedPeriodsByCourtIdAndDate(Integer court_id, String date) throws SQLException {
 
         List<CourtBooking> courtBookingList = new ArrayList<CourtBooking>();
         Connection conn = dbpool.getConnection();

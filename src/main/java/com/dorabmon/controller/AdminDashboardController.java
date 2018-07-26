@@ -16,20 +16,14 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @Controller
-
 public class AdminDashboardController {
 
-    @Autowired
-    private CourseService courseService;
 
-    @RequestMapping(value = "/dashboard" ,method = RequestMethod.GET)
-    public ModelAndView admin (HttpServletRequest httpServletRequest) {
+    @RequestMapping(value = "/dashboard", method = RequestMethod.GET)
+    public ModelAndView admin(HttpServletRequest httpServletRequest) {
 
         return new ModelAndView("admin");
     }
-
-
-
 
 
 }

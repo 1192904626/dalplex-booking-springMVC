@@ -25,17 +25,14 @@ public class LoginController {
     private UserService userService;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
-    {
-        if (httpServletRequest.getSession().getAttribute("currentUser") != null){
+    public ModelAndView login(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
+        if (httpServletRequest.getSession().getAttribute("currentUser") != null) {
             ModelAndView mav = new ModelAndView("homePage");
             User currentUser = (User) httpServletRequest.getSession().getAttribute("currentUser");
             mav.addObject("currentUser", currentUser);
             sendRedirectToProfile(httpServletResponse, currentUser);
             return mav;
-        }
-        else
-            {
+        } else {
             return new ModelAndView("login");
         }
     }
@@ -52,11 +49,11 @@ public class LoginController {
 
             httpSession.setAttribute("currentUser", user);
 
-            if (user.getStudent_role().equals("user")){
+            if (user.getStudent_role().equals("user")) {
                 //student role
                 mav = new ModelAndView("homePage");
 
-            }else {
+            } else {
                 //admin goes to dashboard
                 mav = new ModelAndView("admin");
             }
@@ -76,13 +73,13 @@ public class LoginController {
 
     private void sendRedirectToProfile(HttpServletResponse httpServletResponse, User user) {
         try {
-            if (user.getStudent_role().equals("user")){
+            if (user.getStudent_role().equals("user")) {
                 httpServletResponse.sendRedirect("/");
-            }else {
+            } else {
                 httpServletResponse.sendRedirect("/admin");
             }
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
