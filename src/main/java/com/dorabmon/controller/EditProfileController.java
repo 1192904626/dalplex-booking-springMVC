@@ -67,6 +67,7 @@ public class EditProfileController {
                 // mav.addObject("currentUser",user);
 
             }
+            session.setAttribute("currentUser",user);
             mav.addObject("currentUser", user);
             sendRedirectToEditProfile(response, "/student_page");
 

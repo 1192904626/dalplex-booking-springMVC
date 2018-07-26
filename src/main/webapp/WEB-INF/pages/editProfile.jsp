@@ -46,7 +46,6 @@
         var info = confirm("Leave current page without saving changes !");
         return info;
     }
-
 </script>
 
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient" >
@@ -95,11 +94,11 @@
         <%--</div>--%>
         <!-- edit form column -->
         <div class="col-md-9 personal-info">
-            <div class="alert alert-info alert-dismissable">
-                <a class="panel-close close" data-dismiss="alert">×</a>
-                <i class="fa fa-coffee"></i>
-                <strong>Please save changes, before leave this page. </strong>
-            </div>
+            <%--<div class="alert alert-info alert-dismissable">--%>
+                <%--<a class="panel-close close" data-dismiss="alert">×</a>--%>
+                <%--<i class="fa fa-coffee"></i>--%>
+                <%--<strong>Please save changes, before leave this page. </strong>--%>
+            <%--</div>--%>
             <h3>Personal info</h3>
 
             <form class="form-horizontal" action="/profile/edit" method="post" id="editform">
