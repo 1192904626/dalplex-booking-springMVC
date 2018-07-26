@@ -267,8 +267,8 @@
                             <label class="control-label col-sm-6" for="edit_course_cover_image_link">Course Cover
                                 Image</label>
                             <div class="col-sm-10">
-                                <input type="file" accept="image/*" class="form-control"
-                                       id="edit_course_cover_image_link" name="course_cover_image_link" required>
+                                <img id="edit_display_image" class="img-fluid" src="#" alt="image for class">
+                                <input type="text" style="display: none" class="form-control" id="edit_course_cover_image_link" name="course_cover_image_link" value="#">
                             </div>
                         </div>
                     </div>
