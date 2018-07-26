@@ -181,6 +181,15 @@
                         </a>
                         <label style="font-size:28px;padding-left:0px;">${studentCourt.courtName}</label>
                         <p>${studentCourt.courtDescription}<p>
+                        <p>${studentCourt.book_time}<p>
+                        <c:choose>
+                            <c:when test="${studentCourt.is_expired}">
+                                <p><font color="red">Expired</font><p>
+                            </c:when>
+                            <c:otherwise>
+                                <p><font color="green">Valid</font><p>
+                            </c:otherwise>
+                        </c:choose>
                         <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>--%>
                     </div>
                 </c:forEach>
@@ -228,7 +237,7 @@
 
 <section>
 
-    <div class="newsletter-subscribe">
+    <div class="newsletter-subscribe" style="display:none;">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Subscribe for our Newsletter</h2>

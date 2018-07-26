@@ -101,6 +101,50 @@
     </div>
 </div>
 
+<div class="modal fade" id="showAnnouncement" role="dialog">
+    <div class="modal-dialog">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Show Announcement</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <div class="form-group">
+                    <Strong><label class="control-label col-sm-6" for="announcement_title">Title</label></Strong>
+                    <div class="col-sm-10">
+                        <label id="announcement_title"></label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="announcement_validUntil">Valid from</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="announcement_validUntil"  name="validUntil" disabled>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-6" for="announcement_content">Content</label>
+                    <div class="col-sm-10">
+                        <label id="announcement_content"></label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
 <main class="page lanidng-page">
     <section class="portfolio-block call-to-action border-bottom">
         <div class="container">
@@ -201,7 +245,7 @@
 
 <section>
 
-    <div class="newsletter-subscribe">
+    <div class="newsletter-subscribe" style="display:none;">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Subscribe for our Newsletter</h2>

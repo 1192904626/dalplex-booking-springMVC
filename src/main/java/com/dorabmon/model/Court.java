@@ -1,12 +1,17 @@
 package com.dorabmon.model;
 
+import java.sql.Timestamp;
+
 public class Court {
     private int courtId;
     private String courtName;
     private String courtType;
     private int courtCapacity;
     private String courtDescription;
+
     private int remains = 12;
+    private Timestamp book_time = null;
+    private boolean is_expired = false;
 
     public Court() {
     }
@@ -72,5 +77,22 @@ public class Court {
 
     public void setRemains(int remains) {
         this.remains = remains;
+    }
+
+
+    public boolean isIs_expired() {
+        return is_expired;
+    }
+
+    public void setIs_expired(boolean is_expired) {
+        this.is_expired = is_expired;
+    }
+
+    public Timestamp getBook_time() {
+        return book_time;
+    }
+
+    public void setBook_time(Timestamp book_time) {
+        this.book_time = book_time;
     }
 }

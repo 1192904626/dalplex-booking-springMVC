@@ -58,7 +58,7 @@
                                 <tr>
                                     <th>Announcement Title</th>
                                     <th>Announcement Content</th>
-                                    <th>Valid Until</th>
+                                    <th>Valid From</th>
                                     <th>Edit</th>
                                     <th>Delete</th>
                                 </tr>
@@ -118,7 +118,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="control-label col-sm-6" for="validUntil">Valid until</label>
+                        <label class="control-label col-sm-6" for="validUntil">Valid From</label>
                         <div class="col-sm-10">
                             <input type="date" class="form-control" id="validUntil"  name="validUntil" required>
                         </div>
@@ -164,7 +164,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_validUntil">Valid until</label>
+                            <label class="control-label col-sm-6" for="edit_validUntil">Valid From</label>
                             <div class="col-sm-10">
                                 <input type="date" class="form-control" id="edit_validUntil"  name="validUntil" required>
                             </div>
