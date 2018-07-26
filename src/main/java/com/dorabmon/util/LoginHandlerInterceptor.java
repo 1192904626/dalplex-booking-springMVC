@@ -15,10 +15,8 @@ import javax.servlet.http.HttpSession;
 public class LoginHandlerInterceptor implements HandlerInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginHandlerInterceptor.class);
-    private static String[] urlSets = {"/", "login", "signup"};
+    private static String[] urlSets = { "login", "signup"};
 
-    @Autowired
-    private UserService userService;
 
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception {
