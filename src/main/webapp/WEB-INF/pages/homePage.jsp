@@ -45,12 +45,28 @@
                         <%--<li class="nav-item" ><label class="nav-link">Welcome ${currentUser.student_name}</label></li>--%>
                         <%--<li class="nav-item" ><a class="nav-link" href="/student_page">MyBooking</a></li>--%>
 
+                        <c:set var="adminStatus" scope="session" value="${currentUser.student_role}"/>
+                        <c:if test="${adminStatus=='admin'}">
+
+                            <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Welcome ${currentUser.student_name}</a>
+                                <div class="dropdown-menu" role="menu">
+                                    <a class="dropdown-item"  href="/dashboard">Dashboard</a>
+                                    <a class="dropdown-item"  href="/logout">Logout</a>
+                                </div>
+                            </li>
+
+                        </c:if>
+                    </c:if>
+                <c:if test="${userStatus != null && userStatus != ''}" >
+                        <c:if test="${adminStatus == 'user'}">
                         <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Welcome ${currentUser.student_name}</a>
                             <div class="dropdown-menu" role="menu">
                                 <a class="dropdown-item"  href="/student_page">MyBooking</a>
                                 <a class="dropdown-item"  href="/logout">Logout</a>
                             </div>
                         </li>
+
+                        </c:if>
 
                         <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts</a>
                         <div class="dropdown-menu" role="menu">
