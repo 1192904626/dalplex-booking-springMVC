@@ -15,7 +15,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 @Controller
-public class EditProfile {
+public class EditProfileController {
 
     @Autowired
     private UserService userService;

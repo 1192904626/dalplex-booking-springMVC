@@ -58,26 +58,11 @@
         <div class="collapse navbar-collapse"
              id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
-                <%--<li class="dropdown">--%>
-                    <%--<a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>--%>
-                <%--<div class="dropdown-menu" role="menu">--%>
-                <%--<a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>--%>
-                <%--<a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>--%>
-                <%--<a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>--%>
-                <%--<a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>--%>
-                <%--</div>--%>
-                <%--</li>--%>
-                <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>--%>
-                <%--<div class="dropdown-menu" role="menu">--%>
-                <%--<a class="dropdown-item"  href="#">Yoga</a>--%>
-                <%--<a class="dropdown-item"  href="#">Spin</a>--%>
-                <%--<a class="dropdown-item"  href="#">AquaFit</a>--%>
-                <%--<a class="dropdown-item"  href="#">Explore More >></a>--%>
-                <%--</div>--%>
-                <%--</li>--%>
+
+                <li class="nav-item" ><a class="nav-link" href="/profile/edit">Welcome ${currentUser.student_name}</a></li>
                 <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
 
-                <li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>
+                <%--<li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>--%>
             </ul>
         </div>
     </div>
@@ -87,134 +72,134 @@
 <br>
 <br>
 <section>
-<div class="photo-gallery">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">My Course</h2>
-        </div>
-        <div class="row photos">
-            <c:forEach items="${studentCourseList}" var="studentCourse">
-                <div class="col-sm-6 col-md-4 col-lg-3 item">
-                    <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
-                        <img  class="img-fluid" src=${studentCourse.course_cover_image_link}>
-                    </a>
-                    <label style="font-size:28px;padding-left:0px;">${studentCourse.course_name}</label>
-                    <label style="font-size:19px;padding-left:0px;width:100%;">${studentCourse.course_start_date}</label>
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">My Course</h2>
+            </div>
+            <div class="row photos">
+                <c:forEach items="${studentCourseList}" var="studentCourse">
+                    <div class="col-sm-6 col-md-4 col-lg-3 item">
+                        <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
+                            <img  class="img-fluid" src=${studentCourse.course_cover_image_link}>
+                        </a>
+                        <label style="font-size:28px;padding-left:0px;">${studentCourse.course_name}</label>
+                        <label style="font-size:19px;padding-left:0px;width:100%;">${studentCourse.course_start_date}</label>
                         <button class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2" onclick="deletecourse(this)" value=${studentCourse.course_id}>Delete</button>
-                </div>
-            </c:forEach>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 101</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                    </div>
+                </c:forEach>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a><label style="font-size:28px;padding-left:0px;width:100%;">Yoga 101</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button--%>
-                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
-            <%--</div>--%>
+                <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--</div>--%>
 
 
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button--%>
-                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 101</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button--%>
-                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;">Basketball</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button--%>
-                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
             </div>
         </div>
     </div>
 </section>
 
 <section>
-<div class="photo-gallery">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">Coming Course</h2>
-        </div>
-        <div class="row photos">
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item">--%>
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">Coming Course</h2>
+            </div>
+            <div class="row photos">
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item">--%>
                 <%--<a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a>--%>
                 <%--<label style="font-size:28px;padding-left:0px;width:100%;">Yoga 102</label>--%>
                 <%--<label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
+                <%--</div>--%>
 
-            <c:forEach items="${comingCourseList}" var="comingCourse">
-                <div class="col-sm-6 col-md-4 col-lg-3 item">
-                    <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
-                        <img  class="img-fluid" src=${comingCourse.course_cover_image_link}>
-                    </a>
-                    <label style="font-size:28px;padding-left:0px;">${comingCourse.course_name}</label>
-                    <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>
-                </div>
-            </c:forEach>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <c:forEach items="${comingCourseList}" var="comingCourse">
+                    <div class="col-sm-6 col-md-4 col-lg-3 item">
+                        <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
+                            <img  class="img-fluid" src=${comingCourse.course_cover_image_link}>
+                        </a>
+                        <label style="font-size:28px;padding-left:0px;">${comingCourse.course_name}</label>
+                        <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>
+                    </div>
+                </c:forEach>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;width:100%;">Basketball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;width:100%;">Basketball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid delete-course" src="image/socor.jpg"></a><label style="font-size:28px;width:100%;">Soccor 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid delete-course" src="image/socor.jpg"></a><label style="font-size:28px;width:100%;">Soccor 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;width:100%;">Baseball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;width:100%;">Baseball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;width:100%;">Badminton 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;width:100%;">Badminton 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
                 <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-            <%--</div>--%>
-        </div>
-    </div>
-</div>
-
-</section>
-<section>
-    <div class="photo-gallery">
-    <div class="container">
-        <div class="intro">
-            <h2 class="text-center">My Court</h2>
-        </div>
-        <div class="row photos">
-            <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball_court.jpg"></a><label style="font-size:28px;">Basketball 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
-                <button
-                        class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
+                <%--</div>--%>
             </div>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button--%>
-                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button--%>
-                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
-            <%--</div>--%>
-            <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button--%>
-                        <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
-            <%--</div>--%>
         </div>
     </div>
+
+</section>
+<section>
+    <div class="photo-gallery">
+        <div class="container">
+            <div class="intro">
+                <h2 class="text-center">My Court</h2>
+            </div>
+            <div class="row photos">
+                <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball_court.jpg"></image></a><label style="font-size:28px;">Basketball 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>
+                    <button
+                            class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>
+                </div>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--<button--%>
+                <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/soccor_court.jpg"></a><label style="font-size:28px;">Soccor 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--<button--%>
+                <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--</div>--%>
+                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/table-tennis_court.jpg"></a><label style="font-size:28px;">Table Tennis Table</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
+                <%--<button--%>
+                <%--class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal2">Delete</button>--%>
+                <%--</div>--%>
+            </div>
+        </div>
     </div>
 </section>
 
 <section>
     <div class="photo-gallery">
-    <div class="container time-table">
-    <h2 class="text-center" >Booking Court</h2>
-        <br>
-        <h5 class="text-center">
-            Contact us by Email: dalplexBooking@dorabmon.org
-        </h5>
+        <div class="container time-table">
+            <h2 class="text-center" >Booking Court</h2>
+            <br>
+            <h5 class="text-center">
+                Contact us by Email: dalplexBooking@dorabmon.org
+            </h5>
 
-        <h5 class="text-center">
-            Contact us by Phone: 902-888-2333
-        </h5>
-    </div>
+            <h5 class="text-center">
+                Contact us by Phone: 902-888-2333
+            </h5>
+        </div>
     </div>
 
 </section>
@@ -259,34 +244,33 @@
         var info = confirm("Contact us via Email: DalplexBookingInfo@dorabmon.org");
         return info;
     }
-
 </script>
 
 
 <%--<div class="footer-basic">--%>
-    <%--<footer>--%>
-        <%--<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>--%>
-        <%--<ul class="list-inline">--%>
-            <%--<li class="list-inline-item"><a href="#">Home</a></li>--%>
-            <%--<li class="list-inline-item"><a href="#">Services</a></li>--%>
-            <%--<li class="list-inline-item"><a href="#">About</a></li>--%>
-            <%--<li class="list-inline-item"><a href="#">Terms</a></li>--%>
-            <%--<li class="list-inline-item"><a href="#">Privacy Policy</a></li>--%>
-        <%--</ul>--%>
-        <%--<p class="copyright">Dalplex booking system © 2017</p>--%>
-    <%--</footer>--%>
+<%--<footer>--%>
+<%--<div class="social"><a href="#"><i class="icon ion-social-instagram"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-facebook"></i></a></div>--%>
+<%--<ul class="list-inline">--%>
+<%--<li class="list-inline-item"><a href="#">Home</a></li>--%>
+<%--<li class="list-inline-item"><a href="#">Services</a></li>--%>
+<%--<li class="list-inline-item"><a href="#">About</a></li>--%>
+<%--<li class="list-inline-item"><a href="#">Terms</a></li>--%>
+<%--<li class="list-inline-item"><a href="#">Privacy Policy</a></li>--%>
+<%--</ul>--%>
+<%--<p class="copyright">Dalplex booking system © 2017</p>--%>
+<%--</footer>--%>
 <%--</div>--%>
 <%--<div class="newsletter-subscribe">--%>
-    <%--<div class="container">--%>
-        <%--<div class="intro">--%>
-            <%--<h2 class="text-center">Subscribe for our Newsletter</h2>--%>
-            <%--<p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>--%>
-        <%--</div>--%>
-        <%--<form class="form-inline" method="post">--%>
-            <%--<div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>--%>
-            <%--<div class="form-group"><button class="btn btn-primary" type="submit">Subscribe </button></div>--%>
-        <%--</form>--%>
-    <%--</div>--%>
+<%--<div class="container">--%>
+<%--<div class="intro">--%>
+<%--<h2 class="text-center">Subscribe for our Newsletter</h2>--%>
+<%--<p class="text-center">Nunc luctus in metus eget fringilla. Aliquam sed justo ligula. Vestibulum nibh erat, pellentesque ut laoreet vitae. </p>--%>
+<%--</div>--%>
+<%--<form class="form-inline" method="post">--%>
+<%--<div class="form-group"><input class="form-control" type="email" name="email" placeholder="Your Email"></div>--%>
+<%--<div class="form-group"><button class="btn btn-primary" type="submit">Subscribe </button></div>--%>
+<%--</form>--%>
+<%--</div>--%>
 <%--</div><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">--%>
 
 <div class="book-course-modal">
@@ -384,7 +368,6 @@
         var courseid = element.getAttribute('value');
         $("#deletecourse").val(courseid);
     };
-
     $("#deletecourse").click(function(){
         //get id
         var courseid = $("#deletecourse").val();
@@ -398,12 +381,10 @@
             }
         })
     });
-
     function insertcourse(element) {
         var courseid = element.getAttribute('value');
         $("#insertcourse").val(courseid);
     };
-
     $("#insertcourse").click(function(){
         //get id
         var courseid = $("#insertcourse").val();
@@ -417,7 +398,6 @@
             }
         })
     });
-
     // $("#sync_google_cal").click(function(){
     //     $("#content-php").load("quickstart.php");
     // });

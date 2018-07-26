@@ -34,31 +34,12 @@
         <div class="collapse navbar-collapse"
              id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
-                <%--<li class="nav-item" ><a class="nav-link active" href="index.html" style="padding-left:30px;">Home</a></li>--%>
-                <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>--%>
-                    <%--<div class="dropdown-menu" role="menu">--%>
-                        <%--<a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>--%>
-                        <%--<a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>--%>
-                        <%--<a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>--%>
-                        <%--<a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>--%>
-                    <%--</div>--%>
-                <%--</li>--%>
-                <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>--%>
-                    <%--<div class="dropdown-menu" role="menu">--%>
-                        <%--<a class="dropdown-item"  href="#">Yoga</a>--%>
-                        <%--<a class="dropdown-item"  href="#">Spin</a>--%>
-                        <%--<a class="dropdown-item"  href="#">AquaFit</a>--%>
-                        <%--<a class="dropdown-item"  href="#">Explore More >></a>--%>
-                    <%--</div>--%>
-                <%--</li>--%>
 
                     <c:set var="userStatus" scope="session" value="${currentUser.email}"/>
                     <c:if test="${userStatus == null || userStatus==''}">
                 <li class="nav-item" ><a class="nav-link" href="/login">Sign in</a></li>
                     </c:if>
                     <c:if test="${userStatus != null && userStatus != ''}" >
-                        <%--<li class="nav-item" ><a class="nav-link" href="/student_page">BooK Now</a></li>--%>
-
                         <li class="nav-item" ><a class="nav-link" href="/student_page">MyBooking</a></li>
 
                         <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>
@@ -69,16 +50,7 @@
                         <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
                         </div>
                         </li>
-
-                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Class&nbsp;</a>
-                        <div class="dropdown-menu" role="menu">
-                        <a class="dropdown-item"  href="#">Yoga</a>
-                        <a class="dropdown-item"  href="#">Spin</a>
-                        <a class="dropdown-item"  href="#">AquaFit</a>
-                        <a class="dropdown-item"  href="#">Explore More >></a>
-                        </div>
-                        </li>
-
+                        <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
                     </c:if>
                 <li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>
             </ul>
@@ -109,10 +81,8 @@
             <div class="d-flex justify-content-center align-items-center content">
                 <h3>Announcements</h3>
                 <div id="homeAnnouncement">
-
-
                 </div>
-                <button class="btn btn-outline-primary btn-lg" type="button" style="margin-left:30px">JOIN NOW</button>
+                <%--<button class="btn btn-outline-primary btn-lg" type="button" style="margin-left:30px">JOIN NOW</button>--%>
             </div>
         </div>
     </section>
@@ -134,12 +104,13 @@
                         </a>Drop by Dalplex during our regular hours of operation and speak to a Customer Service Representative.
                             Better yet,&nbsp;<strong>drop&nbsp;by for a tour of the facilities! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong><br></p>
                     </div>
-                </div><i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);"></i></div>
+                </div>
+                <i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);"></i>
+            </div>
             <div class="col-md-4">
                 <div class="card special-skill-item border-0">
                     <div class="card-header bg-transparent border-0">
                         <i class="icon ion-ios-lightbulb-outline" >
-
                         </i>
                     </div>
                     <div class="card-body">
@@ -194,11 +165,6 @@
             </iframe>
         </div><br />
     </div>
-
-    <%--<div>--%>
-    <%--<iframe allowfullscreen frameborder="20" width="100%" height="300" src="https://www.google.com/maps/place/Dalplex/@44.6340049,-63.5935187,17z/data=!3m1!4b1!4m5!3m4!1s0x4b5a223075e6d9d7:0x1fa05d93b92f2e98!8m2!3d44.6340011!4d-63.5913247"></iframe>--%>
-
-    <%--</div>--%>
 
 </section>
 

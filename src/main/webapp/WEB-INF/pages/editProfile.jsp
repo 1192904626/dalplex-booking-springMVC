@@ -15,6 +15,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/bootstrapyiren.min.css" >
+    <link rel="stylesheet" href="../fonts/ionicons.min.css">
+    <link rel="stylesheet" href="../fonts/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -45,6 +48,40 @@
     }
 
 </script>
+
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient" >
+    <div class="container">
+        <a class="navbar-brand logo" href="/">DalplexBooking</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+
+                <c:set var="userStatus" scope="session" value="${currentUser.email}"/>
+                <c:if test="${userStatus == null || userStatus==''}">
+                    <li class="nav-item" ><a class="nav-link" href="/login">Sign in</a></li>
+                </c:if>
+                <c:if test="${userStatus != null && userStatus != ''}" >
+                    <li class="nav-item" ><a class="nav-link" href="/student_page">MyBooking</a></li>
+
+                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>
+                        <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>
+                            <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
+                            <a class="dropdown-item"  href="/studentCourt/pages/soccer">Soccer</a>
+                            <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
+                        </div>
+                    </li>
+                    <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
+                </c:if>
+                <%--<li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>--%>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <div class="container">
     <h1>Edit Profile</h1>
@@ -123,10 +160,17 @@
 <%--<div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>--%>
 <%--</div>--%>
 <%--</footer>--%>
-<script src="../js/jqueryJsun.min.js"></script>
+
+<script src="..js/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 <%--<script src="../js/Profile-Edit-Form.js"></script>--%>
 <script src="../js/theme.js"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
+<script src="js/Simple-Slider.js"></script>
+<script src="js/theme.js"></script>
 
 </body>
 <%--<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>--%>
