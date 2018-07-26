@@ -201,7 +201,7 @@
 
 <section>
 
-    <div class="newsletter-subscribe">
+    <div class="newsletter-subscribe" style="display:none;">
         <div class="container">
             <div class="intro">
                 <h2 class="text-center">Subscribe for our Newsletter</h2>
