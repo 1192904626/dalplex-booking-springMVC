@@ -320,11 +320,11 @@
                             <%--</div>--%>
                         <%--</div>--%>
                         <%--<div class="form-group">--%>
-                            <div class="col-sm-10">
-                                <button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>--%>
 
 
-                            </div>
+                            <%--</div>--%>
                         </di>
                     </form>
                 </div>
