@@ -52,3 +52,32 @@ function editcourse(element) {
 
 
 };
+
+document.getElementById("upload_widget_opener").addEventListener("click", function() {
+    cloudinary.openUploadWidget({
+            cloud_name: 'dvbwoaqub',
+            upload_preset: 'p6b4gfgx'},
+        function(error, result)
+        {
+            console.log(error, result);
+            image_url = result[0].url;
+            console.log(image_url);
+            $("#course_img").attr('src',image_url);
+            $("#course_cover_image_link").attr('value',image_url);
+        });
+}, false);
+
+document.getElementById("upload_widget_opener_edit").addEventListener("click", function() {
+    cloudinary.openUploadWidget({
+            cloud_name: 'dvbwoaqub',
+            upload_preset: 'p6b4gfgx'},
+        function(error, result)
+        {
+            console.log(error, result);
+            image_url = result[0].url;
+            console.log(image_url);
+            $("#edit_display_image").attr('src',image_url);
+            $("#edit_course_cover_image_link").attr('value',image_url);
+        });
+}, false);
+

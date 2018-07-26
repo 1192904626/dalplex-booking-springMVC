@@ -99,75 +99,90 @@
         <div class="modal-dialog">
 
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" style="width: 200%; margin-left: -50%">
                 <div class="modal-header">
                     <h4 class="modal-title">Add Course</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
                 <form id="add-course-form" class="form-horizontal" action="/course/list" method="POST">
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_name">Course Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="course_name" placeholder="Enter course name"
-                                       name="course_name" required>
+                        <div id="add-form-left" style="width: 50%;float: left">
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_name">Course Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="course_name"
+                                           placeholder="Enter course name"
+                                           name="course_name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_category">Category</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="course_category"
+                                           placeholder="Select course type" name="course_category" list="team_list"
+                                           required>
+                                    <datalist id="team_list">
+                                        <option>Soccer</option>
+                                        <option>Basketball</option>
+                                        <option>Swimming</option>
+                                        <option>Yoga</option>
+                                    </datalist>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_start">Course Start</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="course_start" name="course_start_date"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_end">Course End</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="course_end" name="course_end_date"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_instructor">Course Instructor</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="course_instructor"
+                                           placeholder="Enter Instructor name" name="course_instructor" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_time_start">Course time start</label>
+                                <div class="col-sm-10">
+                                    <input type="time" class="form-control" id="course_time_start"
+                                           name="course_start_time"
+                                           required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_time_end">Course time end</label>
+                                <div class="col-sm-10">
+                                    <input type="time" class="form-control" id="course_time_end" name="course_end_time"
+                                           required>
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_category">Category</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="course_category"
-                                       placeholder="Select course type" name="course_category" list="team_list"
-                                       required>
-                                <datalist id="team_list">
-                                    <option>Soccer</option>
-                                    <option>Basketball</option>
-                                    <option>Swimming</option>
-                                    <option>Yoga</option>
-                                </datalist>
+                        <div id="add-form-right" style="width:50%;float: right;">
+                            <%--https://res.cloudinary.com/dirbnqgl0/image/upload/v1530819678/course_cover/socor.jpg--%>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="course_cover_image_link">Course Cover
+                                    Image</label>
+                                <img id="course_img"
+                                     src="http://res.cloudinary.com/dvbwoaqub/image/upload/v1532616971/p1c2irrmcmb7knjthpsx.jpg"
+                                     alt="profile" width="90%">
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_start">Course Start</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="course_start" name="course_start_date"
-                                       required>
+                            <div class="form-group">
+                                <a href="#" id="upload_widget_opener">Upload an image</a>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_end">Course End</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="course_end" name="course_end_date" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_instructor">Course Instructor</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="course_instructor"
-                                       placeholder="Enter Instructor name" name="course_instructor" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_time_start">Course time start</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="course_time_start" name="course_start_time"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_time_end">Course time end</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="course_time_end" name="course_end_time"
-                                       required>
-                            </div>
-                        </div>
-                        <%--https://res.cloudinary.com/dirbnqgl0/image/upload/v1530819678/course_cover/socor.jpg--%>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_cover_image_link">Course Cover
-                                Image</label>
-                            <div class="col-sm-10">
-                                <input type="file" accept="image/*" class="form-control" id="course_cover_image_link"
-                                       name="course_cover_image_link" required>
+                            <div class="form-group">
+                                <div class="col-sm-10" style="display: none">
+                                    <input type="text" class="form-control" id="course_cover_image_link"
+                                           name="course_cover_image_link">
+                                </div>
                             </div>
                         </div>
 
@@ -190,7 +205,7 @@
         <div class="modal-dialog">
 
             <!-- Modal content-->
-            <div class="modal-content">
+            <div class="modal-content" style="width: 200%; margin-left: -50%">
                 <div class="modal-header">
                     <h4 class="modal-title" id="modal_title_edit">Edit Course</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -199,89 +214,103 @@
                 <form id="edit_course_form" class="form-horizontal" action="/course/update" method="post">
 
                     <div class="modal-body">
+                        <div id="edit-form-left" style="width: 50%;float: left">
+                            <div class="form-group" style="display: none">
+                                <div class="col-sm-10">
+                                    <input type="number" class="form-control" id="edit_course_id" name="course_id"
+                                           required>
+                                </div>
+                            </div>
 
-                        <div class="form-group" style="display: none">
-                            <div class="col-sm-10">
-                                <input type="number" class="form-control" id="edit_course_id" name="course_id" required>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_name">Course Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="edit_course_name"
+                                           placeholder="Enter course name" name="course_name" required>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_name">Course Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_course_name"
-                                       placeholder="Enter course name" name="course_name" required>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_category">Category</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="edit_course_category"
+                                           placeholder="Select course type" name="course_category" list="edit_team_list"
+                                           required>
+                                    <datalist id="edit_team_list">
+                                        <option>Soccer</option>
+                                        <option>Basketball</option>
+                                        <option>Swimming</option>
+                                        <option>Yoga</option>
+                                    </datalist>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_category">Category</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_course_category"
-                                       placeholder="Select course type" name="course_category" list="edit_team_list"
-                                       required>
-                                <datalist id="edit_team_list">
-                                    <option>Soccer</option>
-                                    <option>Basketball</option>
-                                    <option>Swimming</option>
-                                    <option>Yoga</option>
-                                </datalist>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_start">Course Start</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="edit_course_start"
+                                           name="course_start_date"
+                                           required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_start">Course Start</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="edit_course_start" name="course_start_date"
-                                       required>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_end">Course End</label>
+                                <div class="col-sm-10">
+                                    <input type="date" class="form-control" id="edit_course_end" name="course_end_date"
+                                           required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_end">Course End</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="edit_course_end" name="course_end_date"
-                                       required>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_instructor">Course
+                                    Instructor</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="edit_course_instructor"
+                                           placeholder="Enter Instructor name" name="course_instructor" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_instructor">Course Instructor</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="edit_course_instructor"
-                                       placeholder="Enter Instructor name" name="course_instructor" required>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_time_start">Course time
+                                    start</label>
+                                <div class="col-sm-10">
+                                    <input type="time" class="form-control" id="edit_course_time_start"
+                                           name="course_start_time" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_time_start">Course time start</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="edit_course_time_start"
-                                       name="course_start_time" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_time_end">Course time end</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="edit_course_time_end" name="course_end_time"
-                                       required>
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_time_end">Course time end</label>
+                                <div class="col-sm-10">
+                                    <input type="time" class="form-control" id="edit_course_time_end"
+                                           name="course_end_time"
+                                           required>
+                                </div>
                             </div>
                         </div>
                         <%--https://res.cloudinary.com/dirbnqgl0/image/upload/v1530819678/course_cover/socor.jpg--%>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="edit_course_cover_image_link">Course Cover
-                                Image</label>
-                            <div class="col-sm-10">
+                        <div id="edit-form-right" style="width:50%;float: right;">
+                            <div class="form-group">
+                                <label class="control-label col-sm-6" for="edit_course_cover_image_link">Course Cover
+                                    Image</label>
                                 <img id="edit_display_image" class="img-fluid" src="#" alt="image for class">
-                                <input type="text" style="display: none" class="form-control" id="edit_course_cover_image_link" name="course_cover_image_link" value="#">
+                            </div>
+                            <div class="form-group">
+                                <a href="#" id="upload_widget_opener_edit">Upload an image</a>
+                            </div>
+                            <div class="col-sm-10" style="display: none">
+
+                                <input type="text"
+                                       id="edit_course_cover_image_link" name="course_cover_image_link" value="#">
                             </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" id="submit-course-_edit">Submit</button>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
-                    </div>
-                </form>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="submit-course-_edit">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
             </div>
-
+            </form>
         </div>
+
     </div>
+</div>
 
 </div>
 
@@ -312,6 +341,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
+<%--Cloudinary--%>
+<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 <!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
