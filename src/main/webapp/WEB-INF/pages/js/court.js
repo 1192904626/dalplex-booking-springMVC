@@ -78,7 +78,7 @@ function courtBookTrigger()
             if(jsonResult.result == true)
             {
                 $("#modal-body-id").html("");
-                $("#modal-body-id").append("<span>Court Booking Successfully, you will receive an email including the detail information</span>");
+                $("#modal-body-id").append("<span>Court Booking Successfully!</span>");
             }
             else{
 

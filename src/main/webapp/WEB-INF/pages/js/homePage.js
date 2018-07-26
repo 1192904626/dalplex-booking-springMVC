@@ -9,7 +9,7 @@ $( document ).ready(function() {
             $("#homeAnnouncement").html("");
             for(index in announcementList){
                 var announcement = announcementList[index];
-                $("#homeAnnouncement").append(`<a href="#">${announcement.title}</a><br/>`);
+                $("#homeAnnouncement").append(`<strong><a href="#">${announcement.title}</a></strong><br/>`);
 
 
             }
