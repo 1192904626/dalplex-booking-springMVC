@@ -189,9 +189,9 @@
 
 <section>
     <div class="photo-gallery">
-        <div class="container time-table">
-            <h2 class="text-center" >Booking Court</h2>
-            <br>
+        <%--<div class="container time-table">--%>
+            <%--<h2 class="text-center" >Booking Court</h2>--%>
+            <%--<br>--%>
             <h5 class="text-center">
                 Contact us by Email: dalplexBooking@dorabmon.org
             </h5>
