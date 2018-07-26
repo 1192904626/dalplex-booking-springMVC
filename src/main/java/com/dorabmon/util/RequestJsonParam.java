@@ -10,6 +10,9 @@ public class RequestJsonParam {
     private Integer student_id;
     private String payload;
 
+    private Integer offset = 0;
+    private Integer rows = 5;
+
     public String getCourt_type() {
         return court_type;
     }
@@ -48,5 +51,21 @@ public class RequestJsonParam {
 
     public void setPayload(String payload) {
         this.payload = payload;
+    }
+
+    public Integer getOffset() {
+        return offset;
+    }
+
+    public void setOffset(Integer offset) {
+        this.offset = offset;
+    }
+
+    public Integer getRows() {
+        return rows;
+    }
+
+    public void setRows(Integer rows) {
+        this.rows = rows;
     }
 }

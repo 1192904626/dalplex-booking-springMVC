@@ -3,6 +3,7 @@ package com.dorabmon.controller;
 import com.dorabmon.model.Annoucement;
 import com.dorabmon.model.Court;
 import com.dorabmon.service.bulletin.AnnouncementService;
+import com.dorabmon.util.RequestJsonParam;
 import com.dorabmon.util.ResultResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,11 +22,11 @@ public class AnnouncementController {
     @Autowired
     private AnnouncementService announcementServiceImpl;
 
-    @RequestMapping(value = "/homePageList", method = RequestMethod.GET)
+    @RequestMapping(value = "/homePageList/{offset}", method = RequestMethod.GET)
     @ResponseBody
-    public List<Annoucement> loadAnnouncement(HttpServletRequest hsq) {
+    public List<Annoucement> loadAnnouncement(HttpServletRequest hsq, @PathVariable("offset") int offset) {
 
-        List<Annoucement> annoucementList = announcementServiceImpl.listAnouncementByPages(0, 5);
+        List<Annoucement> annoucementList = announcementServiceImpl.listAnouncementByPages(offset, 5);
         return annoucementList;
 
     }

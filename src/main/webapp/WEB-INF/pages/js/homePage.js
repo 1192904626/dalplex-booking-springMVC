@@ -1,10 +1,22 @@
-$( document ).ready(function() {
+
+function loadAnnouncements(pageNum){
+
+    if(pageNum == 0)
+        return;
+
+    var offset = (pageNum - 1)*5
 
     $.ajax({
-        url:"/announcement/homePageList",
+        url:"/announcement/homePageList/"+offset,
         type: 'GET',
         dataType: 'json',
+        async:false,
+        contentType:"application/json",
         success: function (announcementList, status){
+
+            if(announcementList.length == 0){
+                return;
+            }
 
             $("#homeAnnouncement").html("");
             for(index in announcementList){
@@ -17,8 +29,18 @@ $( document ).ready(function() {
 
 
             }
+            $("#homeAnnouncement").append(`<p><strong>
+                                                <a class="btn btn-default" onclick="loadAnnouncements(${pageNum-1})" href="javascript:void(0)">Prev</a>
+                                                <span id="page_id">${pageNum}</span>
+                                                <a class="btn btn-default" onclick="loadAnnouncements(${pageNum+1})" href="javascript:void(0)">Next</a>
+                                                </strong></p>`)
         }
     });
+}
+
+$( document ).ready(function() {
+
+    loadAnnouncements(1);
 
 });
 
