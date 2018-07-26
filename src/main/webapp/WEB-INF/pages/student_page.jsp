@@ -59,7 +59,7 @@
              id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
 
-                <li class="nav-item" ><a class="nav-link" href="/profile/edit">Welcome ${currentUser.student_name}</a></li>
+                <li class="nav-item" ><a class="nav-link" href="/profile/edit">Edit Profile</a></li>
                 <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
 
                 <%--<li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>--%>
@@ -71,6 +71,10 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<h3 class="text-center"><strong>Welcome ${currentUser.student_name} !</strong></h3>
 <section>
     <div class="photo-gallery">
         <div class="container">
@@ -197,6 +201,14 @@
     </div>
 </section>
 
+<br>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+<br>
+
 <section>
     <div class="photo-gallery">
         <%--<div class="container time-table">--%>
@@ -301,7 +313,9 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4>Book Course Form</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                    <h4>Book Course Form</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><strong>X</strong></span></button>
+                </div>
                 <div class="modal-body">
                     <p>Are you sure book this course?</p>
                     <%--<form class="form-horizontal" role="form">--%>
