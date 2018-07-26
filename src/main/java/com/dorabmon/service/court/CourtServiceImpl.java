@@ -201,7 +201,7 @@ public class CourtServiceImpl implements CourtService {
 
     @Override
     public List<Court> listCourtsByStudentID(int studentId) {
-        List<Court> courtList = listCourtsByStudentID(studentId);
+        List<Court> courtList = null;
 
         try {
 
