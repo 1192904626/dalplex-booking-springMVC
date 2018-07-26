@@ -37,8 +37,9 @@
         <div class="collapse navbar-collapse"
              id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/" style="padding-left:30px;">Home</a></li>
-                <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
+                <%--<li class="nav-item" role="presentation"><a class="nav-link" href="/" style="padding-left:30px;">Home</a></li>--%>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/student_page">MyBooking</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts&nbsp;</a>
                     <div class="dropdown-menu" role="menu">
                         <a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>
                         <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
@@ -49,7 +50,7 @@
                 <%--<li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Classes&nbsp;</a>--%>
                     <%--<div class="dropdown-menu" role="menu"><a class="dropdown-item"  href="#">First Item</a><a class="dropdown-item"  href="#">Second Item</a><a class="dropdown-item"  href="#">Third Item</a></div>--%>
                 <%--</li>--%>
-                <li class="nav-item" role="presentation"><a class="nav-link" href="/student_page">MyBooking</a></li>
+
             </ul>
         </div>
     </div>

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="css/Simple-Slider.css">
     <link rel="stylesheet" href="css/Newsletter-Subscription-Form.css">
+    <link rel="stylesheet" href="css/Footer-Clean.css">
 
 </head>
 <body>
@@ -37,12 +38,21 @@
 
                     <c:set var="userStatus" scope="session" value="${currentUser.email}"/>
                     <c:if test="${userStatus == null || userStatus==''}">
-                <li class="nav-item" ><a class="nav-link" href="/login">Sign in</a></li>
+                        <li class="nav-item" ><a class="nav-link" href="/login">Sign in</a></li>
+                        <li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>
                     </c:if>
                     <c:if test="${userStatus != null && userStatus != ''}" >
-                        <li class="nav-item" ><a class="nav-link" href="/student_page">MyBooking</a></li>
+                        <%--<li class="nav-item" ><label class="nav-link">Welcome ${currentUser.student_name}</label></li>--%>
+                        <%--<li class="nav-item" ><a class="nav-link" href="/student_page">MyBooking</a></li>--%>
 
-                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Court&nbsp;</a>
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Welcome ${currentUser.student_name}</a>
+                            <div class="dropdown-menu" role="menu">
+                                <a class="dropdown-item"  href="/student_page">MyBooking</a>
+                                <a class="dropdown-item"  href="/logout">Logout</a>
+                            </div>
+                        </li>
+
+                        <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts</a>
                         <div class="dropdown-menu" role="menu">
                         <a class="dropdown-item"  href="/studentCourt/pages/tennis">Tennis</a>
                         <a class="dropdown-item"  href="/studentCourt/pages/basketball">Basketball</a>
@@ -50,9 +60,9 @@
                         <a class="dropdown-item"  href="/studentCourt/pages/common">Common</a>
                         </div>
                         </li>
-                        <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
+                        <%--<li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>--%>
                     </c:if>
-                <li class="nav-item" ><a class="nav-link" href="/signup">Sign up</a></li>
+
             </ul>
         </div>
     </div>
@@ -105,7 +115,9 @@
                             Better yet,&nbsp;<strong>drop&nbsp;by for a tour of the facilities! &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;</strong><br></p>
                     </div>
                 </div>
-                <i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);"></i>
+                <%--<i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);">--%>
+                    <%----%>
+                <%--</i>--%>
             </div>
             <div class="col-md-4">
                 <div class="card special-skill-item border-0">
@@ -119,7 +131,9 @@
                             ages 5-17.</p>
                     </div>
                 </div>
-                <i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);"></i></div>
+                <%--<i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);"></i>--%>
+
+            </div>
             <div class="col-md-4">
                 <div class="card special-skill-item border-0">
                     <div class="card-header bg-transparent border-0"><i class="icon ion-ios-gear-outline"></i></div>
@@ -132,7 +146,8 @@
                         </p>
                     </div>
                 </div>
-                <i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);"></i></div>
+                <%--<i class="fa fa-arrow-circle-right" style="font-size:24px;color:rgb(14,160,255);"></i>--%>
+            </div>
             </div>
         </div>
     </div>
