@@ -193,9 +193,9 @@
 
 <section>
     <div class="photo-gallery">
-        <div class="container time-table">
-            <h2 class="text-center" >Booking Court</h2>
-            <br>
+        <%--<div class="container time-table">--%>
+            <%--<h2 class="text-center" >Booking Court</h2>--%>
+            <%--<br>--%>
             <h5 class="text-center">
                 Contact us by Email: dalplexBooking@dorabmon.org
             </h5>
@@ -299,38 +299,39 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><strong>X</strong></span></button>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form">
-                        <div class="form-group">
-                            <label  class="col-sm-2 control-label"
-                                    for="inputEmail3">Email</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control"
-                                       id="inputEmail3" placeholder="Email"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label  class="col-sm-2 control-label"
-                                    for="inputStudentName">Name</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control"
-                                       id="inputStudentName" placeholder="Name on ID"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label  class="col-sm-2 control-label"
-                                    for="inputPhoneNumber">#Phone</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control"
-                                       id="inputPhoneNumber" placeholder="Phone number"/>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-sm-10">
-                                <button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>
+                    <p>Are you sure book this course?</p>
+                    <%--<form class="form-horizontal" role="form">--%>
+                        <%--<div class="form-group">--%>
+                            <%--<label  class="col-sm-2 control-label"--%>
+                                    <%--for="inputEmail3">Email</label>--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<input type="email" class="form-control"--%>
+                                       <%--id="inputEmail3" placeholder="Email"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="form-group">--%>
+                            <%--<label  class="col-sm-2 control-label"--%>
+                                    <%--for="inputStudentName">Name</label>--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<input type="text" class="form-control"--%>
+                                       <%--id="inputStudentName" placeholder="Name on ID"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="form-group">--%>
+                            <%--<label  class="col-sm-2 control-label"--%>
+                                    <%--for="inputPhoneNumber">#Phone</label>--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<input type="text" class="form-control"--%>
+                                       <%--id="inputPhoneNumber" placeholder="Phone number"/>--%>
+                            <%--</div>--%>
+                        <%--</div>--%>
+                        <%--<div class="form-group">--%>
+                            <%--<div class="col-sm-10">--%>
+                                <%--<button class="btn btn-light" type="button" id = "sync_google_cal" data-dismiss="modal" data-toggle="modal" data-target="#google-modal">Sync with Google Calendar <i class="fab fa-google"></i></button>--%>
 
 
-                            </div>
-                        </div>
+                            <%--</div>--%>
+                        </di>
                     </form>
                 </div>
                 <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>
@@ -404,9 +405,6 @@
             }
         })
     });
-    // $("#sync_google_cal").click(function(){
-    //     $("#content-php").load("quickstart.php");
-    // });
 </script>
 
 
