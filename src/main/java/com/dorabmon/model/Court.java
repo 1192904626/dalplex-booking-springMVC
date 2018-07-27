@@ -1,3 +1,7 @@
+/*
+ * Written by Yi Ren
+ */
+
 package com.dorabmon.model;
 
 import java.sql.Timestamp;
