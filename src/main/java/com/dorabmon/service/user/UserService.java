@@ -1,3 +1,7 @@
+/*
+ * Written by Yi Ren
+ */
+
 package com.dorabmon.service.user;
 
 import com.dorabmon.model.User;
