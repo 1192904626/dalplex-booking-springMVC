@@ -52,6 +52,7 @@ function editcourse(element) {
 
 };
 
+//Written by Ziyun Zhong -------START
 document.getElementById("upload_widget_opener").addEventListener("click", function() {
     cloudinary.openUploadWidget({
             cloud_name: 'dvbwoaqub',
@@ -79,4 +80,5 @@ document.getElementById("upload_widget_opener_edit").addEventListener("click", f
             $("#edit_course_cover_image_link").attr('value',image_url);
         });
 }, false);
-
+//Written by Ziyun Zhong -------END
+//

@@ -1,9 +1,11 @@
+/*
+ * Written by Yi Ren
+ */
+
 package com.dorabmon.dao.court;
 
-import com.dorabmon.dao.DatabaseDao;
 import com.dorabmon.dao.EntityDao;
 import com.dorabmon.model.Court;
-import com.dorabmon.model.User;
 import com.dorabmon.util.DBCPUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

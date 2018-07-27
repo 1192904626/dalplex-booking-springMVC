@@ -40,9 +40,9 @@ public class StudentPageController {
         List<Court> studentCourtList = new ArrayList<>();
 
         HttpSession httpSession = httpServletRequest.getSession();
-        User user = (User) httpSession.getAttribute("currentUser");
+       // User user = (User) httpSession.getAttribute("currentUser");
 
-        if (user == null) {
+        if (httpSession.getAttribute("currentUser") == null) {
             ModelAndView mav1 = new ModelAndView("homePage");
             try {
                 httpServletResponse.sendRedirect("/");
@@ -53,6 +53,8 @@ public class StudentPageController {
             return mav1;
         }
 
+        User user = (User) httpSession.getAttribute("currentUser");
+        mav.addObject("currentUser",user);
 
 
         // student's course
