@@ -23,17 +23,19 @@ public class EditProfileController {
 //    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @RequestMapping(value = "/profile/edit", method = RequestMethod.GET)
-    public ModelAndView getEditProfile(HttpServletRequest request) {
+    public ModelAndView getEditProfile(HttpServletRequest request, HttpServletResponse response) {
         if (request.getSession().getAttribute("currentUser") != null) {
             ModelAndView mav = new ModelAndView("editProfile");
             User currentUser = (User) request.getSession().getAttribute("currentUser");
             mav.addObject("currentUser", currentUser);
 
             return mav;
-        } else {
-
-            return new ModelAndView("login");
         }
+
+        sendRedirectToEditProfile(response, "/login");
+
+        return new ModelAndView("login");
+
 
     }
 
@@ -67,6 +69,7 @@ public class EditProfileController {
                 // mav.addObject("currentUser",user);
 
             }
+            session.setAttribute("currentUser",user);
             mav.addObject("currentUser", user);
             sendRedirectToEditProfile(response, "/student_page");
 

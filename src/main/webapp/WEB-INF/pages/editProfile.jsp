@@ -9,16 +9,35 @@
          pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%
+    String path = request.getContextPath();
+
+    String serverName = request.getServerName();
+    String basePath = null;
+
+    if(serverName.indexOf("azurewebsites")>-1)
+    {
+        basePath = "https://"+request.getServerName()+path+"/";
+    }
+    else
+    {
+        basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+    }
+
+    pageContext.setAttribute("basePath",basePath);
+
+%>
 <html>
 <head>
+    <base href="<%=basePath%>" />
     <title>User Profile</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/bootstrapyiren.min.css" >
-    <link rel="stylesheet" href="../fonts/ionicons.min.css">
-    <link rel="stylesheet" href="../fonts/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrapyiren.min.css" >
+    <link rel="stylesheet" href="fonts/ionicons.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <%--<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">--%>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -46,7 +65,6 @@
         var info = confirm("Leave current page without saving changes !");
         return info;
     }
-
 </script>
 
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient" >
@@ -95,11 +113,11 @@
         <%--</div>--%>
         <!-- edit form column -->
         <div class="col-md-9 personal-info">
-            <div class="alert alert-info alert-dismissable">
-                <a class="panel-close close" data-dismiss="alert">×</a>
-                <i class="fa fa-coffee"></i>
-                <strong>Please save changes, before leave this page. </strong>
-            </div>
+            <%--<div class="alert alert-info alert-dismissable">--%>
+                <%--<a class="panel-close close" data-dismiss="alert">×</a>--%>
+                <%--<i class="fa fa-coffee"></i>--%>
+                <%--<strong>Please save changes, before leave this page. </strong>--%>
+            <%--</div>--%>
             <h3>Personal info</h3>
 
             <form class="form-horizontal" action="/profile/edit" method="post" id="editform">
@@ -109,9 +127,31 @@
                         <label> ${currentUser.email}</label>
                     </div>
                     <div class="col-md-5">
-                        <input type="checkbox" name="userEmail" value="${currentUser.email}" required>
+                        <label value="${currentUser.email}"></label>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Membership Start Date:</label>
+                    <div class="col-md-8">
+                        <label> ${currentUser.membership_start_date}</label>
+                    </div>
+                    <%--<div class="col-md-5">--%>
+                        <%--<input type="checkbox" name="userEmail" value="${currentUser.email}" required>--%>
+                    <%--</div>--%>
+                </div>
+
+                <%--<div class="form-group">--%>
+                    <%--<label class="col-md-3 control-label">Membership Day</label>--%>
+                    <%--<div class="col-md-8">--%>
+                        <%--<label> ${currentUser.membership_day}</label>--%>
+                    <%--</div>--%>
+                    <%--&lt;%&ndash;<div class="col-md-5">&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;<input type="checkbox" name="userEmail" value="${currentUser.email}" required>&ndash;%&gt;--%>
+                    <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+                <%--</div>--%>
+
+
+
                 <div class="form-group">
                     <label class="col-md-3 control-label">Username</label>
                     <div class="col-md-8">
@@ -130,6 +170,15 @@
                         <input class="form-control" type="password" name="password" placeholder="Please input new password" value="${currentUser.password}">
                     </div>
                 </div>
+
+                <div class="form-group" style="display:none">
+                    <label class="col-md-3 control-label">Email</label>
+                    <div class="col-md-8">
+                        <input class="form-control" type="text" name="userEmail" value="${currentUser.email}">
+                    </div>
+                </div>
+
+
                 <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
@@ -138,9 +187,10 @@
                         <button type="reset" class="btn btn-default">Cancel</button>
                     </div>
                 </div>
+
             </form>
 
-            <a class="col-md-8" href="/student_page" onclick="msg()">Back</a>
+            <%--<a class="col-md-8" href="/student_page" onclick="msg()">Back</a>--%>
         </div>
     </div>
 </div>
@@ -168,13 +218,13 @@
 <%--</div>--%>
 <%--</footer>--%>
 
-<script src="../js/jquery.min.js"></script>
-<script src="../js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 <%--<script src="../js/Profile-Edit-Form.js"></script>--%>
-<script src="../js/theme.js"></script>
+<script src="js/theme.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-<script src="../js/Simple-Slider.js"></script>
+<script src="js/Simple-Slider.js"></script>
 
 </body>
 <%--<script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>--%>
