@@ -1,3 +1,8 @@
+
+/*
+ * Written by Ziyun Zhong
+ */
+
 package com.dorabmon.dao.course;
 
 import com.dorabmon.dao.DatabaseDao;
@@ -57,6 +62,8 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
         }
     }
 
+
+//    Written by Yunfei Guo -- start --
     @Override
     public void Update(Course entity) throws SQLException {
         String sql = "CALL UPDATE_COURSE(?,?,?,?,?,?,?,?,?)";
@@ -74,11 +81,6 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
         DateFormat tmf = new SimpleDateFormat("HH:mm:ss");
         stmt.setString(6, tmf.format(new Date()));
         stmt.setString(7, tmf.format(new Date()));
-
-//        stmt.setString(4,entity.getCourse_start_date());
-//        stmt.setString(5, entity.getCourse_end_date());
-//        stmt.setString(6, entity.getCourse_start_time());
-//        stmt.setString(7, entity.getCourse_end_time());
         stmt.setString(8, entity.getCourse_instructor());
         stmt.setString(9, entity.getCourse_cover_image_link());
 
@@ -99,6 +101,8 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
             stmt.close();
         }
     }
+
+    // -- end --
 
 
     @Override

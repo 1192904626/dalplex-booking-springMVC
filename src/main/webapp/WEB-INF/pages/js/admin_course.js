@@ -1,3 +1,7 @@
+/*
+ * Written by Yi Ren
+ */
+
 $(document).ready(function () {
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');
@@ -53,6 +57,10 @@ function editcourse(element) {
 
 };
 
+
+/*
+ * Written by Ziyun Zhong
+ */
 document.getElementById("upload_widget_opener").addEventListener("click", function() {
     cloudinary.openUploadWidget({
             cloud_name: 'dvbwoaqub',

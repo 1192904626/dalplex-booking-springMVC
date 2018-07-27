@@ -1,3 +1,8 @@
+
+/*
+ * Written by Ziyun Zhong
+ */
+
 package com.dorabmon.dao.studentCourse;
 
 
@@ -68,12 +73,6 @@ public class StudentCourseDaoImpl implements StudentCourseDao {
         Connection conn = dbcpUtil.getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1, user.getStudent_id());
-
-        //ResultSet rs = stmt.executeQuery();
-//        while (rs.next()) {
-//            Course course = courseDao.FindById(rs.getInt("course_id"));
-//            courseIdList.add(rs);
-//        }
 
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {

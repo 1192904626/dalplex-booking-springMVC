@@ -1,3 +1,4 @@
+// Author Ziyun Zhong
 package com.dorabmon.controller;
 
 import com.dorabmon.model.Course;
@@ -40,7 +41,6 @@ public class StudentPageController {
         List<Court> studentCourtList = new ArrayList<>();
 
         HttpSession httpSession = httpServletRequest.getSession();
-       // User user = (User) httpSession.getAttribute("currentUser");
 
         if (httpSession.getAttribute("currentUser") == null) {
             ModelAndView mav1 = new ModelAndView("homePage");
@@ -56,13 +56,11 @@ public class StudentPageController {
         User user = (User) httpSession.getAttribute("currentUser");
         mav.addObject("currentUser",user);
 
-
-        // student's course
-//        User user = new User("Ye Fang","123456","902111111","ye.fang@dal.ca","2017-09-01",300,"user");
+        // render course by student ID
         studentCourseList = studentCourseService.FindCourseListByStudentId(user); // pass a user from other view
         mav.addObject("studentCourseList", studentCourseList);
 
-        // coming course
+        // render all course
         comingCourseList = courseService.FindAll();
         mav.addObject("comingCourseList",comingCourseList);
 
@@ -89,9 +87,9 @@ public class StudentPageController {
         return modelAndView;
     }
 
-//    book course by studentID, courseID
-@RequestMapping(value = "/{insert}", method = RequestMethod.POST)
-public ModelAndView courseinsert (@PathVariable("insert") String courseid, HttpServletRequest httpServletRequest) {
+    //    book course by studentID, courseID
+    @RequestMapping(value = "/{insert}", method = RequestMethod.POST)
+    public ModelAndView courseinsert (@PathVariable("insert") String courseid, HttpServletRequest httpServletRequest) {
 
     HttpSession httpSession = httpServletRequest.getSession();
     User user = (User) httpSession.getAttribute("currentUser");

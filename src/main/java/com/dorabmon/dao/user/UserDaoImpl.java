@@ -1,3 +1,7 @@
+/*
+ * Written by Ziyun Zhong
+ */
+
 package com.dorabmon.dao.user;
 
 import com.dorabmon.dao.EntityDao;
@@ -56,8 +60,6 @@ public class UserDaoImpl implements UserDao, EntityDao<User> {
     public void Update(User entity) throws SQLException {
         Connection conn = dbcpUtil.getConnection();
         String sql = "CALL UPDATE_USER(?,?,?,?,?,?,?)";
-
-//        variable order should follow the first line (temp variable) in stored procedure
         PreparedStatement stmt = conn.prepareStatement(sql);
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         stmt.setString(2, entity.getPassword());

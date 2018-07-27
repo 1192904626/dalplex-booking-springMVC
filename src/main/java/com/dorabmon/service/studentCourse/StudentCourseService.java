@@ -1,3 +1,7 @@
+/*
+ * Written by Ziyun Zhong
+ */
+
 package com.dorabmon.service.studentCourse;
 
 import com.dorabmon.model.Course;

@@ -1,3 +1,7 @@
+/*
+ * Written by Ziyun Zhong
+ */
+
 package com.dorabmon.dao.studentCourse;
 
 import com.dorabmon.dao.BaseDao;
