@@ -9,7 +9,6 @@ function deletecourse(element) {
     var courseid = element.getAttribute('value');
     $("#deletecourse").val(courseid);
 };
-
 $("#deletecourse").click(function(){
     //get id
     var courseid = $("#deletecourse").val();
@@ -17,10 +16,10 @@ $("#deletecourse").click(function(){
         url:"/course/"+courseid,
         type: 'DELETE',
         success: function (data, status){
-            if(status == "success"){
+            if(data == 'true'){
                 location.reload();
             } else {
-                alert("Delete course " + data);
+                alert("Can not delete this course, because student has registered.");
             };
 
         }

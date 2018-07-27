@@ -13,6 +13,7 @@ public interface StudentCourseDao {
     void Update(int userid, int courseid) throws SQLException;
     void Delete(int userid, int courseid) throws SQLException;
 
+    List<Integer> FindstudentBycourseId(int courseId) throws SQLException;
 
     List<Integer> FindCourseByStudentId(User user) throws SQLException;
 //    List<Integer> courseIdList = new ArrayList<Integer>();

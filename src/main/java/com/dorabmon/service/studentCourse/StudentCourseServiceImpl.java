@@ -61,6 +61,15 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     }
 
     @Override
+    public List<Integer> FindstudentIdListBycourseId(int courseId) {
+        try {
+            return studentCourseDao.FindstudentBycourseId(courseId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
     public List<Course> FindCourseListByStudentId(User user) {
 
         List<Course> courseList = new ArrayList<Course>();

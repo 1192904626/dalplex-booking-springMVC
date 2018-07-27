@@ -14,6 +14,8 @@ public interface StudentCourseService {
 
     List<Integer> FindCourseIdListByStudentId(User user);
 
+    List<Integer> FindstudentIdListBycourseId(int courseId);
+
     List<Course> FindCourseListByStudentId(User user);
 
 }

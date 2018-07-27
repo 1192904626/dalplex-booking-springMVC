@@ -2,6 +2,7 @@ package com.dorabmon.service.course;
 
 import com.dorabmon.dao.course.CourseDao;
 import com.dorabmon.model.Course;
+import com.dorabmon.service.studentCourse.StudentCourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,8 @@ public class CourseServiceImpl implements CourseService {
 
     @Autowired
     private CourseDao courseDao;
+    @Autowired
+    private StudentCourseService studentCourseService;
 
     @Override
     public void Insert(Course entity) {
@@ -23,6 +26,7 @@ public class CourseServiceImpl implements CourseService {
         }
     }
 
+    // method wrote by Yunfei Guo
     @Override
     public void Update(Course entity) {
         try{
@@ -32,6 +36,7 @@ public class CourseServiceImpl implements CourseService {
         }
     }
 
+    // method wrote by Yunfei Guo
     @Override
     public void Delete(String id) {
         try{
@@ -61,6 +66,17 @@ public class CourseServiceImpl implements CourseService {
             return courseDao.FindAll();
         }catch (SQLException e){
             throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean DeleteCheckStudentid(String id) {
+        List<Integer> studentList = studentCourseService.FindstudentIdListBycourseId(Integer.parseInt(id));
+        if(studentList.size() == 0) {
+            Delete(id);
+            return true;
+        } else {
+            return false;
         }
     }
 }

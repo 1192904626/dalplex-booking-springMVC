@@ -16,7 +16,6 @@ import java.util.List;
 public class AdminCourseController {
     @Autowired
     private CourseService courseService;
-
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public ModelAndView addCourse(HttpServletRequest httpServletRequest) {
         ModelAndView modelAndView = new ModelAndView("add_course");
@@ -29,10 +28,14 @@ public class AdminCourseController {
     @ResponseBody
     public String coursedelete(@PathVariable("courseid") String courseid, HttpServletRequest httpServletRequest) {
         try {
-            courseService.Delete(courseid);
-            return "success";
+            Boolean result = courseService.DeleteCheckStudentid(courseid);
+            if(result) {
+                return "true";
+            } else {
+                return "false";
+            }
         } catch (Exception e) {
-            return "fail";
+            return "false";
         }
 
     }

@@ -89,6 +89,7 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
         }
     }
 
+    // wrote by Yunfei Guo
     @Override
     public void Delete(String id) throws SQLException {
         Connection conn = dbcpUtil.getConnection();

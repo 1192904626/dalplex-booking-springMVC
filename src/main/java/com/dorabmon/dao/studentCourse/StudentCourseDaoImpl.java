@@ -62,19 +62,34 @@ public class StudentCourseDaoImpl implements StudentCourseDao {
     }
 
     @Override
+    public List<Integer> FindstudentBycourseId(int courseId) throws SQLException {
+        List<Integer> studentIdList = new ArrayList<Integer>();
+//        FIND_STUDENT_COURSE_BY_COURSE_ID
+        String sql = "CALL FIND_STUDENT_COURSE_BY_COURSE_ID(?)";
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, courseId);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            studentIdList.add(rs.getInt("student_id"));
+        }
+        rs.close();
+        if (stmt != null) {
+            stmt.close();
+        }
+
+        return studentIdList;
+
+    }
+
+
+    @Override
     public List<Integer> FindCourseByStudentId(User user) throws SQLException {
         List<Integer> courseIdList = new ArrayList<Integer>();
         String sql = "CALL FIND_STUDENT_COURSE_BY_STUDENT_ID(?)";
         Connection conn = dbcpUtil.getConnection();
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1, user.getStudent_id());
-
-        //ResultSet rs = stmt.executeQuery();
-//        while (rs.next()) {
-//            Course course = courseDao.FindById(rs.getInt("course_id"));
-//            courseIdList.add(rs);
-//        }
-
         ResultSet rs = stmt.executeQuery();
         while (rs.next()) {
             courseIdList.add(rs.getInt("course_id"));
