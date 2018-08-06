@@ -64,17 +64,18 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input  class="form-control form-control-lg item" placeholder="Email" type="email" id="email" name="email" pattern="^(?=.*\d){6,11}"/>
+                <input  class="form-control form-control-lg item" placeholder="Email" type="email" id="email" name="email" required/>
             </div>
             <div class="form-group">
                 <label  for="password">Password</label>
                 <input  class="form-control form-control-lg item" type="password" placeholder="Password" id="password" name="password"
                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{8,}"
-                       title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number."/>
+                       title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number." required/>
             </div>
             <div class="form-group">
                 <label  for="phone">Phone</label>
-                <input  class="form-control form-control-lg item" type="text" placeholder="Phone Number" id="phone" name="phone" required/>
+                <input  class="form-control form-control-lg item" type="tel" placeholder="Phone Number" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                        title="000-000-0000" required/>
             </div>
 
             <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup">Sign Up</button>
@@ -103,10 +104,16 @@
         //if ()
     });
 
+//    $("#phone").blur(function(){
+//        var phone = $("#phone").val();
+//        var regex2 = /^[0-9]+$/;
+//    });
+
     $("#signup").click(function () {
         var name = $("#name").val();
         var email = $("#email111").val();
         var password = $("#password").val();
+//        var phone = $("#phone").val();
 
         // if (name != "" && email != "" && password != ""){
         //
