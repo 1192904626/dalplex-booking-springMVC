@@ -64,7 +64,7 @@
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input  class="form-control form-control-lg item" placeholder="Email" type="email" id="email" name="email" />
+                <input  class="form-control form-control-lg item" placeholder="Email" type="email" id="email" name="email" pattern="^(?=.*\d){6,11}"/>
             </div>
             <div class="form-group">
                 <label  for="password">Password</label>
@@ -72,9 +72,17 @@
                        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{8,}"
                        title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number."/>
             </div>
+            <div class="form-group">
+                <label  for="phone">Phone</label>
+                <input  class="form-control form-control-lg item" type="text" placeholder="Phone Number" id="phone" name="phone" required/>
+            </div>
+
             <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup">Sign Up</button>
-            <a href="/login" style="margin-top:-1px;">Already signed up? Login here.</a>
+
         </form>
+        <div class="text-center">
+            <a href="/login" style="margin-top:-1px;">Already signed up? Login here.</a>
+        </div>
     </section>
 </main>
 <footer class="page-footer">

@@ -89,8 +89,13 @@
                        title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number.">
             </div>
             <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup">Sign In</button>
-            <a href="/signup" style="margin-top:-1px;">Don't have an account? Sign up here.</a>
+
         </form>
+        <div class="text-center">
+            <a href="/signup" style="margin-top:-1px;">Don't have an account? Sign up here.</a><br>
+            <a href="/forgotPassword" style="margin-top:-1px;">Forgot password? Click here.</a>
+        </div>
+
     </section>
 </main>
 <footer class="page-footer">

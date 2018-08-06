@@ -157,6 +157,14 @@
         </div>
     </section>
 
+    <section class="portfolio-block call-to-action border-bottom">
+        <div class="container">
+            <div class="d-flex justify-content-center align-items-center content">
+                <h3>Looking for a court? Yoga fans? Book today !</h3>
+                <a href="/login"><button class="btn btn-outline-primary btn-lg" type="button">Join Us</button></a></div>
+        </div>
+    </section>
+
 <section class="portfolio-block skills" style="padding-top:50px;">
     <div class="container">
         <div class="heading">

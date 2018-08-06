@@ -32,7 +32,7 @@ public class SignUpController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public ModelAndView addUser(HttpServletRequest request, HttpServletResponse response,
+    public ModelAndView addUser(@RequestParam("phone") String phone, HttpServletRequest request, HttpServletResponse response,
                                 User user) {
         ModelAndView mav;
         HttpSession httpSession = request.getSession();
@@ -41,6 +41,7 @@ public class SignUpController {
 //            user.setStudent_name(student_name);
 //            user.setEmail(email);
 //            user.setPassword(password);
+            user.setPhone_number(phone);
             user.setStudent_role("user");
             userService.Insert(user);
 

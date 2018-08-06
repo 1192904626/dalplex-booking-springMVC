@@ -37,6 +37,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void Update(User entity) {
         try {
+            entity.setPassword(passwordEncoder.encode(entity.getPassword()));
             userDao.Update(entity);
         }catch (SQLException e) {
             throw new RuntimeException(e);

@@ -184,7 +184,7 @@
                     <div class="col-md-8">
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                         <span></span>
-                        <button type="reset" class="btn btn-default">Cancel</button>
+                        <button type="reset" class="btn btn-primary">Cancel</button>
                     </div>
                 </div>
 
