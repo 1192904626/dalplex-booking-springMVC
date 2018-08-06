@@ -36,7 +36,7 @@ public class StudentPageController {
 
         ModelAndView mav = new ModelAndView("student_page");
         List<Course> studentCourseList = new ArrayList<>();
-        List<Course> comingCourseList = new ArrayList<>();
+//        List<Course> comingCourseList = new ArrayList<>();
         List<Court> studentCourtList = new ArrayList<>();
 
         HttpSession httpSession = httpServletRequest.getSession();
@@ -62,9 +62,9 @@ public class StudentPageController {
         studentCourseList = studentCourseService.FindCourseListByStudentId(user); // pass a user from other view
         mav.addObject("studentCourseList", studentCourseList);
 
-        // coming course
-        comingCourseList = courseService.FindAll();
-        mav.addObject("comingCourseList",comingCourseList);
+//        // coming course
+//        comingCourseList = courseService.FindAll();
+//        mav.addObject("comingCourseList",comingCourseList);
 
         // render court by student ID
         studentCourtList = courtService.listCourtsByStudentID(user.getStudent_id());
@@ -90,16 +90,16 @@ public class StudentPageController {
     }
 
 //    book course by studentID, courseID
-@RequestMapping(value = "/{insert}", method = RequestMethod.POST)
-public ModelAndView courseinsert (@PathVariable("insert") String courseid, HttpServletRequest httpServletRequest) {
-
-    HttpSession httpSession = httpServletRequest.getSession();
-    User user = (User) httpSession.getAttribute("currentUser");
-    studentCourseService.Insert(user.getStudent_id(), Integer.parseInt(courseid));
-    // return
-    ModelAndView modelAndView = new ModelAndView("student_page");
-    return modelAndView;
-}
+//@RequestMapping(value = "/{insert}", method = RequestMethod.POST)
+//public ModelAndView courseinsert (@PathVariable("insert") String courseid, HttpServletRequest httpServletRequest) {
+//
+//    HttpSession httpSession = httpServletRequest.getSession();
+//    User user = (User) httpSession.getAttribute("currentUser");
+//    studentCourseService.Insert(user.getStudent_id(), Integer.parseInt(courseid));
+//    // return
+//    ModelAndView modelAndView = new ModelAndView("student_page");
+//    return modelAndView;
+//}
 
 
 

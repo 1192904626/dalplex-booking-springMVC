@@ -59,6 +59,10 @@
              id="navbarNav">
             <ul class="nav navbar-nav ml-auto">
 
+                <li class="nav-item" ><a class="nav-link" href="/classes">class</a></li>
+
+                <li class="nav-item" ><a class="nav-link" href="/studentCourt/pages/tennis">Court</a></li>
+
                 <li class="nav-item" ><a class="nav-link" href="/profile/edit">Edit Profile</a></li>
                 <li class="nav-item" ><a class="nav-link" href="/logout">Logout</a></li>
 
@@ -85,7 +89,7 @@
                 <c:forEach items="${studentCourseList}" var="studentCourse">
                     <div class="col-sm-6 col-md-4 col-lg-3 item">
                         <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
-                            <img  class="img-fluid" src=${studentCourse.course_cover_image_link}>
+                            <img  class="img-fluid"  style="width:220px;height:150px;" src=${studentCourse.course_cover_image_link}>
                         </a>
                         <label style="font-size:28px;padding-left:0px;">${studentCourse.course_name}</label>
                         <label style="font-size:19px;padding-left:0px;width:100%;">${studentCourse.course_start_date}</label>
@@ -115,53 +119,26 @@
 </section>
 
 <section>
-    <div class="photo-gallery">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">Coming Course</h2>
-            </div>
-            <div class="row photos">
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 offset-xl-0 item">--%>
-                <%--<a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/yoga.jpg"></a>--%>
-                <%--<label style="font-size:28px;padding-left:0px;width:100%;">Yoga 102</label>--%>
-                <%--<label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-
-                <c:forEach items="${comingCourseList}" var="comingCourse">
-                    <div class="col-sm-6 col-md-4 col-lg-3 item">
-                        <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
-                            <img  class="img-fluid" src=${comingCourse.course_cover_image_link}>
-                        </a>
-                        <label style="font-size:28px;padding-left:0px;">${comingCourse.course_name}</label>
-                        <button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>
-                    </div>
-                </c:forEach>
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/swimming.jpg"></a><label style="font-size:28px;width:100%;">Swimming 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/boxing.jpg"></a><label style="font-size:28px;width:100%;">Boxing 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/basketball.jpg"></a><label style="font-size:28px;width:100%;">Basketball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/loft.jpg" data-lightbox="photos"><image alt="#" class="img-fluid delete-course" src="image/socor.jpg"></a><label style="font-size:28px;width:100%;">Soccor 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/baseball.jpg"></a><label style="font-size:28px;width:100%;">Baseball 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton.jpg"></a><label style="font-size:28px;width:100%;">Badminton 102</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-                <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/desk.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/tabletennis.jpg"></a><label style="font-size:28px;">Table Tennis</label><label style="font-size:19px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
-                <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal">Book</button>--%>
-                <%--</div>--%>
-            </div>
-        </div>
-    </div>
-
+    <%--<div class="photo-gallery">--%>
+        <%--<div class="container">--%>
+            <%--<div class="intro">--%>
+                <%--<h2 class="text-center">Coming Course</h2>--%>
+            <%--</div>--%>
+            <%--<div class="row photos">--%>
+          <%----%>
+                <%--<c:forEach items="${comingCourseList}" var="comingCourse">--%>
+                    <%--<div class="col-sm-6 col-md-4 col-lg-3 item">--%>
+                        <%--<a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">--%>
+                            <%--<img  class="img-fluid" src=${comingCourse.course_cover_image_link}>--%>
+                        <%--</a>--%>
+                        <%--<label style="font-size:28px;padding-left:0px;">${comingCourse.course_name}</label>--%>
+                        <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>--%>
+                    <%--</div>--%>
+                <%--</c:forEach>--%>
+             <%----%>
+            <%--</div>--%>
+        <%--</div>--%>
+    <%--</div>--%>
 </section>
 <section>
     <div class="photo-gallery">
@@ -177,7 +154,7 @@
                 <c:forEach items="${studentCourtList}" var="studentCourt">
                     <div class="col-sm-6 col-md-4 col-lg-3 item">
                         <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
-                            <img  class="img-fluid" src="https://res.cloudinary.com/dirbnqgl0/image/upload/v1531855119/basketball_court.jpg">
+                            <img style="width:220px;height:150px;" class="img-fluid" src="https://res.cloudinary.com/dirbnqgl0/image/upload/v1531855119/basketball_court.jpg">
                         </a>
                         <label style="font-size:28px;padding-left:0px;">${studentCourt.courtName}</label>
                         <p>${studentCourt.courtDescription}<p>
@@ -358,8 +335,6 @@
 
 
                             <%--</div>--%>
-                        </di>
-                    </form>
                 </div>
                 <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>
             </div>

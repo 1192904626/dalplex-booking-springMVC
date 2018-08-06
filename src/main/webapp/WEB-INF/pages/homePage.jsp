@@ -59,6 +59,8 @@
                     </c:if>
                 <c:if test="${userStatus != null && userStatus != ''}" >
                         <c:if test="${adminStatus == 'user'}">
+
+
                         <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Welcome ${currentUser.student_name}</a>
                             <div class="dropdown-menu" role="menu">
                                 <a class="dropdown-item"  href="/student_page">MyBooking</a>
@@ -67,6 +69,7 @@
                         </li>
 
                         </c:if>
+                        <li class="nav-item" ><a class="nav-link" href="/classes">Classes</a></li>
 
                         <li class="dropdown"><a class="dropdown-toggle nav-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#" style="padding-right:32px;">Courts</a>
                         <div class="dropdown-menu" role="menu">
