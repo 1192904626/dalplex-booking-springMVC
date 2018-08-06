@@ -69,13 +69,18 @@
                     </div>
 
                     <div class="form-group">
+                        <label  for="student_name">Phone</label>
+                        <input  class="form-control form-control-lg item" type="text" placeholder="Username" id="student_name" name="student_name" required/>
+                    </div>
+
+                    <div class="form-group">
                         <label  for="newpwd">Password</label>
                         <input  class="form-control form-control-lg item" type="password" placeholder="New Password" id="newpwd" name="newpwd"
                                 pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d$@$!%*?&]{8,}"
                                 title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number." required/>
                     </div>
 
-                    <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup">Submit</button>
+                    <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup" onsubmit="successMsg()">Submit</button>
 
                 </form>
         <div class="text-center">
@@ -85,6 +90,11 @@
         <script>
             function adminMsg() {
                 alert("We are here to help! Please contact CustomerService@dorabmon.org or call (800)-8858-8888")
+            }
+        </script>
+        <script>
+            function successMsg() {
+                alert("Password successfully reset !")
             }
         </script>
 

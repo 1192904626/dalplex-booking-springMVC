@@ -31,7 +31,7 @@ public class ForgotPwdController {
 
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.POST)
     public ModelAndView processForgotPasswordForm(@RequestParam("email") String userEmail, @RequestParam("phone") String phone,
-                                                  @RequestParam("newpwd") String newPwd,
+                                                  @RequestParam("newpwd") String newPwd, @RequestParam("student_name") String student_name,
                                                   HttpServletRequest request,
                                                   HttpServletResponse response) throws IOException {
 
@@ -40,7 +40,7 @@ public class ForgotPwdController {
 
         if (user!=null)
         {
-            if (user.getPhone_number().equals(phone))
+            if (user.getPhone_number().equals(phone) && user.getStudent_name().equals(student_name))
             {
                 user.setPassword(newPwd);
                 userService.Update(user);
@@ -52,7 +52,7 @@ public class ForgotPwdController {
             }else {
 
                 modelAndView = new ModelAndView("forgotPassword");
-                modelAndView.addObject("errorMsg","Phone number and email address don't match !");
+                modelAndView.addObject("errorMsg","Phone number, email address, username don't match !");
                 return modelAndView;
             }
 
