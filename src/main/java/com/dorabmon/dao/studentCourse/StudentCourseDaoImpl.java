@@ -3,6 +3,7 @@ package com.dorabmon.dao.studentCourse;
 
 import com.dorabmon.model.User;
 import com.dorabmon.util.DBCPUtil;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
@@ -30,7 +31,6 @@ public class StudentCourseDaoImpl implements StudentCourseDao {
         stmt.executeUpdate();
 
         stmt.close();
-
     }
 
     @Override
@@ -100,6 +100,30 @@ public class StudentCourseDaoImpl implements StudentCourseDao {
         }
 
         return courseIdList;
+    }
+
+
+
+    @Override
+    public int checkDuplicattion(int userid, int courseid) throws SQLException {
+        int exist = 0;
+        String sql = "CALL CHECK_DUPLICATE_USERID_COURSEID(?,?)";
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, userid);
+        stmt.setInt(2, courseid);
+        ResultSet rs = stmt.executeQuery();
+
+
+        if (rs.next()) {
+            exist = rs.getInt("id");
+        }
+        rs.close();
+        if (stmt != null) {
+            stmt.close();
+        }
+        return exist;
+
     }
 
 

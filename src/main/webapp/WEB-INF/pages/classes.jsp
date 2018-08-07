@@ -84,6 +84,7 @@
     </div>
 </nav>
 <main class="page hire-me-page">
+
     <section>
         <div class="photo-gallery">
             <div class="container">
@@ -134,6 +135,8 @@
         </div>
     </div>
 </div>
+
+
 
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
