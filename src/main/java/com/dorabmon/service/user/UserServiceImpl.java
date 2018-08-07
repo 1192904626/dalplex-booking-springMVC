@@ -26,10 +26,10 @@ public class UserServiceImpl implements UserService {
     public void Insert(User entity) {
         try {
             entity.setPassword(passwordEncoder.encode(entity.getPassword()));
-            if (userDao.FindById(entity.getStudent_id()) == null){
+            if (userDao.FindById(entity.getStudent_id()) == null) {
                 userDao.Insert(entity);
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
         try {
             entity.setPassword(passwordEncoder.encode(entity.getPassword()));
             userDao.Update(entity);
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
         try {
             //entity.setPassword(passwordEncoder.encode(entity.getPassword()));
             userDao.Update(entity);
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
     public void Delete(String id) {
         try {
             userDao.Delete(id);
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -77,7 +77,7 @@ public class UserServiceImpl implements UserService {
     public List<User> FindAll() {
         try {
             return userDao.FindAll();
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -86,22 +86,31 @@ public class UserServiceImpl implements UserService {
     public User Login(String email, String password) {
         try {
             User user = userDao.FindByEmail(email);
-            if (user != null && passwordEncoder.matches(password, user.getPassword())){
+            if (user != null && passwordEncoder.matches(password, user.getPassword())) {
                 return user;
-            }else {
+            } else {
                 return null;
             }
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
     public User FindByEmail(String email) {
-        try{
+        try {
             return userDao.FindByEmail(email);
-        }catch (SQLException e) {
-        throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+    @Override
+    public void UpdateMemberShip(User entity) {
+        try {
+            userDao.UpdateMemberShip(entity);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

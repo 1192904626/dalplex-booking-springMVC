@@ -76,10 +76,25 @@ public class UserDaoImpl implements UserDao, EntityDao<User> {
     }
 
     @Override
+    public void UpdateMemberShip(User entity) throws SQLException {
+        Connection conn = dbcpUtil.getConnection();
+        String sql = "update student_table set membership_start_date = ?, membership_day = ? where email = ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, entity.getMembership_start_date());
+        stmt.setInt(2, entity.getMembership_day());
+        stmt.setString(3, entity.getEmail());
+
+        stmt.executeUpdate();
+        if (stmt != null){
+            stmt.close();
+        }
+    }
+
+    @Override
     public void Delete(String id) throws SQLException {
         Connection conn = dbcpUtil.getConnection();
-        PreparedStatement stmt = conn.prepareStatement("CALL DELETE_USER_BY_EMAIL(?)");
-        stmt.setString(1, id);
+        PreparedStatement stmt = conn.prepareStatement("CALL DELETE_USER_BY_ID(?)");
+        stmt.setInt(1, Integer.valueOf(id));
         stmt.executeUpdate();
 
         if (stmt != null) {
@@ -185,5 +200,7 @@ public class UserDaoImpl implements UserDao, EntityDao<User> {
         }
         return user;
     }
+
+
 
 }

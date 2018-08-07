@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Controller
@@ -22,5 +23,36 @@ public class AdminUserController {
         List<User> userList = userService.FindAll();
         modelAndView.addObject("userList", userList);
         return modelAndView;
+    }
+
+
+    @RequestMapping(value = "/{userid}", method = RequestMethod.GET)
+    @ResponseBody
+    public String deleteUser(@PathVariable("userid") int userid, HttpServletRequest httpServletRequest) {
+        try {
+            userService.Delete(String.valueOf(userid));
+            return "success";
+        } catch (Exception e) {
+            return "fail";
+        }
+    }
+
+    @RequestMapping(value = "/list/{userid}", method = RequestMethod.POST)
+    public void updateUser(User user, HttpServletResponse response) {
+
+        userService.UpdateMemberShip(user);
+
+        try {
+            response.sendRedirect("/adminUser/list");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @RequestMapping(value = "/list/{userid}", method = RequestMethod.GET)
+    @ResponseBody
+    public User getUser(@PathVariable("userid") int userid) {
+
+        return userService.FindById(userid);
     }
 }
