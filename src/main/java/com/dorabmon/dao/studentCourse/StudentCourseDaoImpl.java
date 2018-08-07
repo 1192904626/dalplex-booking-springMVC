@@ -3,7 +3,6 @@ package com.dorabmon.dao.studentCourse;
 
 import com.dorabmon.model.User;
 import com.dorabmon.util.DBCPUtil;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
