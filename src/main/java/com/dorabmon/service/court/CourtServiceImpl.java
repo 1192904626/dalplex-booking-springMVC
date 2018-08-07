@@ -253,4 +253,19 @@ public class CourtServiceImpl implements CourtService {
 //        }
 
     }
+
+    @Override
+    public boolean deleteBookingCourtById(String id) {
+
+        try {
+            courtBookingDao.Delete(id);
+            return true;
+
+        } catch (SQLException e) {
+
+            logger.error("Error deleteBookingCourtById:" + e.getMessage());
+            e.printStackTrace();
+        }
+        return false;
+    }
 }
