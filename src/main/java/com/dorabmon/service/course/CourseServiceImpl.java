@@ -79,4 +79,16 @@ public class CourseServiceImpl implements CourseService {
             return false;
         }
     }
+
+    @Override
+    public List<Course> FindOtherCourseByStudentId(int studentId) {
+        try {
+
+            return courseDao.FindOtherCourseByStudentId(studentId);
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -118,4 +118,13 @@ public class StudentCourtController {
 
     }
 
+    @RequestMapping(value = "/courtBooking/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public ResultResponse deleteBookCourtById(@PathVariable("id") String id, HttpServletRequest httpServletRequest)
+    {
+        boolean result = courtService.deleteBookingCourtById(id);
+        return new ResultResponse(result);
+
+    }
+
 }

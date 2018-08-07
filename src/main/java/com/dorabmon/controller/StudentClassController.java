@@ -49,7 +49,7 @@ public class StudentClassController {
             mav.addObject("currentUser", user);
 
             // coming course
-            comingCourseList = courseService.FindAll();
+            comingCourseList = courseService.FindOtherCourseByStudentId(user.getStudent_id());
             mav.addObject("comingCourseList",comingCourseList);
 
         }
@@ -57,15 +57,23 @@ public class StudentClassController {
     }
 
     @RequestMapping(value = "/student_page/{insert}", method = RequestMethod.POST)
-    public ModelAndView courseinsert (@PathVariable("insert") String courseid, HttpServletRequest httpServletRequest) {
+    public ModelAndView courseinsert (@PathVariable("insert") int courseid, HttpServletRequest httpServletRequest) {
 
         ModelAndView mav;
         HttpSession httpSession = httpServletRequest.getSession();
         User user = (User) httpSession.getAttribute("currentUser");
-        studentCourseService.Insert(user.getStudent_id(), Integer.parseInt(courseid));
-        // return
-        mav = new ModelAndView("classes");
-        return mav;
+        if (studentCourseService.DuplicateCheck(user.getStudent_id(), courseid) == 0) {
+            studentCourseService.Insert(user.getStudent_id(), courseid);
+            // return
+            mav = new ModelAndView("classes");
+            mav.addObject("duplicatebooking", 0); // no duplicate value
+            return mav;
+        } else {
+            mav = new ModelAndView("classes");
+            mav.addObject("duplicatebooking", 1); // has duplicate value
+            return mav;
+        }
+
     }
 
 }

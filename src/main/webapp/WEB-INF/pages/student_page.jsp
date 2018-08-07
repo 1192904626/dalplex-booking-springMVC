@@ -167,7 +167,8 @@
                                 <p><font color="green">Valid</font><p>
                             </c:otherwise>
                         </c:choose>
-                        <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>--%>
+                        <button class="btn btn-danger" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal3" onclick="deleteCourt(this)" value=${studentCourt.book_court_id}>Delete</button>
+                            <%--<button class="btn btn-primary book-course" type="button" style="width:100%;" data-toggle="modal" data-target="#myModal"  onclick="insertcourse(this)"   value=${comingCourse.course_id}>Book</button>--%>
                     </div>
                 </c:forEach>
                 <%--<div class="col-sm-6 col-md-4 col-lg-3 item"><a href="image/building.jpg" data-lightbox="photos"><image alt="#" class="img-fluid" src="image/badminton_court.jpg"></a><label style="font-size:28px;">Badminton 1</label><label style="font-size:19px;padding-left:0px;width:100%;">2018-07-17 5:00pm-6:00pm</label>--%>
@@ -282,6 +283,26 @@
 <%--</div><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">--%>
 
 <div class="book-course-modal">
+
+    <div role="dialog" tabindex="-1" class="modal fade" id="myModal3">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>Are you sure to delete?</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <p class="text-center text-muted">Deleted item can not be recovered.</p >
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" id="delete_court_id" value=""/>
+                    <button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button>
+                    <button class="btn btn-primary" type="button" onclick="deleteCourtConfirm()">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div role="dialog" tabindex="-1" class="modal fade" id="myModal2">
         <div class="modal-dialog" role="document">
             <div class="modal-content">

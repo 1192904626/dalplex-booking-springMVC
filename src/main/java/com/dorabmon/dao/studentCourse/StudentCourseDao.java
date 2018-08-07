@@ -16,7 +16,12 @@ public interface StudentCourseDao {
     List<Integer> FindstudentBycourseId(int courseId) throws SQLException;
 
     List<Integer> FindCourseByStudentId(User user) throws SQLException;
+
+
 //    List<Integer> courseIdList = new ArrayList<Integer>();
+    int checkDuplicattion(int userid, int courseid) throws SQLException;
+
+
 
 
 }

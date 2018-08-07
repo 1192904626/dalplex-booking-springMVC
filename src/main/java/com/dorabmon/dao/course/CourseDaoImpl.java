@@ -171,4 +171,24 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
             throw new RuntimeException(e);
         }
     }
-}
+
+    @Override
+    public List FindOtherCourseByStudentId(int studentId) throws SQLException {
+        List<Course> courseList = new ArrayList<Course>();
+        String sql = "CALL LIST_OTHER_COURSE(?)";
+        Connection conn = dbcpUtil.getConnection();
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setInt(1, studentId);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            courseList.add(this.setResult(rs));
+        }
+        rs.close();
+        if (stmt != null) {
+            stmt.close();
+        }
+
+        return courseList;
+
+    }
+    }

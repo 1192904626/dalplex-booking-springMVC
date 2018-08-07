@@ -18,4 +18,8 @@ public interface StudentCourseService {
 
     List<Course> FindCourseListByStudentId(User user);
 
+    int DuplicateCheck(int userid, int courseid);
+
+
+
 }

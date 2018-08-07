@@ -20,6 +20,10 @@ public class StudentCourseServiceImpl implements StudentCourseService {
     @Autowired
     private CourseDao courseDao;
 
+
+
+
+
     @Override
     public void Insert(int userid, int courseid) {
         try {
@@ -98,5 +102,18 @@ public class StudentCourseServiceImpl implements StudentCourseService {
 
         return null;
     }
+
+    @Override
+    public int DuplicateCheck(int userid, int courseid) {
+        try {
+            int count = studentCourseDao.checkDuplicattion(userid, courseid);
+            return count;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
 
