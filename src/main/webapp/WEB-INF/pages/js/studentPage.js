@@ -38,3 +38,24 @@ $("#insertcourse").click(function(){
     })
 });
 
+function deleteCourt(element){
+
+    var courtId = element.getAttribute('value');
+    $("#delete_court_id").val(courtId);
+
+}
+
+function deleteCourtConfirm(){
+
+    var court_id = $("#delete_court_id").val();
+    $.ajax({
+        url:"/studentCourt/courtBooking/"+court_id,
+        type: 'DELETE',
+        success: function (data, status){
+            if(status == "success" && data.result == true){
+                location.reload();
+            };
+        }
+    });
+
+}

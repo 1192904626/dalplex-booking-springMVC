@@ -130,11 +130,16 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" type="button" data-dismiss="modal">Close</button>
-                    <button class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>
+                    <button onclick="registerMsg()" class="btn btn-primary" type="button" id="insertcourse">Confirm</button></div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    function registerMsg(){
+        alert("Successfully booked this course !");
+    }
+</script>
 
 
 

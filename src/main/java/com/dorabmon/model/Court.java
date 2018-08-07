@@ -16,6 +16,7 @@ public class Court {
     private int remains = 12;
     private Timestamp book_time = null;
     private boolean is_expired = false;
+    private Integer book_court_id = null;
 
     public Court() {
     }
@@ -98,5 +99,13 @@ public class Court {
 
     public void setBook_time(Timestamp book_time) {
         this.book_time = book_time;
+    }
+
+    public Integer getBook_court_id() {
+        return book_court_id;
+    }
+
+    public void setBook_court_id(Integer book_court_id) {
+        this.book_court_id = book_court_id;
     }
 }

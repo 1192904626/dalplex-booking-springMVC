@@ -175,7 +175,8 @@ public class CourtDaoImpl implements CourtDao, EntityDao<Court> {
         List<Court> courtList = new ArrayList<>();
         Connection conn = dbcpUtil.getConnection();
 
-        String sql = "select b.court_id,b.court_type, b.court_name,b.description, b.capacity, a.student_id, a.book_time " +
+        String sql = "select a.id as court_book_id, " +
+                "b.court_id,b.court_type, b.court_name,b.description, b.capacity, a.student_id, a.book_time " +
                 "from court_booking_table a inner join court_table b " +
                 "  on a.court_id = b.court_id " +
                 "where a.student_id = ? order by book_time desc;";
@@ -188,6 +189,7 @@ public class CourtDaoImpl implements CourtDao, EntityDao<Court> {
         while (rs.next()) {
             court = this.setResult(rs);
             court.setBook_time(rs.getTimestamp("book_time"));
+            court.setBook_court_id(rs.getInt("court_book_id"));
             courtList.add(court);
         }
         rs.close();

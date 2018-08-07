@@ -7,7 +7,7 @@ public class User {
     private String phone_number;
     private String email;
     private String membership_start_date;
-    private int membership_day;
+    private int membership_day = 100;
     private String student_role;
 
     public User() {
