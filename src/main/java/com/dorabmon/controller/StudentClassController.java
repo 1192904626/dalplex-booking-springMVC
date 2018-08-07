@@ -29,50 +29,51 @@ public class StudentClassController {
 
 
     @RequestMapping(value = "/classes", method = RequestMethod.GET)
-    public ModelAndView classList(HttpServletRequest request, HttpServletResponse response){
+    public ModelAndView classList(HttpServletRequest request, HttpServletResponse response) {
 
         ModelAndView mav = new ModelAndView("classes");
         List<Course> comingCourseList = new ArrayList<>();
         HttpSession httpSession = request.getSession();
-        if(httpSession.getAttribute("currentUser")==null){
+        if (httpSession.getAttribute("currentUser") == null) {
             mav.setViewName("homepage");
-           // ModelAndView mav1 = new ModelAndView("homepage");
+            // ModelAndView mav1 = new ModelAndView("homepage");
             try {
                 response.sendRedirect("/");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-          //  return mav;
-        }
-        else {
+            //  return mav;
+        } else {
             User user = (User) httpSession.getAttribute("currentUser");
             mav.addObject("currentUser", user);
 
-            // coming course
+            // coming course, book and vanish
             comingCourseList = courseService.FindOtherCourseByStudentId(user.getStudent_id());
-            mav.addObject("comingCourseList",comingCourseList);
+            mav.addObject("comingCourseList", comingCourseList);
+
+//            coming course
+//            comingCourseList = courseService.FindAll();
+//            mav.addObject("comingCourseList", comingCourseList);
+
 
         }
         return mav;
     }
 
     @RequestMapping(value = "/student_page/{insert}", method = RequestMethod.POST)
-    public ModelAndView courseinsert (@PathVariable("insert") int courseid, HttpServletRequest httpServletRequest) {
+    public ModelAndView courseinsert(@PathVariable("insert") int courseid, HttpServletRequest httpServletRequest) {
 
         ModelAndView mav;
         HttpSession httpSession = httpServletRequest.getSession();
         User user = (User) httpSession.getAttribute("currentUser");
-        if (studentCourseService.DuplicateCheck(user.getStudent_id(), courseid) == 0) {
-            studentCourseService.Insert(user.getStudent_id(), courseid);
-            // return
-            mav = new ModelAndView("classes");
-            mav.addObject("duplicatebooking", 0); // no duplicate value
-            return mav;
-        } else {
-            mav = new ModelAndView("classes");
-            mav.addObject("duplicatebooking", 1); // has duplicate value
-            return mav;
-        }
+
+        studentCourseService.Insert(user.getStudent_id(), courseid);
+        int status = studentCourseService.DuplicateCheck(user.getStudent_id(), courseid);
+        // return
+        mav = new ModelAndView("classes");
+        mav.addObject("duplicatebooking", status);
+        return mav;
+
 
     }
 
