@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label  for="student_name">Phone</label>
+                        <label  for="student_name">Username</label>
                         <input  class="form-control form-control-lg item" type="text" placeholder="Username" id="student_name" name="student_name" required/>
                     </div>
 
@@ -80,23 +80,25 @@
                                 title="At least 8 digits. Must contain a lowercase letter, a uppercase letter and a number." required/>
                     </div>
 
-                    <button class="btn btn-primary btn-block btn-lg" type="submit" id="signup" onsubmit="successMsg()">Submit</button>
+                    <button onsubmit="successMsg()" class="btn btn-primary btn-block btn-lg" type="submit" id="signup" >Submit</button>
 
                 </form>
         <div class="text-center">
             <a href="#" onclick="adminMsg()" style="margin-top:-1px;">Can't find your account?</a><br>
         </div>
+        <script>
+            function successMsg() {
+                alert("Password successfully reset !")
+            }
+        </script>
+
 
         <script>
             function adminMsg() {
                 alert("We are here to help! Please contact CustomerService@dorabmon.org or call (800)-8858-8888")
             }
         </script>
-        <script>
-            function successMsg() {
-                alert("Password successfully reset !")
-            }
-        </script>
+
 
     </section>
 </main>
