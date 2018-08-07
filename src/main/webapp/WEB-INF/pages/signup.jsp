@@ -74,7 +74,7 @@
             </div>
             <div class="form-group">
                 <label  for="phone">Phone</label>
-                <input  class="form-control form-control-lg item" type="tel" placeholder="Phone Number" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                <input  class="form-control form-control-lg item" type="tel" placeholder="Phone Number" id="phone" name="phone" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                         title="000-000-0000" required/>
             </div>
 

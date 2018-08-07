@@ -40,21 +40,21 @@ public class ForgotPwdController {
 
         if (user!=null)
         {
-            if (user.getPhone_number().equals(phone) && user.getStudent_name().equals(student_name))
-            {
-                user.setPassword(newPwd);
-                userService.Update(user);
-                modelAndView = new ModelAndView("login");
-                response.sendRedirect("/login");
-                return modelAndView;
-                //modelAndView.addObject("errorMsg","Right email address...please continue");
+                if (user.getPhone_number().equals(phone) && user.getStudent_name().equals(student_name))
+                {
+                    user.setPassword(newPwd);
+                    userService.Update(user);
+                    modelAndView = new ModelAndView("homepage");
+                    response.sendRedirect("/");
+                    return modelAndView;
+                    //modelAndView.addObject("errorMsg","Right email address...please continue");
 
-            }else {
+                }else {
 
-                modelAndView = new ModelAndView("forgotPassword");
-                modelAndView.addObject("errorMsg","Phone number, email address, username don't match !");
-                return modelAndView;
-            }
+                    modelAndView = new ModelAndView("forgotPassword");
+                    modelAndView.addObject("errorMsg","Phone number, email address, username don't match !");
+                    return modelAndView;
+                }
 
         }
         else {
