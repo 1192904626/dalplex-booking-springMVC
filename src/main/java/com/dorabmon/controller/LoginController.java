@@ -19,6 +19,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 @Controller
 public class LoginController {
@@ -50,6 +55,30 @@ public class LoginController {
         ModelAndView mav;
         User user = userService.Login(email, password);
         if (user != null) {
+
+            DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");
+            Date start_date = null;
+
+            try {
+
+                Calendar validUntilCalendar = Calendar.getInstance();
+                start_date = fmt.parse(user.getMembership_start_date());
+                validUntilCalendar.setTime(start_date);
+                validUntilCalendar.add(Calendar.DAY_OF_YEAR, user.getMembership_day());
+
+                if(validUntilCalendar.before(Calendar.getInstance())){
+
+                    mav = new ModelAndView("login");
+                    String validDate = fmt.format(validUntilCalendar.getTime());
+                    mav.addObject("loginError", "Your membership has been expired on " + validDate);
+
+                    return mav;
+
+                }
+            } catch (ParseException e) {
+
+                e.printStackTrace();
+            }
 
             httpSession.setAttribute("currentUser", user);
 
