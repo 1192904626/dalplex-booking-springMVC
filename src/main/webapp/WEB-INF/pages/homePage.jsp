@@ -1,15 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: js
-  Date: 2018-07-23
-  Time: 3:44 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>DalplexBooking</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DalplexBooking</title>
@@ -93,8 +85,9 @@
 <div class="simple-slider">
     <div class="swiper-container">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url(https://res.cloudinary.com/dirbnqgl0/image/upload/v1531792215/slider2.jpg);height:700px;"></div>
             <div class="swiper-slide" style="background-image:url(https://res.cloudinary.com/dirbnqgl0/image/upload/v1531792215/slider3.jpg);height:700px;"></div>
+            <div class="swiper-slide" style="background-image:url(https://res.cloudinary.com/dvbwoaqub/image/upload/v1532617474/hgceoo0wrarlqspw6s8g.jpg);height:700px;"></div>
+            <div class="swiper-slide" style="background-image:url(https://res.cloudinary.com/dvbwoaqub/image/upload/v1532616971/p1c2irrmcmb7knjthpsx.jpg);height:700px;"></div>
             <%--<div class="swiper-slide" style="background-image:url(images/slider1.jpg);height:700px;"></div>--%>
             <%--<div class="swiper-slide" style="background-image:url(images/1528900362524.jpg);height:700px;"></div>--%>
         </div>

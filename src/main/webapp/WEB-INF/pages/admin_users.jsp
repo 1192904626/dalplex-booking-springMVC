@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ziyunzhong
-  Date: 2018-07-15
-  Time: 4:40 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -49,12 +42,14 @@
                             <table class="col-sm-12 table table-bordered table-striped table-condensed cf">
                                 <thead class="cf">
                                 <tr>
-                                    <th>User Name</th>
+                                    <th>Username</th>
                                     <th>Phone number</th>
                                     <th>Email</th>
                                     <th>Membership start date</th>
                                     <th>Membership day</th>
                                     <th>Role</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -66,6 +61,20 @@
                                         <td>${user.membership_start_date}</td>
                                         <td>${user.membership_day}</td>
                                         <td>${user.student_role}</td>
+                                        <td>
+                                            <a onclick="edituser(this)" class="btn btn-default"
+                                               value=${user.student_id} data-toggle="modal"
+                                               data-target="#addCourseModal">
+                                                <i class="material-icons">border_color</i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <a onclick="deleteuser(this)" class="btn btn-danger" data-toggle="modal"
+                                               href="#myModal" value=${user.student_id}>
+                                                <em class="fa fa-trash">
+                                                </em>
+                                            </a>
+                                        </td>
                                     </tr>
                                 </c:forEach>
                                 </tbody>
@@ -85,73 +94,31 @@
             <!-- Modal content-->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title">Add Course</h4>
+                    <h4 class="modal-title">Add membership</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <form id="add-course-form" class="form-horizontal" action="/course/list" method="POST">
+                <form id="add-user-form" class="form-horizontal" action="" method="POST">
                     <div class="modal-body">
                         <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_name">Course Name</label>
+                            <label class="control-label col-sm-6" for="email">Email</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="course_name" placeholder="Enter course name"
-                                       name="course_name" required>
+                                <input type="email" class="form-control" id="email"
+                                       name="email" readonly>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_category">Category</label>
+                            <label class="control-label col-sm-6" for="membership_start_date">Membership start
+                                date</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="course_category"
-                                       placeholder="Select course type" name="course_category" list="team_list"
-                                       required>
-                                <datalist id="team_list">
-                                    <option>Soccer</option>
-                                    <option>Basketball</option>
-                                    <option>Swimming</option>
-                                    <option>Yoga</option>
-                                </datalist>
+                                <input type="date" class="form-control" id="membership_start_date"
+                                       name="membership_start_date" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_start">Course Start</label>
+                            <label class="control-label col-sm-6" for="membership_day">Membership day</label>
                             <div class="col-sm-10">
-                                <input type="date" class="form-control" id="course_start" name="course_start_date"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_end">Course End</label>
-                            <div class="col-sm-10">
-                                <input type="date" class="form-control" id="course_end" name="course_end_date" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_instructor">Course Instructor</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" id="course_instructor"
-                                       placeholder="Enter Instructor name" name="course_instructor" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_time_start">Course time start</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="course_time_start" name="course_start_time"
-                                       required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_time_end">Course time end</label>
-                            <div class="col-sm-10">
-                                <input type="time" class="form-control" id="course_time_end" name="course_end_time"
-                                       required>
-                            </div>
-                        </div>
-                        <%--https://res.cloudinary.com/dirbnqgl0/image/upload/v1530819678/course_cover/socor.jpg--%>
-                        <div class="form-group">
-                            <label class="control-label col-sm-6" for="course_cover_image_link">Course Cover
-                                Image</label>
-                            <div class="col-sm-10">
-                                <input type="file" accept="image/*" class="form-control" id="course_cover_image_link"
-                                       name="course_cover_image_link" required>
+                                <input type="number" class="form-control" id="membership_day"
+                                       name="membership_day" required>
                             </div>
                         </div>
 
@@ -170,7 +137,27 @@
         </div>
     </div>
 
-</div>
+    <%--Delete Modal--%>
+    <div id="popup">
+        <div role="dialog" tabindex="-1" class="modal fade" id="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4>Are you sure to delete?</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-center text-muted">Deleted user can not be recovered.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button>
+                        <button id="deleteuser" class="btn btn-primary" value="" type="button">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -188,7 +175,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
 
 
-<script src="../js/admin_course.js"></script>
+<script src="../js/admin_user.js"></script>
 
 </body>
 
