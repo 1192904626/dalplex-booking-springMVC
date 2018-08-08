@@ -104,7 +104,7 @@
     <div class="modal-dialog">
 
         <div class="modal-content">
-            <div class="modal-header">
+            <div class="modal-header" style="background-color: #0ea0ff" >
                 <h4 class="modal-title">Show Announcement</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
 
