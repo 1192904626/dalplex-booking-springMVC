@@ -76,7 +76,7 @@
                                             </a>
                                         </td>
                                         <td>
-                                            <a onclick="deletecourse(this)" class="btn btn-danger" data-toggle="modal"
+                                            <a onclick="deleteclass(this)" class="btn btn-danger" data-toggle="modal"
                                                href="#myModal" value=${course.course_id}>
                                                 <em class="fa fa-trash">
                                                 </em>
@@ -211,28 +211,28 @@
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
 
                 </div>
-                <form id="edit_course_form" class="form-horizontal" action="/course/update" method="post">
+                <form id="edit_class_form" class="form-horizontal" action="/course/update" method="post">
 
                     <div class="modal-body">
                         <div id="edit-form-left" style="width: 50%;float: left">
                             <div class="form-group" style="display: none">
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" id="edit_course_id" name="course_id"
+                                    <input type="number" class="form-control" id="edit_class_id" name="course_id"
                                            required>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_name">Course Name</label>
+                                <label class="control-label col-sm-6" for="edit_class_name">Course Name</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_course_name"
+                                    <input type="text" class="form-control" id="edit_class_name"
                                            placeholder="Enter course name" name="course_name" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_category">Category</label>
+                                <label class="control-label col-sm-6" for="edit_class_category">Category</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_course_category"
+                                    <input type="text" class="form-control" id="edit_class_category"
                                            placeholder="Select course type" name="course_category" list="edit_team_list"
                                            required>
                                     <datalist id="edit_team_list">
@@ -244,49 +244,48 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_start">Course Start</label>
+                                <label class="control-label col-sm-6" for="edit_class_start">Course Start</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control" id="edit_course_start"
+                                    <input type="date" class="form-control" id="edit_class_start"
                                            name="course_start_date"
                                            required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_end">Course End</label>
+                                <label class="control-label col-sm-6" for="edit_class_end">Course End</label>
                                 <div class="col-sm-10">
-                                    <input type="date" class="form-control" id="edit_course_end" name="course_end_date"
+                                    <input type="date" class="form-control" id="edit_class_end" name="course_end_date"
                                            required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_instructor">Course
+                                <label class="control-label col-sm-6" for="edit_class_instructor">Course
                                     Instructor</label>
                                 <div class="col-sm-10">
-                                    <input type="text" class="form-control" id="edit_course_instructor"
+                                    <input type="text" class="form-control" id="edit_class_instructor"
                                            placeholder="Enter Instructor name" name="course_instructor" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_time_start">Course time
+                                <label class="control-label col-sm-6" for="edit_class_time_start">Course time
                                     start</label>
                                 <div class="col-sm-10">
-                                    <input type="time" class="form-control" id="edit_course_time_start"
+                                    <input type="time" class="form-control" id="edit_class_time_start"
                                            name="course_start_time" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_time_end">Course time end</label>
+                                <label class="control-label col-sm-6" for="edit_class_time_end">Course time end</label>
                                 <div class="col-sm-10">
-                                    <input type="time" class="form-control" id="edit_course_time_end"
+                                    <input type="time" class="form-control" id="edit_class_time_end"
                                            name="course_end_time"
                                            required>
                                 </div>
                             </div>
                         </div>
-                        <%--https://res.cloudinary.com/dirbnqgl0/image/upload/v1530819678/course_cover/socor.jpg--%>
                         <div id="edit-form-right" style="width:50%;float: right;">
                             <div class="form-group">
-                                <label class="control-label col-sm-6" for="edit_course_cover_image_link">Course Cover
+                                <label class="control-label col-sm-6" for="edit_class_cover_image_link">Course Cover
                                     Image</label>
                                 <img id="edit_display_image" class="img-fluid" src="#" alt="image for class">
                             </div>
@@ -296,7 +295,7 @@
                             <div class="col-sm-10" style="display: none">
 
                                 <input type="text"
-                                       id="edit_course_cover_image_link" name="course_cover_image_link" value="#">
+                                       id="edit_class_cover_image_link" name="course_cover_image_link" value="#">
                             </div>
                         </div>
                     </div>
@@ -328,32 +327,23 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" type="button" data-dismiss="modal">Cancel</button>
-                    <button id="deletecourse" value="" class="btn btn-primary" type="button">Delete</button>
+                    <button id="deleteclass" value="" class="btn btn-primary" type="button">Delete</button>
                 </div>
             </div>
         </div>
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- jQuery CDN - Slim version (=without AJAX) -->
-<%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--%>
-<!-- Popper.JS -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
 <%--Cloudinary--%>
 <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
-<!-- Bootstrap JS -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
         integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/4.4.0/bootbox.min.js"></script>
-
-
 <script src="../js/admin_course.js"></script>
-
-
 </body>
 
 </html>

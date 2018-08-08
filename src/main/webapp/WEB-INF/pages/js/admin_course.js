@@ -4,14 +4,13 @@ $(document).ready(function () {
         $(this).toggleClass('active');
     });
 });
-// pass value to modal
-function deletecourse(element) {
+function deleteclass(element) {
     var courseid = element.getAttribute('value');
-    $("#deletecourse").val(courseid);
+    $("#deleteclass").val(courseid);
 };
-$("#deletecourse").click(function(){
+$("#deleteclass").click(function(){
     //get id
-    var courseid = $("#deletecourse").val();
+    var courseid = $("#deleteclass").val();
     $.ajax({
         url:"/course/"+courseid,
         type: 'DELETE',
@@ -35,15 +34,15 @@ function editcourse(element) {
         type: "GET",
         success: function (course, status) {
             if(course != null){
-                $("#edit_course_id").attr('value', course.course_id);
-                $("#edit_course_name").attr('value', course.course_name);
-                $("#edit_course_category").attr('value', course.course_category);
-                $("#edit_course_start").attr('value', course.course_start_date);
-                $("#edit_course_end").attr('value', course.course_end_date);
-                $("#edit_course_instructor").attr('value', course.course_instructor)
-                $("#edit_course_time_start").attr('value', course.course_start_time);
-                $("#edit_course_time_end").attr('value', course.course_end_time);
-                $("#edit_course_cover_image_link").attr('value', course.course_cover_image_link);
+                $("#edit_class_id").attr('value', course.course_id);
+                $("#edit_class_name").attr('value', course.course_name);
+                $("#edit_class_category").attr('value', course.course_category);
+                $("#edit_class_start").attr('value', course.course_start_date);
+                $("#edit_class_end").attr('value', course.course_end_date);
+                $("#edit_class_instructor").attr('value', course.course_instructor)
+                $("#edit_class_time_start").attr('value', course.course_start_time);
+                $("#edit_class_time_end").attr('value', course.course_end_time);
+                $("#edit_class_cover_image_link").attr('value', course.course_cover_image_link);
                 $("#edit_display_image").attr('src', course.course_cover_image_link);
             }
         }
@@ -77,7 +76,7 @@ document.getElementById("upload_widget_opener_edit").addEventListener("click", f
             image_url = result[0].url;
             console.log(image_url);
             $("#edit_display_image").attr('src',image_url);
-            $("#edit_course_cover_image_link").attr('value',image_url);
+            $("#edit_class_cover_image_link").attr('value',image_url);
         });
 }, false);
 //Written by Ziyun Zhong -------END
