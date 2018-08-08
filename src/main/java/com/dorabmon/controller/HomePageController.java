@@ -15,11 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping(value = "/")
 public class HomePageController {
 
-    @Autowired
-    private CourseService courseService;
-
-    @Autowired
-    private CourtService courtService;
 
     @RequestMapping(method = RequestMethod.GET)
     public ModelAndView admin(HttpServletRequest httpServletRequest) {
@@ -38,17 +33,5 @@ public class HomePageController {
     }
 }
 
-
-//
-//
-//        List<Course> courseList = new ArrayList<>();
-//        courseList = courseService.FindAll();
-//        mav.addObject("courseList", courseList);
-//
-//        List<Court> courtList = new ArrayList<>();
-//        courtList = courtService.FindAll();
-//        mav.addObject("courtList", courtList);
-//        return mav;
-//    }
 
 

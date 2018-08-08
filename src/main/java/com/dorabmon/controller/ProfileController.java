@@ -11,10 +11,9 @@ import org.springframework.web.servlet.ModelAndView;
 public class ProfileController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView profile(){
+    public ModelAndView profile() {
         return new ModelAndView("profile");
     }
-
 
 
 }

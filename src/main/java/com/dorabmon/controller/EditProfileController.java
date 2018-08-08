@@ -20,8 +20,6 @@ public class EditProfileController {
     @Autowired
     private UserService userService;
 
-//    private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-
     @RequestMapping(value = "/profile/edit", method = RequestMethod.GET)
     public ModelAndView getEditProfile(HttpServletRequest request, HttpServletResponse response) {
         if (request.getSession().getAttribute("currentUser") != null) {
@@ -66,18 +64,12 @@ public class EditProfileController {
                 user.setPassword(password);
 
                 userService.Update(user);
-                // mav.addObject("currentUser",user);
 
             }
-            session.setAttribute("currentUser",user);
+            session.setAttribute("currentUser", user);
             mav.addObject("currentUser", user);
             sendRedirectToEditProfile(response, "/student_page");
 
-//            try {
-//                response.sendRedirect("/student_page");
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
 
             return mav;
 

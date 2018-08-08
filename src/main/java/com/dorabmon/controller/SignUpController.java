@@ -37,10 +37,7 @@ public class SignUpController {
         ModelAndView mav;
         HttpSession httpSession = request.getSession();
         if (userService.FindByEmail(user.getEmail()) == null) {
-//            User user = new User();
-//            user.setStudent_name(student_name);
-//            user.setEmail(email);
-//            user.setPassword(password);
+
             user.setPhone_number(phone);
             user.setStudent_role("user");
             userService.Insert(user);

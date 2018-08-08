@@ -32,7 +32,7 @@ public class StudentCourtController {
     public ModelAndView viewCourtPage(@PathVariable("court_type") String court_type, HttpServletRequest httpServletRequest) {
 
         User user = (User) httpServletRequest.getSession().getAttribute("currentUser");
-        if(user == null){
+        if (user == null) {
 
             ModelAndView modelAndView = new ModelAndView("login");
             return modelAndView;
@@ -55,12 +55,10 @@ public class StudentCourtController {
     @RequestMapping(value = "/listCourts", method = RequestMethod.POST)
     @ResponseBody
     public List<Court> listCourtsByTypeAndDate(
-                              @RequestBody RequestJsonParam requestJsonParam)
-    {
+            @RequestBody RequestJsonParam requestJsonParam) {
         String date = requestJsonParam.getDate();
         String court_type = requestJsonParam.getCourt_type();
-        if(StringUtils.isEmpty(date) || StringUtils.isEmpty(court_type) )
-        {
+        if (StringUtils.isEmpty(date) || StringUtils.isEmpty(court_type)) {
             return null;
         }
 
@@ -72,13 +70,11 @@ public class StudentCourtController {
     @RequestMapping(value = "/showValidPeriods", method = RequestMethod.POST)
     @ResponseBody
     public List<String> showValidPeriodsByCourtIdandDate(
-            @RequestBody RequestJsonParam requestJsonParam)
-    {
+            @RequestBody RequestJsonParam requestJsonParam) {
         String date = requestJsonParam.getDate();
         Integer court_id = requestJsonParam.getCourt_id();
 
-        if(StringUtils.isEmpty(date) || court_id == null )
-        {
+        if (StringUtils.isEmpty(date) || court_id == null) {
             return null;
         }
 
@@ -89,39 +85,36 @@ public class StudentCourtController {
     @RequestMapping(value = "/courtBooking", method = RequestMethod.POST)
     @ResponseBody
     public ResultResponse bookCourt(HttpServletRequest httpServletRequest,
-            @RequestBody RequestJsonParam requestJsonParam)
-    {
+                                    @RequestBody RequestJsonParam requestJsonParam) {
         Integer court_id = requestJsonParam.getCourt_id();
         String payload = requestJsonParam.getPayload();
         String dateStr = requestJsonParam.getDate();
-        if(StringUtils.isEmpty(payload) || court_id == null || StringUtils.isEmpty(dateStr)){
+        if (StringUtils.isEmpty(payload) || court_id == null || StringUtils.isEmpty(dateStr)) {
             logger.error("Error bookCourt wrong parameters");
             return new ResultResponse(false, "Error bookCourt wrong parameters");
         }
 
         User user = (User) httpServletRequest.getSession().getAttribute("currentUser");
-        if(user == null){
+        if (user == null) {
             logger.error("Error Session Time Out!!!");
             return new ResultResponse(false, "Session Time Out");
         }
 
         int hourOfday = java.util.Arrays.asList(ConstantsUitls.arrayAll12Periods).indexOf(payload);
 
-        if(hourOfday == -1)
-        {
+        if (hourOfday == -1) {
             logger.error("Error bookCourt wrong date period");
             return new ResultResponse(false, "Error bookCourt wrong date period");
         }
 
-        boolean result = courtService.createCourtBooking(user.getStudent_id(), court_id, hourOfday,  dateStr);
+        boolean result = courtService.createCourtBooking(user.getStudent_id(), court_id, hourOfday, dateStr);
         return new ResultResponse(result);
 
     }
 
     @RequestMapping(value = "/courtBooking/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public ResultResponse deleteBookCourtById(@PathVariable("id") String id, HttpServletRequest httpServletRequest)
-    {
+    public ResultResponse deleteBookCourtById(@PathVariable("id") String id, HttpServletRequest httpServletRequest) {
         boolean result = courtService.deleteBookingCourtById(id);
         return new ResultResponse(result);
 

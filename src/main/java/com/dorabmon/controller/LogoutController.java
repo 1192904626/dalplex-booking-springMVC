@@ -18,15 +18,13 @@ public class LogoutController {
 
 
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
-    public void logoutPOST(HttpServletRequest request, HttpServletResponse response)
-    {
+    public void logoutPOST(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession(false);
-        if(session.getAttribute("currentUser")==null){
+        if (session.getAttribute("currentUser") == null) {
 
             logger.error("Null user logout action. ");
 
-        }
-        else{
+        } else {
 
             session.removeAttribute("currentUser");
             try {

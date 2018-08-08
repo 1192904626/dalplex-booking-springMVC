@@ -24,7 +24,7 @@ public class ForgotPwdController {
     private UserService userService;
 
     @RequestMapping(value = "/forgotPassword", method = RequestMethod.GET)
-    public ModelAndView displayForgotPasswordPage(){
+    public ModelAndView displayForgotPasswordPage() {
 
         return new ModelAndView("forgotPassword");
     }
@@ -35,29 +35,26 @@ public class ForgotPwdController {
                                                   HttpServletRequest request,
                                                   HttpServletResponse response) throws IOException {
 
-        ModelAndView modelAndView ;
+        ModelAndView modelAndView;
         User user = userService.FindByEmail(userEmail);
 
-        if (user!=null)
-        {
-                if (user.getPhone_number().equals(phone) && user.getStudent_name().equals(student_name))
-                {
-                    user.setPassword(newPwd);
-                    userService.Update(user);
-                    modelAndView = new ModelAndView("homepage");
-                    response.sendRedirect("/");
-                    return modelAndView;
-                    //modelAndView.addObject("errorMsg","Right email address...please continue");
+        if (user != null) {
+            if (user.getPhone_number().equals(phone) && user.getStudent_name().equals(student_name)) {
+                user.setPassword(newPwd);
+                userService.Update(user);
+                modelAndView = new ModelAndView("homePage");
+                request.getSession().setAttribute("currentUser", user);
+                response.sendRedirect("/");
+                return modelAndView;
 
-                }else {
+            } else {
 
-                    modelAndView = new ModelAndView("forgotPassword");
-                    modelAndView.addObject("errorMsg","Phone number, email address, username don't match !");
-                    return modelAndView;
-                }
+                modelAndView = new ModelAndView("forgotPassword");
+                modelAndView.addObject("errorMsg", "Phone number, email address, username don't match !");
+                return modelAndView;
+            }
 
-        }
-        else {
+        } else {
             modelAndView = new ModelAndView("forgotPassword");
             modelAndView.addObject("errorMsg", "We didn't find an account for this e-mail address.");
             return modelAndView;
