@@ -272,8 +272,6 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/DashBoard-light-boostrap.js"></script>
-<script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
-<script src="js/Simple-Slider.js"></script>
 <script src="js/sticky.js"></script>
 <script src="js/studentPage.js"></script>
 
