@@ -190,10 +190,10 @@
     <div role="dialog" tabindex="-1" class="modal fade" id="myModal3">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header"  style="background-color: #0ea0ff">
                     <h4>Are you sure to delete?</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">×</span></button>
+                            aria-hidden="true">x</span></button>
                 </div>
                 <div class="modal-body">
                     <p class="text-center text-muted">Deleted item can not be recovered.</p>
@@ -211,10 +211,10 @@
     <div role="dialog" tabindex="-1" class="modal fade" id="myModal2">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header"  style="background-color: #0ea0ff">
                     <h4>Are you sure to delete?</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true">×</span></button>
+                            aria-hidden="true">x</span></button>
                 </div>
                 <div class="modal-body">
                     <p class="text-center text-muted">Deleted item can not be recovered.</p>
@@ -229,10 +229,10 @@
     <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header"  style="background-color: #0ea0ff">
                     <h4>Book Course Form</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                            aria-hidden="true"><strong>X</strong></span></button>
+                            aria-hidden="true">x</span></button>
                 </div>
                 <div class="modal-body">
                     <p>Are you sure book this course?</p>
