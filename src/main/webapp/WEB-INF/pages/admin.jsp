@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ziyunzhong
-  Date: 2018-07-15
-  Time: 4:40 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -22,7 +15,6 @@
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../css/toggle-menu.css">
-
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -94,8 +86,6 @@
             </nav>
             <div id="courtAndCourse">
                 <h3 id="welcomeadmin" style="padding-left: 30px">Welcome to the management system!</h3>
-                <%--<div id="court_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_court"></iframe></div>--%>
-                <%--<div id="course_list"><iframe width="100%" height="80%" src="http://localhost:8099/add_course"></iframe></div>--%>
             </div>
         </div>
     </div>

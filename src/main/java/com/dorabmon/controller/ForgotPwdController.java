@@ -44,7 +44,8 @@ public class ForgotPwdController {
                 {
                     user.setPassword(newPwd);
                     userService.Update(user);
-                    modelAndView = new ModelAndView("homepage");
+                    modelAndView = new ModelAndView("homePage");
+                    request.getSession().setAttribute("currentUser", user);
                     response.sendRedirect("/");
                     return modelAndView;
                     //modelAndView.addObject("errorMsg","Right email address...please continue");

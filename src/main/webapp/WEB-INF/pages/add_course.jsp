@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: ziyunzhong
-  Date: 2018-07-15
-  Time: 4:40 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
@@ -301,16 +294,16 @@
                         </div>
                     </div>
 
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary" id="submit-course-_edit">Submit</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" id="submit-course-_edit">Submit</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
+                    </div>
+                </form>
             </div>
-            </form>
-        </div>
 
+        </div>
     </div>
-</div>
 
 </div>
 
@@ -335,9 +328,7 @@
     </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- jQuery CDN - Slim version (=without AJAX) -->
-<%--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>--%>
-<!-- Popper.JS -->
+<
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
         integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
