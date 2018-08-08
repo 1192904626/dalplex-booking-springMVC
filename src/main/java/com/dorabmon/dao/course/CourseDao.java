@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface CourseDao extends BaseDao<Course> {
     List<Course> FindOtherCourseByStudentId(int studentId) throws SQLException;
+
+    List<Course> findCourseByKeyword(String keyword) throws SQLException;
 }

@@ -15,7 +15,6 @@
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="../css/toggle-menu.css">
-
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
             integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
@@ -39,6 +38,15 @@
                         <button type="button" class="btn btn-primary add-button" name="add_course" data-toggle="modal"
                                 data-target="#addCourseModal">Add a course
                         </button>
+                        <form action="/course/keyword" method="get" class="navbar-form">
+                            <div class="input-group" style="margin-left: 2%">
+                                <input type="search" id="keyword" name="keyword" class="form-control" style="height: 46px"
+                                       placeholder="Search">
+                                    <button type="submit" class="btn btn-primary" style="margin-left: 2%"><i class="fas fa-search"></i></button>
+
+                            </div>
+                        </form>
+
 
                     </div>
                     <div class="row">
@@ -47,7 +55,7 @@
                                 <thead class="cf">
                                 <tr>
                                     <th>Course Name</th>
-                                    <th>Capacity</th>
+                                    <th>Type</th>
                                     <th>Course Start</th>
                                     <th>Course End</th>
                                     <th>Edit</th>

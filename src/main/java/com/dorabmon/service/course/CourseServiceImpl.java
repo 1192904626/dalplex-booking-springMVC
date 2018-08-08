@@ -19,9 +19,9 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public void Insert(Course entity) {
-        try{
+        try {
             courseDao.Insert(entity);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -29,9 +29,9 @@ public class CourseServiceImpl implements CourseService {
     // method wrote by Yunfei Guo
     @Override
     public void Update(Course entity) {
-        try{
+        try {
             courseDao.Update(entity);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -39,9 +39,9 @@ public class CourseServiceImpl implements CourseService {
     // method wrote by Yunfei Guo
     @Override
     public void Delete(String id) {
-        try{
+        try {
             courseDao.Delete(id);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -53,18 +53,18 @@ public class CourseServiceImpl implements CourseService {
 
     @Override
     public Course FindById(int id) {
-        try{
+        try {
             return courseDao.FindById(id);
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
     public List<Course> FindAll() {
-        try{
+        try {
             return courseDao.FindAll();
-        }catch (SQLException e){
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
@@ -72,7 +72,7 @@ public class CourseServiceImpl implements CourseService {
     @Override
     public boolean DeleteCheckStudentid(String id) {
         List<Integer> studentList = studentCourseService.FindstudentIdListBycourseId(Integer.parseInt(id));
-        if(studentList.size() == 0) {
+        if (studentList.size() == 0) {
             Delete(id);
             return true;
         } else {
@@ -86,7 +86,15 @@ public class CourseServiceImpl implements CourseService {
 
             return courseDao.FindOtherCourseByStudentId(studentId);
 
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 
+    @Override
+    public List<Course> findCourseByKeyword(String keyword) {
+        try {
+            return courseDao.findCourseByKeyword(keyword);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

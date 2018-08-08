@@ -47,9 +47,8 @@ function editcourse(element) {
             }
         }
     });
-
-
 };
+
 
 //Written by Ziyun Zhong -------START
 document.getElementById("upload_widget_opener").addEventListener("click", function() {

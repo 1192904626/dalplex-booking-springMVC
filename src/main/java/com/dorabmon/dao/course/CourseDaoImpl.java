@@ -140,6 +140,25 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
     }
 
     @Override
+    public List<Course> findCourseByKeyword(String keyword) throws SQLException {
+        List<Course> courseList = new ArrayList<>();
+        Connection conn = dbcpUtil.getConnection();
+        String sql = "select * from course_table where course_name like ?";
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, "%"+keyword+"%");
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            courseList.add(this.setResult(rs));
+        }
+        rs.close();
+        if (stmt != null) {
+            stmt.close();
+        }
+
+        return courseList;
+    }
+
+    @Override
     public List FindAll(String query) throws SQLException {
         return null;
     }
@@ -190,4 +209,6 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
         return courseList;
 
     }
+
+
 }

@@ -25,6 +25,15 @@ public class AdminCourseController {
         return modelAndView;
     }
 
+    @RequestMapping(value = "/keyword", method = RequestMethod.GET)
+    public ModelAndView searchCourse(@RequestParam String keyword, HttpServletResponse response) {
+        ModelAndView mav = new ModelAndView("add_course");
+        List<Course> courseList = courseService.findCourseByKeyword(keyword);
+        mav.addObject("courseList", courseList);
+
+        return mav;
+    }
+
     @RequestMapping(value = "/{courseid}", method = RequestMethod.DELETE)
     @ResponseBody
     public String coursedelete(@PathVariable("courseid") String courseid, HttpServletRequest httpServletRequest) {
@@ -80,4 +89,6 @@ public class AdminCourseController {
             return null;
         }
     }
+
+
 }

@@ -9,4 +9,5 @@ public interface CourseService extends BaseService<Course> {
 
     boolean DeleteCheckStudentid(String id);
     List<Course> FindOtherCourseByStudentId(int studentId);
+    List<Course> findCourseByKeyword(String keyword);
 }
