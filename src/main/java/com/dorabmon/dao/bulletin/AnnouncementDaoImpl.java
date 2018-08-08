@@ -33,7 +33,7 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
         cstmt.executeUpdate();
         entity.setId(cstmt.getInt(4));
 
-        if (cstmt != null){
+        if (cstmt != null) {
             cstmt.close();
         }
 
@@ -52,7 +52,7 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
         stmt.setDate(4, entity.getValidUntil());
 
         stmt.executeUpdate();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
 
@@ -65,7 +65,7 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
         PreparedStatement stmt = conn.prepareStatement("CALL DELETE_ANNOUNCEMENT_BY_ID(?)");
         stmt.setInt(1, Integer.valueOf(id));
         int result = stmt.executeUpdate();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
 
@@ -81,13 +81,12 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
         stmt.setInt(1, id);
 
         ResultSet rs = stmt.executeQuery();
-        while (rs.next()){
-            annoucement =  this.setResult(rs);
+        while (rs.next()) {
+            annoucement = this.setResult(rs);
         }
         rs.close();
 
-        if(stmt != null)
-        {
+        if (stmt != null) {
             stmt.close();
         }
 
@@ -111,7 +110,7 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
 
     @Override
     public Annoucement setResult(ResultSet rs) {
-        try{
+        try {
             Annoucement annoucement = new Annoucement();
             annoucement.setId(rs.getInt("id"));
             annoucement.setTitle(rs.getString("title"));
@@ -120,7 +119,7 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
 
             logger.info(annoucement.toString());
             return annoucement;
-        }catch(SQLException e) {
+        } catch (SQLException e) {
             // e.printStackTrace();
             logger.error(e.getMessage());
             throw new RuntimeException(e);
@@ -139,12 +138,12 @@ public class AnnouncementDaoImpl implements AnnouncementDao, EntityDao<Annouceme
         stmt.setInt(2, rows);
 
         ResultSet rs = stmt.executeQuery();
-        while (rs.next()){
+        while (rs.next()) {
             annoucementList.add(this.setResult(rs));
         }
         rs.close();
 
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
 

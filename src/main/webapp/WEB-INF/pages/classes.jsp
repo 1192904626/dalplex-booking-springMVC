@@ -6,20 +6,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/Article-List.css">
-    <link rel="stylesheet" href="css/DashBoard-light-boostrap.css">
-    <link rel="stylesheet" href="css/Data-Table.css">
-    <link rel="stylesheet" href="css/Dynamic-Table.css">
     <link rel="stylesheet" href="css/Footer-Basic.css">
     <link rel="stylesheet" href="css/Footer-Clean.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
     <link rel="stylesheet" href="css/Lightbox-Gallery.css">
-    <link rel="stylesheet" href="css/product-list.css">
-    <link rel="stylesheet" href="css/Sidebar-Menu.css">
-    <link rel="stylesheet" href="css/SIdebar-Responsive-2.css">
-    <link rel="stylesheet" href="css/sss-Product-List-f.css">
     <link rel="stylesheet" href="css/styles.css">
 
     <link rel="stylesheet" href="css/bootstrapyiren.min.css">

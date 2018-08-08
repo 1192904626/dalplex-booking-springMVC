@@ -47,7 +47,7 @@ public class CourtBookingDaoImpl implements CourtBookingDao, EntityDao<CourtBook
     public void Delete(String id) throws SQLException {
 
         Connection conn = dbpool.getConnection();
-        String sql = "delete from zyzhong.court_booking_table where id = ?" ;
+        String sql = "delete from zyzhong.court_booking_table where id = ?";
         PreparedStatement stmt = conn.prepareStatement(sql);
         stmt.setInt(1, Integer.valueOf(id));
         stmt.executeUpdate();

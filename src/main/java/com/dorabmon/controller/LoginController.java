@@ -56,7 +56,7 @@ public class LoginController {
         User user = userService.Login(email, password);
         if (user != null) {
 
-            DateFormat fmt =new SimpleDateFormat("yyyy-MM-dd");
+            DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd");
             Date start_date = null;
 
             try {
@@ -66,7 +66,7 @@ public class LoginController {
                 validUntilCalendar.setTime(start_date);
                 validUntilCalendar.add(Calendar.DAY_OF_YEAR, user.getMembership_day());
 
-                if(validUntilCalendar.before(Calendar.getInstance())){
+                if (validUntilCalendar.before(Calendar.getInstance())) {
 
                     mav = new ModelAndView("login");
                     String validDate = fmt.format(validUntilCalendar.getTime());

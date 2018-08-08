@@ -10,7 +10,9 @@ import java.util.List;
 
 public interface StudentCourseDao {
     void Insert(int userid, int courseid) throws SQLException;
+
     void Update(int userid, int courseid) throws SQLException;
+
     void Delete(int userid, int courseid) throws SQLException;
 
     List<Integer> FindstudentBycourseId(int courseId) throws SQLException;
@@ -18,10 +20,7 @@ public interface StudentCourseDao {
     List<Integer> FindCourseByStudentId(User user) throws SQLException;
 
 
-//    List<Integer> courseIdList = new ArrayList<Integer>();
     int checkDuplicattion(int userid, int courseid) throws SQLException;
-
-
 
 
 }

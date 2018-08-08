@@ -45,7 +45,7 @@ public class UserDaoImpl implements UserDao, EntityDao<User> {
         if (rs.next()) {
             entity.setStudent_id((rs.getInt(1)));
         }
-        if(stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
 
@@ -85,7 +85,7 @@ public class UserDaoImpl implements UserDao, EntityDao<User> {
         stmt.setString(3, entity.getEmail());
 
         stmt.executeUpdate();
-        if (stmt != null){
+        if (stmt != null) {
             stmt.close();
         }
     }
@@ -200,7 +200,6 @@ public class UserDaoImpl implements UserDao, EntityDao<User> {
         }
         return user;
     }
-
 
 
 }

@@ -1,6 +1,5 @@
 package com.dorabmon.dao.course;
 
-import com.dorabmon.dao.DatabaseDao;
 import com.dorabmon.dao.EntityDao;
 import com.dorabmon.model.Course;
 import com.dorabmon.util.DBCPUtil;
@@ -191,4 +190,4 @@ public class CourseDaoImpl implements CourseDao, EntityDao<Course> {
         return courseList;
 
     }
-    }
+}

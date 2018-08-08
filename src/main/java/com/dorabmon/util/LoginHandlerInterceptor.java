@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 public class LoginHandlerInterceptor implements HandlerInterceptor {
 
     private static final Logger logger = LoggerFactory.getLogger(LoginHandlerInterceptor.class);
-    private static String[] urlSets = { "login", "signup", "announcement","forgotPassword"};
+    private static String[] urlSets = {"login", "signup", "announcement", "forgotPassword"};
 
 
     @Override

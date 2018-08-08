@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 public interface UserDao extends BaseDao<User> {
 
-    User FindByEmail (String email) throws SQLException;
+    User FindByEmail(String email) throws SQLException;
+
     void UpdateMemberShip(User entity) throws SQLException;
 }

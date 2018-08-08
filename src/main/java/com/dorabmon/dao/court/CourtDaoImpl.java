@@ -182,7 +182,7 @@ public class CourtDaoImpl implements CourtDao, EntityDao<Court> {
                 "where a.student_id = ? order by book_time desc;";
 
         PreparedStatement stmt = conn.prepareStatement(sql);
-        stmt.setInt(1,userid);
+        stmt.setInt(1, userid);
 
         ResultSet rs = stmt.executeQuery();
         Court court = null;

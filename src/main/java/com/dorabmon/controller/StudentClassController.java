@@ -36,25 +36,17 @@ public class StudentClassController {
         HttpSession httpSession = request.getSession();
         if (httpSession.getAttribute("currentUser") == null) {
             mav.setViewName("homepage");
-            // ModelAndView mav1 = new ModelAndView("homepage");
             try {
                 response.sendRedirect("/");
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            //  return mav;
         } else {
             User user = (User) httpSession.getAttribute("currentUser");
             mav.addObject("currentUser", user);
 
-            // coming course, book and vanish
             comingCourseList = courseService.FindOtherCourseByStudentId(user.getStudent_id());
             mav.addObject("comingCourseList", comingCourseList);
-
-//            coming course
-//            comingCourseList = courseService.FindAll();
-//            mav.addObject("comingCourseList", comingCourseList);
-
 
         }
         return mav;

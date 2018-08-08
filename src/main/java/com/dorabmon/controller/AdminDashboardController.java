@@ -20,7 +20,6 @@ public class AdminDashboardController {
                 return new ModelAndView("admin");
             }
         }
-
         return new ModelAndView("homePage");
     }
 
