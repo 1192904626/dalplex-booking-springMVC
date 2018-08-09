@@ -67,7 +67,7 @@
             </div>
             <div class="row photos">
                 <c:forEach items="${studentCourseList}" var="studentCourse">
-                    <div class="col-sm-6 col-md-4 col-lg-3 item">
+                    <div class="col-sm-6 col-md-4 col-lg-3 item" style="margin-top: 10px">
                         <a style="pointer-events: none" href="image/desk.jpg" data-lightbox="photos">
                             <img class="img-fluid" style="width:220px;height:150px;"
                                  src=${studentCourse.course_cover_image_link}>
