@@ -97,7 +97,7 @@
     <div class="modal fade" role="dialog" tabindex="-1" id="myModal">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header" style="background-color: #0ea0ff">
                     <h4>Book Course Form</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true"><strong>X</strong></span></button>
@@ -108,18 +108,13 @@
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-light" type="button" data-dismiss="modal">Close</button>
-                    <button onclick="registerMsg()" class="btn btn-primary" type="button" id="insertcourse">Confirm
+                    <button  class="btn btn-primary" type="button" id="insertcourse">Confirm
                     </button>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script>
-    function registerMsg() {
-        alert("Successfully booked this course !");
-    }
-</script>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
