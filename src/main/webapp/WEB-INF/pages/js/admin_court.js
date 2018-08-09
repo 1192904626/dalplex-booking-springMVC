@@ -49,3 +49,59 @@ function editcourt(element) {
         }
     });
 };
+
+function searchCourts(){
+
+    var keyword = $("#keyword_input").val();
+    var param = {"keyword": keyword};
+
+    $.ajax({
+        url:"/court/search",
+        dataType: "json",
+        data: JSON.stringify(param),
+        type: "POST",
+        contentType:"application/json",
+        success: function (courtList, status) {
+            if(status == "success"){
+
+                $("#court_list").html("");
+                for(index in courtList){
+                    var court = courtList[index];
+
+                    $("#court_list").append(`
+                        <tr>
+                            <td>${court.courtName}</td>
+                            <td>${court.courtType}</td>
+                            <td>${court.courtCapacity}</td>
+                            <td>${court.courtDescription}</td>
+                            <td>
+                                <a onclick="editcourt(this)" class="btn btn-default"
+                                   value=${court.courtId} data-toggle="modal"
+                                   data-target="#editCourseModal">
+                                    <i class="material-icons">border_color</i>
+                                </a>
+                            </td>
+                            <td>
+                                <a onclick="deletecourt(this)" class="btn btn-danger" data-toggle="modal"
+                                   href="#myModal" value=${court.courtId}>
+                                    <em class="fa fa-trash">
+                                    </em>
+                                </a>
+                            </td>
+                        </tr>
+                `);
+                }
+            }
+        }
+    });
+
+}
+
+$(document).keyup(function(event){
+    if(event.keyCode ==13){
+        searchCourts();
+    }
+});
+
+
+//# sourceURL=admin_court.js

@@ -6,6 +6,8 @@ package com.dorabmon.controller;
 
 import com.dorabmon.model.Court;
 import com.dorabmon.service.court.CourtService;
+import com.dorabmon.util.RequestJsonParam;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -90,6 +92,17 @@ public class AdminCourtController {
     public List<Court> getCourt(HttpServletRequest httpServletRequest) {
 
         return courtService.FindAll();
+    }
+
+    @RequestMapping(value = "/search", method = RequestMethod.POST)
+    @ResponseBody
+    public List<Court> searchCourtsByKeyword(
+            @RequestBody RequestJsonParam requestJsonParam) {
+
+        String keyWord = requestJsonParam.getKeyword();
+        List<Court> courtList = null;
+        courtList = courtService.searchCourtsbyKeyword(keyWord);
+        return courtList;
     }
 
 }

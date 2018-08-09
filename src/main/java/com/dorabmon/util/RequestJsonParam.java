@@ -13,6 +13,8 @@ public class RequestJsonParam {
     private Integer offset = 0;
     private Integer rows = 5;
 
+    private String keyword = "";
+
     public String getCourt_type() {
         return court_type;
     }
@@ -67,5 +69,13 @@ public class RequestJsonParam {
 
     public void setRows(Integer rows) {
         this.rows = rows;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 }

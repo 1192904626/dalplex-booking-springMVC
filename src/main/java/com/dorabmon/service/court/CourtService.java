@@ -24,4 +24,6 @@ public interface CourtService extends BaseService<Court> {
     List<Court> listCourtsByStudentID (int studentId);
 
     boolean deleteBookingCourtById(String id);
+
+    List<Court> searchCourtsbyKeyword (String keyword);
 }

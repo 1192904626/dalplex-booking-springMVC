@@ -37,6 +37,15 @@
                                 data-toggle="modal" data-target="#addCourseModal">Add a court
                         </button>
 
+                        <form class="navbar-form">
+                            <div class="input-group" style="margin-left: 2%;">
+                                <input value="" id="keyword_input" class="form-control" style="height: 46px" placeholder="Search"/>
+                                <input type="text" style="display: none;">
+                                <button type="button" id="btn_search" class="btn btn-primary" name="search" onclick="searchCourts()" style="margin-left: 2%" >
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                     <div class="row">
                         <div id="no-more-tables1" class="admin-table">
@@ -51,7 +60,7 @@
                                     <th>Delete</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="court_list">
                                 <c:forEach items="${courtList}" var="court">
                                     <tr>
                                         <td>${court.courtName}</td>

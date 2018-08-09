@@ -199,4 +199,27 @@ public class CourtDaoImpl implements CourtDao, EntityDao<Court> {
         return courtList;
 
     }
+
+    @Override
+    public List<Court> getCourtListByKeyword(String keyword) throws SQLException {
+
+        List<Court> courtList = new ArrayList<>();
+        Connection conn = dbcpUtil.getConnection();
+
+        String sql = "select * from court_table where court_name like ? ";
+
+        PreparedStatement stmt = conn.prepareStatement(sql);
+        stmt.setString(1, "%" + keyword + "%");
+
+        ResultSet rs = stmt.executeQuery();
+        Court court = null;
+        while (rs.next()) {
+            court = this.setResult(rs);
+            courtList.add(court);
+        }
+        rs.close();
+        stmt.close();
+
+        return courtList;
+    }
 }

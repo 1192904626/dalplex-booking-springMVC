@@ -10,6 +10,7 @@ import com.dorabmon.model.Court;
 import com.dorabmon.model.CourtBooking;
 import com.dorabmon.util.ConstantsUitls;
 import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -267,5 +268,29 @@ public class CourtServiceImpl implements CourtService {
             e.printStackTrace();
         }
         return false;
+    }
+
+    @Override
+    public List<Court> searchCourtsbyKeyword(String keyword) {
+
+        List<Court> courtList = null;
+        try {
+
+            if(StringUtils.isEmpty(keyword)){
+                courtList = courtDao.FindAll();
+            }
+            else
+            {
+                courtList = courtDao.getCourtListByKeyword(keyword);
+            }
+
+
+        } catch (SQLException e) {
+
+            logger.error("Error searchCourtsbyKeyword:" + e.getMessage());
+            e.printStackTrace();
+        }
+
+        return courtList;
     }
 }
