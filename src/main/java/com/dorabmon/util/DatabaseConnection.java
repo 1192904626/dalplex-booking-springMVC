@@ -12,11 +12,12 @@ import java.sql.Statement;
 public class DatabaseConnection {
 
     private final static Logger logger = LoggerFactory.getLogger(DatabaseConnection.class);
+   // add database connection setting
     public final static String driverName = "com.mysql.jdbc.Driver";
-    public final static String serverName = "35.236.233.72";
-    public final static String database = "zyzhong";
-    public final static String username = "yiren";
-    public final static String password = "yiren";
+    public final static String serverName = ;
+    public final static String database = ;
+    public final static String username = ;
+    public final static String password = ;
 
 
     public Connection getConnection() {
