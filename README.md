@@ -24,4 +24,10 @@ ziyun.zhong@dal.ca
 Younan Gao  
 yn803382@dal.ca 
 
+# Report Link
+https://dalu-my.sharepoint.com/:w:/g/personal/yn679831_dal_ca/EQsQCL1juOZGqhGHZ7bCrPQBKubhthya3OSLygrzBBXcjw?e=D4kiJD
+
+# Project Link
+https://dalplexbooking.azurewebsites.net
+
  
